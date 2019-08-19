@@ -1,0 +1,8 @@
+.btn {
+  @apply bg-red my-3 text-white border-2 px-4 py-4 leading-none uppercase border-red;
+
+  transition: 0.2s ease;
+  font-family: benton-sans-condensed, sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}

@@ -1,0 +1,30 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply mb-2 leading-tight;
+
+  font-family: "benton-sans-condensed", "Helvetica Neue", sans-serif;
+}
+
+p {
+  @apply mb-3 leading-normal font-sans;
+}
+
+a {
+  @apply text-primary no-underline;
+
+  transition: 0.2s ease;
+
+  &:hover {
+    @apply border-primary;
+  }
+}
+
+@media (min-width: 1920px) {
+  .container {
+    max-width: 1616px;
+  }
+}

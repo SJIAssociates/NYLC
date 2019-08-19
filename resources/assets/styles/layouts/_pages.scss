@@ -1,0 +1,141 @@
+.img-bg {
+  min-height: 150px;
+}
+
+.full-section {
+  @apply py-8;
+
+  min-height: 300px;
+
+  h2 {
+    @apply text-center text-5xl text-red relative inline-block mx-auto;
+
+    &::before {
+      position: absolute;
+      top: 50%;
+      left: -30px;
+      right: -30px;
+      content: " ";
+      height: 3px;
+      background: $primary;
+      z-index: 10;
+    }
+
+    span {
+      @apply bg-white px-5 relative;
+
+      z-index: 20;
+      font-family: benton-sans-condensed, sans-serif;
+    }
+  }
+
+  h3 {
+    @apply text-3xl text-black;
+
+    font-family: benton-sans-condensed, sans-serif;
+  }
+}
+//Landmark Card
+.landmark-card {
+  @apply flex my-8 relative;
+
+  .bg-image {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    bottom: 0;
+    z-index: 10;
+  }
+
+  .card {
+    @apply text-center bg-white;
+
+    z-index: 20;
+  }
+
+  h3 {
+    font-size: 2.35em;
+    margin: 0 auto;
+  }
+
+  p {
+    margin: 30px auto;
+    font-size: 1.25em;
+  }
+
+  .archive-link {
+    @apply text-black underline;
+  }
+}
+
+.success-box {
+  h3 {
+    @apply text-4xl font-bold w-2/3;
+  }
+
+  .btn {
+    text-align: center;
+    min-width: 240px;
+    padding: 20px 0;
+  }
+
+  .archive-link {
+    @apply text-black inline-block underline uppercase;
+
+    font-family: benton-sans-condensed, sans-serif;
+    font-weight: bold;
+    letter-spacing: 0.04em;
+
+    &:hover {
+      @apply border-none;
+    }
+  }
+}
+//NewsCard
+.news-card {
+  img {
+    width: 100%;
+    height: auto;
+  }
+
+  .btn {
+    bottom: 1.5rem;
+    left: 1.5rem;
+    margin: 0;
+  }
+}
+
+.center-btn {
+  display: block;
+  width: 200px;
+  text-align: center;
+  margin: 0 auto;
+}
+//Responsive
+@screen xl {
+  .full-section {
+    @apply py-20;
+  }
+
+  .img-bg {
+    min-height: 250px;
+  }
+}
+
+@screen xxl {
+  .img-bg {
+    min-height: 300px;
+  }
+
+  .full-section {
+    h3 {
+      font-size: 2.375rem;
+    }
+  }
+
+  .success-box {
+    h3 {
+      max-width: 66%;
+    }
+  }
+}

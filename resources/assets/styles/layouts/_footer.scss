@@ -1,0 +1,101 @@
+.content-info {
+  border-bottom: 16px solid $primary;
+  background: white;
+  padding: 70px 0 10px;
+
+  .widget_roots_vcard {
+    font-size: 19px;
+    font-weight: 400;
+  }
+
+  h2 {
+    margin-bottom: 25px;
+    font-family: benton-sans-condensed, sans-serif;
+  }
+
+  .org {
+    color: #372e2c;
+    font-weight: 700;
+  }
+
+  .btn {
+    margin-top: 50px;
+    margin-bottom: 20px;
+    display: inline-block;
+    border-radius: 0;
+    background: none;
+    text-transform: uppercase;
+    color: #372e2c;
+    padding: 20px 0;
+    width: 250px;
+    text-align: center;
+  }
+
+  .social-links {
+    margin: 30px 0;
+
+    a {
+      font-size: 26px;
+      padding: 0 15px;
+      border: none;
+
+      &:hover {
+        border: none;
+      }
+    }
+  }
+}
+
+#newsletterSignup {
+  background: #505662;
+}
+
+#menu-footer-nav {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  vertical-align: top;
+
+  a {
+    color: #372e2c;
+    font-weight: 400;
+  }
+
+  > li {
+    display: inline-block;
+    width: 22%;
+    vertical-align: top;
+    border: none;
+
+    > a {
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-bottom: 25px;
+      display: block;
+      border: none;
+    }
+  }
+
+  .sub-menu {
+    padding: 0;
+    list-style: none;
+
+    a {
+      font-size: 15px;
+      margin-bottom: 15px;
+      display: inline-block;
+    }
+  }
+
+  #menu-item-138 {
+    width: auto;
+  }
+
+  #menu-item-139 {
+    width: 15%;
+  }
+
+  #menu-item-143 {
+    width: 10%;
+  }
+}
