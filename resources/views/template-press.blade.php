@@ -15,7 +15,7 @@
     </div>
     <div class='container'>
     <div class='flex flex-row flex-wrap'>
-    @foreach($press_list as $item )
+    @foreach($press_funnel as $item )
       @include('partials.press' , $item)
     @endforeach
     </div>
