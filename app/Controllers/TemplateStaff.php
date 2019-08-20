@@ -11,26 +11,15 @@ class TemplateStaff extends Controller
     // Get Repeater
     $pressRepeater = get_field('staff_repeater');
 
-    //$i = count($pressRepeater);
-
-    //Return an array
    return array_map(function ($item) {
 
-        // if($item['image'] !== false):
-        //   $pic = $item['image']['url'];
-        // else:
-        //   $pic = App\asset_path('images/logo.jpg');
-        // endif;
-
         return [
-            'name'         => $item['name'],
-            'description'  => $item['description'],
-            'image'        => $item['image'],
+            'name'         => $item['name']  ?? null,
+            'description'  => $item['description']  ?? null,
+            'image'        => $item['image']['url']  ?? \App\asset_path('images/profile-placeholder.jpg'),
             'email'        => $item['email'] ?? null,
-            'title'        => $item['title'],
+            'title'        => $item['title']  ?? null,
         ];
     }, $pressRepeater ?? [] );
-
-
   }
 }
