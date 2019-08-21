@@ -1,4 +1,4 @@
-<div class='news-card w-full w-1/3 bg-white mx-5 items-stretch relative'>
+<div class='news-card w-full bg-white mx-5 mb-5 items-stretch relative md:w-1/3 md:mb-0'>
   {!! $item['thumbnail'] !!}
   <div class="p-8 mb-10">
     <time class='text-primary mb-3 uppercase font-bold block'>{!! $item['time'] !!}</time>

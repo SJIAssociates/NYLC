@@ -30,30 +30,4 @@
     @apply bg-blue-grey;
   }
 }
-//Home::Support_us
-#supportHome {
-  @apply bg-red;
-
-  h2 {
-    margin-bottom: 50px;
-    background: $primary;
-
-    &::before {
-      background: white;
-    }
-  }
-
-  h3,
-  .btn {
-    font-family: benton-sans-condensed, sans-serif;
-  }
-
-  .card {
-    @apply bg-white p-10 text-center mx-5 w-1/3;
-  }
-
-  h2 span {
-    @apply bg-red;
-  }
-}
 //Responsive
