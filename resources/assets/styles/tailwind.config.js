@@ -45,10 +45,10 @@ View the full documentation at https://tailwindcss.com.
 
 let colors = {
   'primary': '#a8353a',
-
   'transparent': 'transparent',
 
   'black': '#372E2C',
+
   'grey-darkest': '#3d4852',
   'grey-darker': '#606f7b',
   'grey-dark': '#8795a1',
@@ -308,6 +308,36 @@ module.exports = {
     'contain': 'contain',
   },
 
+  /*
+  |-----------------------------------------------------------------------------
+  | Background sizes               https://tailwindcss.com/docs/order
+  |-----------------------------------------------------------------------------
+  |
+  | Here is where you define your background sizes. We provide some common
+  | values that are useful in most projects, but feel free to add other sizes
+  | that are specific to your project here as well.
+  |
+  | Class name: .order-{size}
+  |
+  */
+
+  order: {
+    'first': '-9999',
+    'last': '9999',
+    'normal': '0',
+    '1': '1',
+    '2': '2',
+    '3': '3',
+    '4': '4',
+    '5': '5',
+    '6': '6',
+    '7': '7',
+    '8': '8',
+    '9': '9',
+    '10': '10',
+    '11': '11',
+    '12': '12',
+  },
 
   /*
   |-----------------------------------------------------------------------------
@@ -806,7 +836,7 @@ module.exports = {
     flexbox: ['responsive'],
     float: ['responsive'],
     fonts: ['responsive'],
-    fontWeights: ['responsive', 'hover'],
+    fontWeights: [],
     height: ['responsive'],
     leading: ['responsive'],
     lists: ['responsive'],
@@ -817,6 +847,7 @@ module.exports = {
     minWidth: ['responsive'],
     negativeMargin: ['responsive'],
     opacity: ['responsive'],
+    order: ['responsive'],
     outline: ['focus'],
     overflow: ['responsive'],
     padding: ['responsive'],

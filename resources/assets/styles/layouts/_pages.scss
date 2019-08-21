@@ -79,6 +79,10 @@
     padding: 20px 0;
   }
 
+  .box-image {
+    order: -1;
+  }
+
   .archive-link {
     @apply text-black inline-block underline uppercase;
 
@@ -112,6 +116,14 @@
   margin: 0 auto;
 }
 //Responsive
+@screen md {
+  .success-box {
+    .box-image {
+      order: 1;
+    }
+  }
+}
+
 @screen xl {
   .full-section {
     @apply py-20;
