@@ -1,17 +1,17 @@
 <section class='full-section bg-red xl:py-24' id="supportHome">
 	<div class='container'>
 		<div class='text-center'><h2><span class='text-white'>Support Us</span></h2></div>
-		<div class='flex justify-center'>
-  		  <div class='card'>
+		<div class='flex justify-center flex-wrap'>
+  		  <div class='card w-full bg-white p-10 text-center my-5 md:mx-5 md:w-1/3'>
     		  <h3 class='text-black text-4xl'>Donate</h3>
     		  <p class='font-grey my-5 m-auto w-3/4 block text-xl text-grey-darker '>Your donation helps us expand our reach and be your voice for preservation.</p>
     		  <a href="/donate" title="Make a Donation" class='btn border-red inline-block w-1/2'>Make A Donation</a>
   		  </div>
-  		  <div class='card'>
+  		  <div class='card w-full bg-white p-10 text-center my-5 md:mx-5 md:w-1/3'>
     		  <h3 class='text-black text-4xl'>Become A Member</h3>
     		  <p class='font-grey my-5 m-auto w-3/4 block text-xl text-grey-darker'>Join the Conservancy and be part of our mission to save New York’s extraordinary architectural heritage.</p>
     		  <a href="/donate" title="Make a Donation" class='btn border-red inline-block w-1/2 '>Join Us</a>
-  		  </div>  		  
+  		  </div>
 		</div>
 	</div>
 </section>

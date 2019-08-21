@@ -46,6 +46,28 @@
   }
 }
 
+#supportHome {
+  @apply bg-red;
+
+  h2 {
+    margin-bottom: 50px;
+    background: $primary;
+
+    &::before {
+      background: white;
+    }
+  }
+
+  h3,
+  .btn {
+    font-family: benton-sans-condensed, sans-serif;
+  }
+
+  h2 span {
+    @apply bg-red;
+  }
+}
+
 #newsletterSignup {
   background: #505662;
 }
