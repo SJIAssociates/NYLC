@@ -30,33 +30,33 @@ class App extends Controller
         }
         return get_the_title();
     }
-    
+
     public function footerForm()
     {
       //$form  = get_field(' signup_form','options');
       return get_field('signup_form','options');
     }
-    
+
     public function social()
     {
       return (object) array(
          'facebook'  =>   get_field('facebook','options'),
          'twitter'   =>   get_field('twitter','options'),
-         'youtube'   =>   get_field('youtube','options'), 
-         'instagram' =>   get_field('instagram','options')    
+         'youtube'   =>   get_field('youtube','options'),
+         'instagram' =>   get_field('instagram','options')
       );
     }
-    
+
     public function headerImage(){
       $img = get_the_post_thumbnail_url();
-      
+
       return $img;
     }
-    
+
     public function breadcrumbs()
     {
       $showOnHome = 0; // 1 - show breadcrumbs on the homepage, 0 - don't show
-      $delimiter = '&gt;'; // delimiter between crumbs
+      $delimiter = '&gt;</span>'; // delimiter between crumbs
       $home = 'Home'; // text for the 'Home' link
       $showCurrent = 1; // 1 - show current post/page title in breadcrumbs, 0 - don't show
       $before = '<span class="current">'; // tag before the current crumb
@@ -64,12 +64,12 @@ class App extends Controller
       global $post;
       $homeLink = get_bloginfo('url');
 
-      $output = '<div id="crumbs" class="py-3"><a href="' . $homeLink . '" class="underline text-black">' . $home . '</a> ' . $delimiter . ' ';
-      
+      $output = '<div id="crumbs" class="py-3"><a href="' . $homeLink . '" class="underline text-black home-crumb">' . $home . '</a> <span class="delimiter home-delimiter">' . $delimiter . ' ';
+
       if (is_category()) {
           $thisCat = get_category(get_query_var('cat'), false);
           if ($thisCat->parent != 0) {
-              $output .= get_category_parents($thisCat->parent, true, ' ' . $delimiter . ' ');
+              $output .= get_category_parents($thisCat->parent, true, ' <span class="delimiter">' . $delimiter . ' ');
           }
           $output .= $before . 'Archive by category "' . single_cat_title('', false) . '"' . $after;
       } elseif (is_search()) {
@@ -90,16 +90,13 @@ class App extends Controller
                   $cats = preg_replace("#^(.+)\s$delimiter\s$#", "$1", $cats);
               }
               $newsPage = 'News';
-              
+
               $output .=  $newsPage . ' ' . $delimiter . ' ';
               //$output .= $cats;
               if ($showCurrent == 1) {
                   $output .= $before . get_the_title() . $after;
               }
           }
-      } elseif (!is_single() && !is_page() && get_post_type() != 'post' && !is_404()) {
-          $post_type = get_post_type_object(get_post_type());
-          $output .= $before . $post_type->labels->singular_name . $after;
       } elseif (is_page() && !$post->post_parent) {
           if ($showCurrent == 1) {
               $output .= $before . get_the_title() . $after;
@@ -109,33 +106,24 @@ class App extends Controller
           $breadcrumbs = array();
           while ($parent_id) {
               $page = get_page($parent_id);
-              $breadcrumbs[] = '<a href="' . get_permalink($page->ID) . '" class="text-black underline px-2">' . get_the_title($page->ID) . '</a>';
+              $breadcrumbs[] = '<a href="' . get_permalink($page->ID) . '" class="text-black underline px-2 parent-page">' . get_the_title($page->ID) . '</a>';
               $parent_id  = $page->post_parent;
           }
           $breadcrumbs = array_reverse($breadcrumbs);
           for ($i = 0; $i < count($breadcrumbs); $i++) {
               $output .= $breadcrumbs[$i];
               if ($i != count($breadcrumbs)-1) {
-                  $output .= ' ' . $delimiter . ' ';
+                  $output .= ' <span class="delimiter">' . $delimiter . ' ';
               }
           }
           if ($showCurrent == 1) {
-              $output .= ' ' . $delimiter . ' ' . $before . get_the_title() . $after;
+              $output .= ' <span class="delimiter">' . $delimiter . ' ' . $before . get_the_title() . $after;
           }
       } elseif (is_404()) {
           $output .= $before . 'Error 404' . $after;
       }
-      if (get_query_var('paged')) {
-          if (is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author()) {
-              $output .= ' (';
-          }
-          $output .= __('Page') . ' ' . get_query_var('paged');
-          if (is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author()) {
-              $output .= ')';
-          }
-      }
       $output .= '</div>';
       return $output;
 
-  } // end the_breadcrumb()  
+  } // end the_breadcrumb()
 }
