@@ -2,15 +2,15 @@
 	<div class='container'>
 		<div class='text-center'><h2><span class='text-white'>Support Us</span></h2></div>
 		<div class='flex justify-center flex-wrap'>
-  		  <div class='card w-full bg-white p-10 text-center my-5 md:mx-5 md:w-1/3'>
+  		  <div class='card w-full p-5 bg-white text-center my-5 md:mx-5 md:w-1/3 md:p-10'>
     		  <h3 class='text-black text-4xl'>Donate</h3>
-    		  <p class='font-grey my-5 m-auto w-3/4 block text-xl text-grey-darker '>Your donation helps us expand our reach and be your voice for preservation.</p>
-    		  <a href="/donate" title="Make a Donation" class='btn border-red inline-block w-1/2'>Make A Donation</a>
+    		  <p class='font-grey my-5 m-auto md:w-3/4 block text-xl text-grey-darker '>Your donation helps us expand our reach and be your voice for preservation.</p>
+    		  <a href="/donate" title="Make a Donation" class='btn border-red inline-block md:w-1/2'>Make A Donation</a>
   		  </div>
-  		  <div class='card w-full bg-white p-10 text-center my-5 md:mx-5 md:w-1/3'>
+  		  <div class='card w-full p-5 bg-white text-center my-5 md:mx-5 md:w-1/3 md:p-10'>
     		  <h3 class='text-black text-4xl'>Become A Member</h3>
-    		  <p class='font-grey my-5 m-auto w-3/4 block text-xl text-grey-darker'>Join the Conservancy and be part of our mission to save New York’s extraordinary architectural heritage.</p>
-    		  <a href="/donate" title="Make a Donation" class='btn border-red inline-block w-1/2 '>Join Us</a>
+    		  <p class='font-grey my-5 m-auto md:w-3/4 block text-xl text-grey-darker'>Join the Conservancy and be part of our mission to save New York’s extraordinary architectural heritage.</p>
+    		  <a href="/donate" title="Make a Donation" class='btn border-red inline-block md:w-1/2 '>Join Us</a>
   		  </div>
 		</div>
 	</div>
@@ -35,7 +35,6 @@
 				<a href="{{ $social->facebook }}" target="_blank" title="facebook" class="text-grey-darkest hover:text-primary hover:no-underline"><i class="fab fa-facebook-f"></i></a>
 				<a href="{{ $social->instagram }}" target="_blank" title="instagram" class="text-grey-darkest hover:text-primary hover:no-underline"><i class="fab fa-instagram"></i></a>
 			</p>
-			<a href="#" class='btn border border-black'>Trustee Login</a>
 		</div>
 		<div class='w-2/3'>
       @if (has_nav_menu('footer_navigation'))
@@ -45,11 +44,14 @@
 	 </div>
   </div>
   <div class='container'>
-	  <div class='flex'>
-		  <div class='w-1/2'>
+	  <div class='flex flex-wrap'>
+			<div class='w-full'>
+				<a href="#" class='btn border border-black'>Trustee Login</a>
+			</div>
+		  <div class='md:w-1/2'>
 			  <p class='text-normal'>@php echo date("Y") @endphp {{ get_bloginfo('name', 'display') }}. All Rights Reserved.</p>
 		  </div>
-		  <nav class='w-1/2 text-right'>
+		  <nav class='md:w-1/2 text-right'>
 			  <a href="#" class='text-grey-darkest p-1 hover:text-red'>Terms of Use</a>
 			  <a href="#" class='text-grey-darkest p-1 hover:text-red'>Privacy Policy</a>
 			  <a href="#" class='text-grey-darkest p-1 hover:text-red'>Sitemap</a>
