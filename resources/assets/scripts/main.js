@@ -26,12 +26,12 @@ jQuery(document).ready(() => routes.loadEvents());
 // import then needed Font Awesome functionality
 import { library, dom } from '@fortawesome/fontawesome-svg-core';
 
-import { faPhone , faEnvelope, faChevronRight} from '@fortawesome/free-solid-svg-icons';
+import { faPhone , faEnvelope, faChevronRight, faSearch} from '@fortawesome/free-solid-svg-icons';
 // import the Facebook and Twitter icons
 import { faFacebookF, faTwitter, faInstagram } from '@fortawesome/free-brands-svg-icons';
 
 // add the imported icons to the library
-library.add(faFacebookF, faTwitter, faInstagram, faPhone, faEnvelope, faChevronRight);
+library.add(faFacebookF, faTwitter, faInstagram, faPhone, faEnvelope, faChevronRight, faSearch);
 
 // tell FontAwesome to watch the DOM and add the SVGs when it detects icon markup
 dom.watch();
