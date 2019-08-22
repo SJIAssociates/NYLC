@@ -1,9 +1,29 @@
-.banner .nav {
-  @apply list-reset flex flex-wrap;
-}
-
 .banner {
   color: white;
+
+  .nav {
+    @apply list-reset flex flex-wrap;
+
+    li {
+      margin-left: 30px;
+    }
+
+    a {
+      @apply inline-block px-5 py-3 text-xl text-white border-none;
+
+      font-family: benton-sans-condensed, sans-serif;
+      font-weight: 600;
+
+      &:hover {
+        color: black;
+        background: white;
+      }
+    }
+  }
+
+  .menu-main-menu-container {
+    margin-left: 30px;
+  }
 
   .brand {
     img {
@@ -15,17 +35,10 @@
   .btn-donate {
     @apply bg-white text-primary uppercase inline-block;
 
-    padding: 15px 35px;
+    padding: 13px 30px;
     margin-left: 15px;
-  }
-}
-
-.banner .nav a {
-  @apply inline-block px-8 py-2 text-2xl text-white border-none;
-
-  font-family: benton-sans-condensed, sans-serif;
-
-  &:hover {
-    color: darken(#fff, 30%);
+    font-weight: bold;
+    font-size: 14px;
+    margin-top: 0;
   }
 }
