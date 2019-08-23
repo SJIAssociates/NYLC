@@ -8,10 +8,10 @@ class TemplateWhat extends Controller
 {
   public function SuccessStoriesLoop(){
 
-    $latest_success = get_posts(
+    $latest_success = get_posts([
         'post_type'       => 'success_stories',
         'posts_per_page'  => 3,
-      );
+      ]);
 
 
       return array_map(function ($post) {
