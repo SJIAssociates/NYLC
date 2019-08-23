@@ -1,28 +1,62 @@
 .banner {
   color: white;
 
+  .sub-menu {
+    opacity: 0;
+    height: 0;
+    position: absolute;
+    background: white;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    transition: opacity 0.4s;
+    overflow: hidden;
+
+    li {
+      margin-left: 0 !important;
+    }
+
+    a {
+      @apply text-red;
+    }
+  }
+
   .nav {
     @apply list-reset flex flex-wrap;
 
-    li {
-      margin-left: 30px;
-    }
+    margin-left: 30px;
 
     a {
       @apply inline-block px-5 py-3 text-xl text-white border-none;
 
       font-family: benton-sans-condensed, sans-serif;
       font-weight: 600;
+      transition: all 0.4s;
 
       &:hover {
         color: black;
+      }
+    }
+
+    li {
+      margin-left: 30px;
+      transition: all 0.4s;
+
+      &:hover,
+      &.current_page_item {
         background: white;
+
+        a {
+          color: black;
+        }
       }
     }
   }
 
-  .menu-main-menu-container {
-    margin-left: 30px;
+  .menu-item-has-children:hover .sub-menu {
+    display: block;
+    opacity: 1;
+    height: auto;
   }
 
   .brand {
