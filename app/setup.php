@@ -133,6 +133,9 @@ add_action('after_setup_theme', function () {
     sage('blade')->compiler()->directive('asset', function ($asset) {
         return "<?= " . __NAMESPACE__ . "\\asset_path({$asset}); ?>";
     });
+
+
+    
 });
 
 
@@ -278,29 +281,3 @@ function custom_menu_page_removing() {
   remove_menu_page( 'edit-comments.php' );          //Comments
 }
 add_action( 'admin_menu', __NAMESPACE__ .'\\custom_menu_page_removing' );
-
-
-/**
- * Add this to your setup.php
- * Usage @loop( $wp_query ) or $loop and end with @endloop
- * the new $loop variable is available
-*/
-
-/**
- * Create @loop Blade directive
- */
-sage('blade')->compiler()->directive('loop', function ( $query = null ) {
-    global $wp_query;
-    if(!$query) $query = $wp_query;
-
-    $initLoop = "\$__currentLoopData = {$query}; \$__env->addLoop(\$__currentLoopData->posts);";
-    $iterateLoop = '$__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); $__currentLoopData->the_post();';
-    return "<?php {$initLoop} while(\$__currentLoopData->have_posts()): {$iterateLoop} ?>";
-});
-
-/**
- * Create @endloop Blade directive
- */
-sage('blade')->compiler()->directive('endloop', function () {
-    return '<?php endwhile; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>';
-});
