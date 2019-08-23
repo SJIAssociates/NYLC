@@ -6,42 +6,20 @@ use Sober\Controller\Controller;
 
 class TemplateWhat extends Controller
 {
-  public function StaffBlock(){
+  public function SuccessStoriesLoop(){
 
-      return (object) array(
-         'description'  =>   get_field('board_staff_description'),
-         'link'   =>   get_field('staff_page_link'),
-         'image'   =>   get_field('staff_image'),
+    $latest_success = get_posts(
+        'post_type'       => 'success_stories',
+        'posts_per_page'  => 3,
       );
-  }
-
-  public function AnnualReport(){
-
-      return (object) array(
-         'description'  =>   get_field('annual_report_description'),
-         'link'   =>   get_field('annual_report_link'),
-         'archive_link'   =>   get_field('annual_report_archive_link'),
-         'image'   =>   get_field('annual_report_image'),
-      );
-  }
-  public function PressFunnel(){
-
-    //Get Press Page ID
-    $press = get_page_by_title( 'Press' ); //as an e.g.
-
-    // Get Repeater
-    $pressRepeater = get_field('press_stories',$press->ID);
-
-    //Return an array
-    return array_map(function ($item) {
-      return [
-          'title'       => $item['title'],
-          'description' => $item['description'],
-          'link'        => $item['link'],
-          'date'        => $item['date'],
-        ];
-    }, $pressRepeater ?? [] );
 
 
+      return array_map(function ($post) {
+         return [
+           'title'       => get_the_title( $post->ID ),
+           'permalink'   => get_permalink( $post->ID ),
+           'image'       => get_the_post_thumbnail($post->ID, 'large'),
+         ];
+     }, $latest_success);
   }
 }
