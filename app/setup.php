@@ -14,9 +14,9 @@ use Roots\Sage\Template\BladeProvider;
 add_action('wp_enqueue_scripts', function () {
     wp_enqueue_style('sage/main.css', asset_path('styles/main.css'), false, null);
     wp_enqueue_style( 'AdobeBenton' ,'https://use.typekit.net/nwk0uyd.css',false, null);
-    
+
     wp_enqueue_script('sage/main.js', asset_path('scripts/main.js'), ['jquery'], null, true);
-    
+
     if (is_single() && comments_open() && get_option('thread_comments')) {
         wp_enqueue_script('comment-reply');
     }
@@ -262,7 +262,7 @@ add_filter( 'excerpt_length', __NAMESPACE__ . '\\news_excerpt', 999 );
 // Options Page
 // -------------------------------------------------------------
 if( function_exists('acf_add_options_page') ) {
-	
+
 	acf_add_options_page(array(
 		'page_title' 	=> 'Theme General Settings',
 		'menu_title'	=> 'Theme Settings',
@@ -278,3 +278,29 @@ function custom_menu_page_removing() {
   remove_menu_page( 'edit-comments.php' );          //Comments
 }
 add_action( 'admin_menu', __NAMESPACE__ .'\\custom_menu_page_removing' );
+
+
+/**
+ * Add this to your setup.php
+ * Usage @loop( $wp_query ) or $loop and end with @endloop
+ * the new $loop variable is available
+*/
+
+/**
+ * Create @loop Blade directive
+ */
+sage('blade')->compiler()->directive('loop', function ( $query = null ) {
+    global $wp_query;
+    if(!$query) $query = $wp_query;
+
+    $initLoop = "\$__currentLoopData = {$query}; \$__env->addLoop(\$__currentLoopData->posts);";
+    $iterateLoop = '$__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); $__currentLoopData->the_post();';
+    return "<?php {$initLoop} while(\$__currentLoopData->have_posts()): {$iterateLoop} ?>";
+});
+
+/**
+ * Create @endloop Blade directive
+ */
+sage('blade')->compiler()->directive('endloop', function () {
+    return '<?php endwhile; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>';
+});
