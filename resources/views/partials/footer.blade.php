@@ -25,8 +25,8 @@
 </section>
 <footer class="content-info font-sans text-black">
   <div class="container">
-	 <div class='flex'>
-		<div class='w-1/3'>
+	 <div class='flex flex-wrap'>
+		<div class='w-full md:w-1/3'>
   		  <h2 class='text-4xl font-bold'>Connect With Us</h2>
 			@php dynamic_sidebar('sidebar-footer') @endphp
 			<p>Have a preservation question? <a href="">Email our experts.</a></p>
@@ -36,7 +36,7 @@
 				<a href="{{ $social->instagram }}" target="_blank" title="instagram" class="text-grey-darkest hover:text-primary hover:no-underline"><i class="fab fa-instagram"></i></a>
 			</p>
 		</div>
-		<div class='w-2/3'>
+		<div class='w-full md:w-2/3'>
       @if (has_nav_menu('footer_navigation'))
         {!! wp_nav_menu(['theme_location' => 'footer_navigation', 'menu_class' => '']) !!}
       @endif
@@ -48,13 +48,13 @@
 			<div class='w-full'>
 				<a href="#" class='btn border border-black'>Trustee Login</a>
 			</div>
-		  <div class='md:w-1/2'>
-			  <p class='text-normal'>@php echo date("Y") @endphp {{ get_bloginfo('name', 'display') }}. All Rights Reserved.</p>
+		  <div class='md:w-1/2 copyright'>
+			  <p class='text-sm'>&copy; @php echo date("Y") @endphp {{ get_bloginfo('name', 'display') }}. All Rights Reserved.</p>
 		  </div>
-		  <nav class='md:w-1/2 text-right'>
-			  <a href="#" class='text-grey-darkest p-1 hover:text-red'>Terms of Use</a>
-			  <a href="#" class='text-grey-darkest p-1 hover:text-red'>Privacy Policy</a>
-			  <a href="#" class='text-grey-darkest p-1 hover:text-red'>Sitemap</a>
+		  <nav class='md:w-1/2 text-right text-sm py-2'>
+			  <a href="#" class='text-grey-darkest pr-1 py-1 hover:text-red'>Terms of Use</a>
+			  <a href="#" class='text-grey-darkest pr-1 py-1 hover:text-red'>Privacy Policy</a>
+			  <a href="#" class='text-grey-darkest pr-1 py-1 hover:text-red'>Sitemap</a>
 		  </nav>
 	  </div>
   </div>
