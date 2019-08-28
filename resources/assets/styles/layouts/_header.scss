@@ -76,3 +76,66 @@
     margin-top: 0;
   }
 }
+
+.menu-toggle {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  height: 30px;
+  width: 50px;
+  display: block;
+  z-index: 99999;
+
+  .bar {
+    height: 2px;
+    width: 47px;
+    background: white;
+    position: absolute;
+    cursor: pointer;
+    pointer-events: none;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .top {
+    top: 7px;
+    left: 5px;
+  }
+
+  .middle {
+    top: 13px;
+    left: 5px;
+  }
+
+  .bottom {
+    top: 19px;
+    left: 5px;
+  }
+
+  .menu-title {
+    position: absolute;
+    top: 25px;
+    left: 5px;
+    text-transform: uppercase;
+  }
+
+  .rotatedown {
+    transform: rotate(-45deg) !important;
+    transition: all 0.2s ease-in-out;
+    top: 12px;
+    right: 0;
+    width: 25px;
+  }
+
+  .rotateup {
+    transform: rotate(45deg) !important;
+    transition: all 0.2s ease-in-out;
+    top: 12px;
+    right: 0;
+    width: 25px;
+  }
+
+  .hidemiddle {
+    display: none;
+    transition: all 0.2s ease-in-out;
+  }
+}
