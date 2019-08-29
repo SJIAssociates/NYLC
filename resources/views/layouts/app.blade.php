@@ -19,5 +19,10 @@
       @include('partials.footer')
       @php wp_footer() @endphp
   </div>
+  <section id="mobile-nav" class="lg:hidden">
+    <div class="search-wrap">
+  		<?php get_search_form(); ?>
+  	</div>
+  </section>
   </body>
 </html>
