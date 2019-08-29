@@ -1,3 +1,16 @@
+.sitewrapper {
+  transition: transform 0.4s;
+  z-index: 2;
+
+  &.openNav {
+    transform: translateX(-85%);
+    overflow-y: hidden;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+  }
+}
+
 .img-bg {
   min-height: 150px;
 }

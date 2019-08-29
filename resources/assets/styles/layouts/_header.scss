@@ -139,3 +139,21 @@
     transition: all 0.2s ease-in-out;
   }
 }
+
+#mobile-nav {
+  background: #FFF;
+  z-index: 1;
+  border-left: 1px solid #555;
+  width: 85%;
+  transition: transform 0.4s;
+  transform: translateX(100%);
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  overflow-y: scroll;
+
+  &.open {
+    transform: translateX(0);
+  }
+}
