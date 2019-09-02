@@ -78,7 +78,7 @@ class App extends Controller
           if (get_post_type() != 'post') {
               $post_type = get_post_type_object(get_post_type());
               $slug = $post_type->rewrite;
-              $output .= '<a href="' . $homeLink . '/' . $slug['slug'] . '/">' . $post_type->labels->singular_name . '</a>';
+              $output .= '<a href="' . $homeLink . '/' . $slug['slug'] . '/" class="text-black underline">' . $post_type->labels->singular_name . '</a>';
               if ($showCurrent == 1) {
                   $output .= ' ' . $delimiter . ' ' . $before . get_the_title() . $after;
               }
@@ -89,7 +89,7 @@ class App extends Controller
               if ($showCurrent == 0) {
                   $cats = preg_replace("#^(.+)\s$delimiter\s$#", "$1", $cats);
               }
-              $newsPage = 'News';
+              $newsPage = '<span class="underline">News</span>';
 
               $output .=  $newsPage . ' ' . $delimiter . ' ';
               //$output .= $cats;
