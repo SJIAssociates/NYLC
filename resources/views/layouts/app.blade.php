@@ -18,11 +18,10 @@
       @php do_action('get_footer') @endphp
       @include('partials.footer')
       @php wp_footer() @endphp
+    </div>
   </div>
-  <section id="mobile-nav" class="lg:hidden">
-    <div class="search-wrap">
-  		<?php get_search_form(); ?>
-  	</div>
-  </section>
+    <section id="mobile-nav" class="lg:hidden">
+      <h2>Menu</h2>
+    </section>
   </body>
 </html>
