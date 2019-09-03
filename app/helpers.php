@@ -133,6 +133,11 @@ function locate_template($templates)
 function display_sidebar()
 {
     static $display;
-    isset($display) || $display = apply_filters('sage/display_sidebar', false);
+    isset($display) || $display = in_array(true, [
+          // The sidebar will be displayed if any of the following return true
+          is_single(),
+          is_404(),
+          is_page_template('template-custom.php')
+        ]);
     return $display;
 }
