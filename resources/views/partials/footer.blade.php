@@ -52,7 +52,7 @@
 			  <p class='text-sm'>&copy; @php echo date("Y") @endphp {{ get_bloginfo('name', 'display') }}. All Rights Reserved.</p>
 		  </div>
 		  <nav class='md:w-1/2 text-right text-sm py-2'>
-			  <a href="#" class='text-grey-darkest pr-1 py-1 hover:text-red'>Terms of Use</a>
+			  <a href="#" class='text-grey-darkest pr-1 py-1 hover:text-red'>Terms of Service</a>
 			  <a href="#" class='text-grey-darkest pr-1 py-1 hover:text-red'>Privacy Policy</a>
 			  <a href="#" class='text-grey-darkest pr-1 py-1 hover:text-red'>Sitemap</a>
 		  </nav>
