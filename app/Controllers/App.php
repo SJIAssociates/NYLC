@@ -47,7 +47,8 @@ class App extends Controller
       );
     }
 
-    public function headerImage(){
+    public function headerImage()
+    {
       $img = get_the_post_thumbnail_url();
 
       return $img;
