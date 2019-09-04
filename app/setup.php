@@ -135,7 +135,7 @@ add_action('after_setup_theme', function () {
     });
 
 
-    
+
 });
 
 
@@ -281,3 +281,12 @@ function custom_menu_page_removing() {
   remove_menu_page( 'edit-comments.php' );          //Comments
 }
 add_action( 'admin_menu', __NAMESPACE__ .'\\custom_menu_page_removing' );
+// -------------------------------------------------------------
+// Remove Comments
+// -------------------------------------------------------------
+function my_acf_init() {
+
+	acf_update_setting('google_api_key', 'AIzaSyDVIoaRu1IQ3d-3REFNb9IhYFhUagwWlpw');
+}
+
+add_action('acf/init', __NAMESPACE__ .'\\my_acf_init');
