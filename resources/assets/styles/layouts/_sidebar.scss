@@ -1,4 +1,27 @@
 .facetwp-facet {
   padding: 10px 0;
+}
 
+.widget_categories {
+  h3 {
+    background: $primary;
+    color: white;
+    padding: 5px 10px;
+    margin: 0;
+  }
+
+  ul {
+    margin: 0;
+    background: #505662;
+    list-style: none;
+    padding: 0;
+  }
+
+  li {
+    padding: 10px 5px;
+
+    a {
+      color: white;
+    }
+  }
 }
