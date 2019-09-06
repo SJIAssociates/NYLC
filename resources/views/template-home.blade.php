@@ -43,7 +43,7 @@
 		<p class='text-black text-xxl text-center font-semibold my-3 xxl:mb-10'>Stay informed about the latest preservation issues.</p>
 		<div class='flex my-8 flex-wrap'>
       @foreach($news_loop as $item)
-        @include('partials/news-card')
+        @include('partials/box-news')
       @endforeach
 		</div>
 	</div>

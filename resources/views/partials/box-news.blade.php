@@ -1,4 +1,8 @@
-<div class='news-card w-full bg-white mx-5 mb-5 items-stretch relative md:w-1/3 md:mb-0'>
+@if ($loop->last)
+  <div class='news-card w-full bg-white mx-5 mb-5 items-stretch relative md:flex-grow-1 lg:flex-1' data-loop='{!! $loop->index !!}'>
+@else
+  <div class='news-card w-full bg-white mx-5 mb-5 items-stretch relative md:flex-1 lg:flex-1' data-loop='{!! $loop->index !!}'>
+@endif
   {!! $item['thumbnail'] !!}
   <div class="p-8 mb-10">
     <time class='text-primary mb-3 uppercase font-bold block'>{!! $item['time'] !!}</time>
