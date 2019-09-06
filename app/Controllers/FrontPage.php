@@ -7,12 +7,12 @@ use Sober\Controller\Controller;
 class FrontPage extends Controller
 {
   public function newsLoop(){
-    
+
     $news_loop = get_posts([
       'post_type' => 'post',
       'posts_per_page' => 3
     ]);
-    
+
    return array_map(function ($post) {
         return [
             'content'   => get_the_excerpt( $post->ID ),
@@ -23,4 +23,7 @@ class FrontPage extends Controller
         ];
     }, $news_loop);
   }
+
+  use Partials\ServiceBoxes;
+
 }

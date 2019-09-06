@@ -18,7 +18,11 @@
 	<div class='container'>
 		<div class='text-center'><h2><span>What We Do</span></h2></div>
 		<p class='text-center font-bold xxl:mb-10'>Our work enriches the quality of life for all New Yorkers.</p>
-		@include('partials/trio')
+    <div class='flex my-10 flex-wrap'>
+      @foreach($service_boxes as $item )
+		    @include('partials/trio', $items)
+      @endforeach
+    </div>
 		<div class='flex success-box'>
   		  <div class='w-full p-5 md:p-24 bg-blue-grey my-8'>
     		  <div class='flex flex-wrap'>
