@@ -4,8 +4,8 @@
   @include('partials.page-header')
   <div class='container'>
     <div class="content">
-      <div class='flex'>
-        <main class="main py-8 xl:w-3/4 xxl:py-12">
+      <div class=''>
+        <main class="flex flex-wrap main py-8 xl:w-3/4 xxl:py-12">
           @if (!have_posts())
             <div class="alert alert-warning">
               {{ __('Sorry, no results were found.', 'sage') }}
