@@ -20,7 +20,7 @@
 		<p class='text-center font-bold xxl:mb-10'>Our work enriches the quality of life for all New Yorkers.</p>
     <div class='flex my-10 flex-wrap'>
       @foreach($service_boxes as $item )
-		    @include('partials/trio', $items)
+		    @include('partials/trio', $item)
       @endforeach
     </div>
 		<div class='flex success-box'>
@@ -29,12 +29,12 @@
       		  <div class='w-full md:w-1/2 flex flex-wrap flex-col md:pr-8'>
       		    <h3 class='mb-10'>{!! $featured_success->title !!}</h3>
       		    <div class="">
-        		    <a href="{!! $featured_Success->link !!}" class='btn bg-red text-white inline-block mb-12 hover:no-underline'>Read The Story</a><br>
+        		    <a href="{!! $featured_success->link !!}" class='btn bg-red text-white inline-block mb-12 hover:no-underline'>Read The Story</a><br>
       		    </div>
-      		    <a href="/what-we-do/success-stories" class='archive-link hover:no-underline hover:no-border'>View All Success Stories <i class="fas fa-chevron-right"></i></a>
+      		    <a href="/what-we-do/success-story" class='archive-link hover:no-underline hover:no-border'>View All Success Stories <i class="fas fa-chevron-right"></i></a>
       		  </div>
       		  <div class='box-image w-full md:w-1/2'>
-        		  <img src="{!! $featured_Success->image !!}" alt="{!! $featured_Success->title !!}">
+        		  <img src="{!! $featured_success->image !!}" alt="{!! $featured_success->title !!}">
       		  </div>
     		  </div>
   		  </div>

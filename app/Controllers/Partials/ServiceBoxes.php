@@ -11,8 +11,8 @@ trait ServiceBoxes
     return array_map(function ($item) {
         return [
             'description' => $item['description'],
-            'link'        => get_the_permalink($item['link']),
-            'title'       => get_the_title($item['link']),
+            'link'        => $item['link'],
+            'title'       => $item['title'],
             'classes'     => $item['class_names'],
             'buttonText'  => $item['call_to_action']
         ];
