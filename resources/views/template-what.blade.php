@@ -15,8 +15,10 @@
     </div>
   @endwhile
   <section class='full-section' id="homeWhat">
-  	<div class='container'>
-      @include('partials/trio')
+  	<div class='container flex'>
+      @foreach($service_boxes as $item )
+		    @include('partials/trio', $item)
+      @endforeach
   	</div>
   </section>
 <section class='full-section'>
