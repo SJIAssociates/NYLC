@@ -16,7 +16,7 @@
   @endwhile
 <section class='full-section bg-grey-lightest'>
   <div class='container'>
-      <div class="text-center">  
+      <div class="text-center">
         <h2><span class='bg-grey-lightest'>Board & Staff</span></h2>
       </div>
       <div class='flex flex-row py-5 items-stretch xl:px-24'>
@@ -28,15 +28,15 @@
       		  </div>
         <div class='flex-1 w-full sm:w-1/2'>
         		  <img src="{{ $staff_block->image['url'] }}" alt="{{ $staff_block->image['alt'] }}">
-      		  </div>       
+      		  </div>
       </div>
   </div>
-</section> 
+</section>
 <section class='full-section'>
   <div class='container'>
     <div class="text-center">
-		  <h2><span>Annual Reports and 990s</span></h2> 
-    </div>  
+		  <h2><span class='bg-white'>Annual Reports and 990s</span></h2>
+    </div>
 		<div class='flex success-box'>
   		  <div class='w-full p-12 xl:p-24 bg-blue-grey my-8'>
     		  <div class='flex'>
@@ -54,33 +54,33 @@
   		  </div>
 		</div>
   </div>
-</section> 
+</section>
 <section class='full-section'>
   <div class='container'>
     <div class="text-center">
-      <h2><span>Press</span></h2>  
-    </div>  
+      <h2><span class='bg-white'>Press</span></h2>
+    </div>
       <div class='flex flex-wrap py-5 xxl:py-10 mx-auto xl:w-4/5'>
         @php $i = 0; @endphp
         @foreach($press_funnel as $item )
-        
+
           @php $i++; @endphp
-        
+
           @include('partials.press' , $item)
-        
+
           @if($i == 4)
             @break
          @endif
         @endforeach
-      </div>   
-      <a href="/who-we-are/press/" class="btn center-btn">View All Press</a>              
+      </div>
+      <a href="/who-we-are/press/" class="btn center-btn">View All Press</a>
     </div>
   </div>
-</section> 
+</section>
 <section class='full-section'>
   <div class='container'>
     <div class="text-center">
-      <h2><span>Contact Us</span></h2>    
+      <h2><span class='bg-white'>Contact Us</span></h2>
     </div>
     <div class='flex mx-auto xl:w-4/5'>
       <div class='w-full md:w-2/3'>
@@ -99,7 +99,7 @@
     </div>
 
   </div>
-</section>  
+</section>
 
 
 @endsection

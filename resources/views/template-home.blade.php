@@ -16,7 +16,7 @@
 </section>
 <section class='full-section' id="homeWhat">
 	<div class='container'>
-		<div class='text-center'><h2><span>What We Do</span></h2></div>
+		<div class='text-center'><h2><span class='bg-white'>What We Do</span></h2></div>
 		<p class='text-center font-bold xxl:mb-10'>Our work enriches the quality of life for all New Yorkers.</p>
     <div class='flex my-10 flex-wrap'>
       @foreach($service_boxes as $item )
@@ -54,7 +54,7 @@
 </section>
 <section class='full-section' id='exploreHome'>
 	<div class='container'>
-		<div class='text-center'><h2><span>Explore NY</span></h2></div>
+		<div class='text-center'><h2><span class='bg-white'>Explore NY</span></h2></div>
 		<p class='text-black font-bold text-center w-1/2 mx-auto xxl:mb-10'>Visit some of New York’s best hidden gems as well as some of the classic iconic landmarks.</p>
 		<div class='landmark-card'>
   		  <div class='bg-image' style="background: url( @asset('images/SS_Dyckman_farmhouse.jpg') ); background-size:cover; background-position: center center;"></div>

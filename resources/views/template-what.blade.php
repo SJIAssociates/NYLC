@@ -22,7 +22,7 @@
 <section class='full-section'>
   <div class='container'>
     <div class="text-center">
-		  <h2><span>Success Stories</span></h2>
+		  <h2><span class='bg-white'>Success Stories</span></h2>
     </div>
     <p class='font-bold text-center w-3/4 lg:w-3/5 mx-auto lg:text-2xl'>
       With your support, we’re proud to celebrate a history of accomplishments since our founding in 1973.
