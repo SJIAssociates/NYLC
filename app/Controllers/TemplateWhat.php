@@ -22,4 +22,6 @@ class TemplateWhat extends Controller
          ];
      }, $latest_success);
   }
+
+    use Partials\ServiceBoxes;
 }
