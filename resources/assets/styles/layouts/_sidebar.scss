@@ -2,17 +2,18 @@
   padding: 10px 0;
 }
 
-.widget_categories {
+.sidebar {
   h3 {
-    background: $primary;
-    color: white;
-    padding: 5px 10px;
-    margin: 0;
+    @apply text-black;
+
+    border-bottom: 2px solid black;
+    text-transform: uppercase;
+    padding-bottom: 5px;
+    font-size: 14px;
   }
 
   ul {
     margin: 0;
-    background: #505662;
     list-style: none;
     padding: 0;
   }
@@ -21,12 +22,10 @@
     padding: 10px 5px;
 
     a {
-      color: white;
+      color: $primary;
     }
   }
-}
 
-.sidebar {
   .widget_ssba_widget {
     h3 {
       text-align: center;
@@ -36,5 +35,9 @@
   .ssba a {
     display: block;
     text-align: center;
+  }
+
+  .widget {
+    margin-bottom: 25px;
   }
 }
