@@ -49,7 +49,8 @@ class App extends Controller
 
     public function headerImage()
     {
-      $img = get_the_post_thumbnail_url();
+      $img = get_the_post_thumbnail_url() ?? FALSE;
+
 
       return $img;
     }
@@ -133,8 +134,9 @@ class App extends Controller
       global $post;
       $current = $post->ID;
       $parent = $post->post_parent;
+      $parent_title = get_the_title( $parent );
 
-      if($parent == 'Greants & Loans') {
+      if($parent_title == "Grants & Loans") {
 
           $sidebarRepeater = get_field('sidebar_content');
 
@@ -145,10 +147,8 @@ class App extends Controller
               ];
           }, $sidebarRepeater ?? [] );
 
+      } else {
+        return false;
       }
-
-
-
-
     }
 }
