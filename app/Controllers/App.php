@@ -126,5 +126,29 @@ class App extends Controller
       $output .= '</div>';
       return $output;
 
-  } // end the_breadcrumb()
+    } // end the_breadcrumb()
+
+    public function grantSidebar()
+    {
+      global $post;
+      $current = $post->ID;
+      $parent = $post->post_parent;
+
+      if($parent == 'Greants & Loans') {
+
+          $sidebarRepeater = get_field('sidebar_content');
+
+          return array_map(function ($item) {
+              return [
+                  'title'       => $item['title'],
+                  'content' => $item['content'],
+              ];
+          }, $sidebarRepeater ?? [] );
+
+      }
+
+
+
+
+    }
 }
