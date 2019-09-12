@@ -136,9 +136,9 @@ class App extends Controller
       $parent = $post->post_parent;
       $parent_title = get_the_title( $parent );
 
-      if($parent_title == "Grants & Loans") {
+      $sidebarRepeater = get_field('sidebar_content');
+      if( isset($sidebarRepeater) ) {
 
-          $sidebarRepeater = get_field('sidebar_content');
 
           return array_map(function ($item) {
               return [
