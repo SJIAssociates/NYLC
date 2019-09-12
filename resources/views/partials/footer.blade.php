@@ -16,11 +16,12 @@
 	</div>
 </section>
 <section id='newsletterSignup' class='py-8 bg-blue-grey xl:py-24'>
-  <div class='w-full md:w-1/2 mx-auto'>
-  <h2 class='text-white text-4xl font-bold xl:mb-5'>Join Our Mailing List</h2>
-  <p class='text-white w-1/2 font-bold'>Sign up to receive our free E-Newsletter, informative alerts, our monthly Mystery Landmark contest, and our monthly Tourist in Your Own Town video series.</p>
-
-  {!! $footer_form !!}
+	<div class='container'>
+		<div class='w-full md:w-4/5 mx-auto'>
+	  	<h2 class='text-white text-4xl font-bold xl:mb-5'>Join Our Mailing List</h2>
+	  	<p class='text-white w-1/2 font-bold'>Sign up to receive our free E-Newsletter, informative alerts, our monthly Mystery Landmark contest, and our monthly Tourist in Your Own Town video series.</p>
+	  	{!! $footer_form !!}
+		</div>
   </div>
 </section>
 <footer class="content-info font-sans text-black">

@@ -74,6 +74,31 @@
 
 #newsletterSignup {
   background: #505662;
+
+  .ctct-form-field {
+    display: inline-block;
+    padding-right: 10px;
+    width: 25%;
+
+    input {
+      padding: 10px;
+      width: 100%;
+    }
+  }
+
+  .ctct-form-field-hidden {
+    padding: 0;
+    margin: 0;
+    width: 0;
+  }
+
+  .ctct-form-field-submit input {
+    color: white;
+    background: $primary;
+    border: 1px solid $primary;
+    padding: 10px 45px;
+    text-transform: uppercase;
+  }
 }
 
 #menu-footer-nav {
