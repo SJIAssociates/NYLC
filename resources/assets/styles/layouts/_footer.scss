@@ -77,26 +77,25 @@
 
   .ctct-form-field {
     display: inline-block;
-    padding-right: 10px;
-    width: 25%;
+    width: 100%; //25%
 
     input {
-      padding: 10px;
+      padding: 15px 10px;
       width: 100%;
     }
   }
 
   .ctct-form-field-hidden {
-    padding: 0;
+    padding: 0 !important;
     margin: 0;
-    width: 0;
+    width: 0 !important;
   }
 
   .ctct-form-field-submit input {
     color: white;
     background: $primary;
     border: 1px solid $primary;
-    padding: 10px 45px;
+    padding: 15px 45px;
     text-transform: uppercase;
   }
 }
@@ -185,6 +184,13 @@
 
     > li:last-child > a {
       border-bottom: none;
+    }
+  }
+
+  #newsletterSignup {
+    .ctct-form-field {
+      padding-right: 10px;
+      width: 25%;
     }
   }
 }
