@@ -11,13 +11,16 @@
     list-style: none;
     transition: opacity 0.4s;
     overflow: hidden;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
 
     li {
       margin-left: 0 !important;
+      padding: 1em 1.25em;
     }
 
     a {
-      @apply text-red;
+      padding: 0 !important;
+      font-weight: 400 !important;
     }
   }
 
@@ -53,6 +56,10 @@
     }
   }
 
+  .menu-item-has-children .sub-menu .current_page_item a {
+    border-bottom: 2px solid;
+  }
+
   .menu-item-has-children:hover .sub-menu {
     display: block;
     opacity: 1;
@@ -74,6 +81,10 @@
     font-weight: bold;
     font-size: 14px;
     margin-top: 0;
+  }
+
+  .nav .sub-menu .current_page_item a {
+    border-bottom: 2px solid;
   }
 }
 
