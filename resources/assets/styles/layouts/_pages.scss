@@ -43,8 +43,6 @@
   }
 
   h3 {
-    @apply text-3xl text-black;
-
     font-family: benton-sans-condensed, sans-serif;
   }
 }
@@ -122,6 +120,15 @@
   }
 }
 
+.archive,
+.blog {
+  .news-card {
+    @apply bg-grey-lightest;
+
+    width: 100%;
+  }
+}
+
 .center-btn {
   display: block;
   width: 200px;
@@ -133,6 +140,16 @@
   .success-box {
     .box-image {
       order: 1;
+    }
+  }
+}
+
+@screen lg {
+  .archive,
+  .blog {
+    .news-card {
+      width: 46%;
+      margin: 1% 2%;
     }
   }
 }
@@ -152,15 +169,17 @@
     min-height: 400px;
   }
 
-  .full-section {
-    h3 {
-      font-size: 2.375rem;
-    }
-  }
-
   .success-box {
     h3 {
       max-width: 66%;
+    }
+  }
+
+  .archive,
+  .blog {
+    .news-card {
+      width: 31%;
+      margin: 1% 1%;
     }
   }
 }
