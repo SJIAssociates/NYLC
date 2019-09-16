@@ -4,7 +4,10 @@
   @include('partials.page-header')
   <div class='container'>
     <div class="content">
-      <div class=''>
+      <div class='flex'>
+        <aside class="sidebar py-8 xl:w-1/4 pr-5 xxl:py-12">
+          @include('partials.sidebar')
+        </aside>
         <main class="flex flex-wrap main py-8 xl:w-3/4 xxl:py-12">
           @if (!have_posts())
             <div class="alert alert-warning">

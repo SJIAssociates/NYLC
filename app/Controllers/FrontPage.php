@@ -19,7 +19,7 @@ class FrontPage extends Controller
             'time'      => get_the_time('F d, Y', $post->ID),
             'permalink' => get_permalink( $post->ID ),
             'title'     => get_the_title( $post->ID ),
-            'thumbnail' => get_the_post_thumbnail($post->ID),
+            'thumbnail' => get_the_post_thumbnail_url($post->ID) ?: \App\asset_path('images/profile-placeholder.jpg'),
         ];
     }, $news_loop);
   }
