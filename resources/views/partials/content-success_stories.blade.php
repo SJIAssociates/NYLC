@@ -1,4 +1,4 @@
-<div class='flex success-box'>
+<div class='flex success-box w-full'>
     <div class='w-full p-5 md:p-24 bg-blue-grey my-8'>
       <div class='flex flex-wrap'>
         <div class='box-content w-full md:w-1/2 flex flex-wrap flex-col md:pr-8'>
