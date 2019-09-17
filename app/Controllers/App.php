@@ -19,9 +19,13 @@ class App extends Controller
             }
             return __('Latest Posts', 'sage');
         }
-        if (is_archive()) {
-            return get_the_archive_title();
+        if (is_archive() AND !is_category() AND !is_month() ) {
+            return post_type_archive_title();
         }
+        if(is_category() or is_month() ){
+          return get_the_archive_title();
+        }
+
         if (is_search()) {
             return sprintf(__('Search Results for %s', 'sage'), get_search_query());
         }
@@ -88,10 +92,13 @@ class App extends Controller
               $cat = get_the_category();
               $cat = $cat[0];
               $cats = get_category_parents($cat, true, ' ' . $delimiter . ' ');
+              $archive_title = get_the_title(get_option('page_for_posts', true) );
+              $archive_link = get_post_type_archive_link('post');
               if ($showCurrent == 0) {
                   $cats = preg_replace("#^(.+)\s$delimiter\s$#", "$1", $cats);
               }
-              $newsPage = '<span class="underline">News</span>';
+
+              $newsPage = '<a href="' . $archive_link . '" class="underline text-black">' . $archive_title . '</a>';
 
               $output .=  $newsPage . ' ' . $delimiter . ' ';
               //$output .= $cats;
@@ -132,23 +139,25 @@ class App extends Controller
     public function grantSidebar()
     {
       global $post;
-      $current = $post->ID;
-      $parent = $post->post_parent;
-      $parent_title = get_the_title( $parent );
+      if( !is_404() ):
+        $current = $post->ID;
+        $parent = $post->post_parent;
+        $parent_title = get_the_title( $parent );
 
-      $sidebarRepeater = get_field('sidebar_content');
-      if( isset($sidebarRepeater) ) {
+        $sidebarRepeater = get_field('sidebar_content');
+        if( isset($sidebarRepeater) ) {
 
 
-          return array_map(function ($item) {
-              return [
-                  'title'       => $item['title'],
-                  'content' => $item['content'],
-              ];
-          }, $sidebarRepeater ?? [] );
+            return array_map(function ($item) {
+                return [
+                    'title'       => $item['title'],
+                    'content' => $item['content'],
+                ];
+            }, $sidebarRepeater ?? [] );
 
-      } else {
-        return false;
-      }
+        } else {
+          return false;
+        }
+      endif;
     }
 }
