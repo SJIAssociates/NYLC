@@ -1,3 +1,16 @@
+.menu-main-menu-container {
+  .nav {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    li {
+      padding: 10px 15px;
+      border-bottom: 1px solid #ddd;
+    }
+  }
+}
+
 .banner {
   color: white;
 
