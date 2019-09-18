@@ -9,3 +9,33 @@
     }
   }
 }
+
+.tribe-events-event-meta {
+  background: none !important;
+  border: none !important;
+
+  .tribe-events-meta-group {
+    width: 100%;
+  }
+
+  .tribe-events-single-section-title {
+    display: none;
+  }
+
+  .tribe-events-start-date-label,
+  .tribe-events-start-time-label,
+  .tribe-events-event-cost-label,
+  .tribe-events-event-categories-label {
+    border-bottom: 2px solid black;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 18px;
+    padding-bottom: 2px;
+    margin-bottom: 4px;
+    display: block;
+  }
+
+  dd {
+    margin-bottom: 30px;
+  }
+}
