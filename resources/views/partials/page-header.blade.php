@@ -9,8 +9,9 @@
   <div class="container">
   {!! $breadcrumbs !!}
   </div>
+  @if( !is_singular('tribe_events') )
   <section class='page-title py-5 xxl:py-10 text-center'>
     <h1 class='text-center text-black xxl:text-5xl xxl:w-1/2 mx-auto'>{!! App::title() !!}</h1>
   </section>
-
+  @endif
 @endif

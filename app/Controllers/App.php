@@ -32,6 +32,7 @@ class App extends Controller
         if (is_404()) {
             return __('Not Found', 'sage');
         }
+
         return get_the_title();
     }
 
@@ -81,7 +82,11 @@ class App extends Controller
       } elseif (is_search()) {
           $output .= $before . 'Search results for "' . get_search_query() . '"' . $after;
       } elseif (is_single() && !is_attachment()) {
-          if (get_post_type() != 'post') {
+          if (is_singular('tribe_events')) {
+            $post_type = get_post_type_object(get_post_type());
+            $output .= '<a href="/events/" class="text-black underline">Events</a>';
+          }
+          elseif (get_post_type() != 'post') {
               $post_type = get_post_type_object(get_post_type());
               $slug = $post_type->rewrite;
               $output .= '<a href="' . $homeLink . '/' . $slug['slug'] . '/" class="text-black underline">' . $post_type->labels->singular_name . '</a>';

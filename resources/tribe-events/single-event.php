@@ -20,13 +20,15 @@ $events_label_plural   = tribe_get_event_label_plural();
 
 $event_id = get_the_ID();
 
-?>
-  	<?php the_title( '<h1 class="tribe-events-single-event-title">', '</h1>' ); ?>
+
+the_title( '<h1 class="text-center text-black xxl:text-5xl py-5 xxl:py-10">', '</h1>' ); ?>
 
 <div class="flex">
-  <aside class='sidebar py-8 lg:w-1/4 xxl:py-12 pr-10'>
-    <!-- Event meta -->
+  <aside class='sidebar py-8 lg:w-1/3 xxl:py-12 pr-12 xxl:pr-24'>
+    <!-- Event featured image, but exclude link -->
     <?php
+      //echo tribe_event_featured_image( $event_id, 'full', false );
+
       do_action( 'tribe_events_single_event_before_the_meta' );
 
       tribe_get_template_part( 'modules/meta' );
@@ -34,20 +36,11 @@ $event_id = get_the_ID();
       do_action( 'tribe_events_single_event_after_the_meta' );
     ?>
   </aside>
-  <div id="tribe-events-content" class="tribe-events-single main py-8 lg:w-3/4 xxl:py-12">
+  <div class="tribe-events-single main py-8 lg:w-2/3 xxl:py-12">
+    <h2 class='bold text-black text-2xl xxl:text-4xl mb-2'>About the Event</h2>
   	<!-- Notices -->
   	<?php tribe_the_notices() ?>
-
-  	<div class="tribe-events-schedule tribe-clearfix">
-  		<?php echo tribe_events_event_schedule_details( $event_id, '<h2>', '</h2>' ); ?>
-  		<?php if ( tribe_get_cost() ) : ?>
-  			<span class="tribe-events-cost"><?php echo tribe_get_cost( null, true ) ?></span>
-  		<?php endif; ?>
-  	</div>
   		<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-  			<!-- Event featured image, but exclude link -->
-  			<?php echo tribe_event_featured_image( $event_id, 'full', false ); ?>
-
   			<!-- Event content -->
   			<?php do_action( 'tribe_events_single_event_before_the_content' ) ?>
   			<div class="tribe-events-single-event-description tribe-events-content">
