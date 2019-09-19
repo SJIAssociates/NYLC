@@ -3,13 +3,17 @@
 }
 
 .sidebar {
-  h3 {
+  h3,
+  dt {
     @apply text-black;
 
-    border-bottom: 2px solid black;
+    border-bottom: 1px solid black;
     text-transform: uppercase;
     padding-bottom: 5px;
     font-size: 14px;
+    font-family: benton-sans-condensed, sans-serif;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
   }
 
   ul {
@@ -39,5 +43,10 @@
 
   .widget {
     margin-bottom: 25px;
+  }
+
+  .tribe-venue {
+    margin: 0;
+    font-weight: bold;
   }
 }
