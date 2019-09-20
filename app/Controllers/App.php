@@ -54,8 +54,12 @@ class App extends Controller
 
     public function headerImage()
     {
-      $img = get_the_post_thumbnail_url() ?? FALSE;
-
+      if( is_home() ) {
+        $newsID = get_option('page_for_posts', true);
+        $img = get_the_post_thumbnail_url($newsID);
+      }else {
+        $img = get_the_post_thumbnail_url() ?? FALSE;
+      }
 
       return $img;
     }
