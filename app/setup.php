@@ -282,7 +282,7 @@ function custom_menu_page_removing() {
 }
 add_action( 'admin_menu', __NAMESPACE__ .'\\custom_menu_page_removing' );
 // -------------------------------------------------------------
-// Remove Comments
+// Google Map
 // -------------------------------------------------------------
 function my_acf_init() {
 
@@ -290,3 +290,9 @@ function my_acf_init() {
 }
 
 add_action('acf/init', __NAMESPACE__ .'\\my_acf_init');
+
+
+function admin_styles() {
+	echo '<style type="text/css">#adminmenu li.wp-menu-separator {margin: 0; background: #444;}  .column-featured_image img{ height: 50px;}</style>';
+}
+add_action('admin_head', __NAMESPACE__ .'\\admin_styles');
