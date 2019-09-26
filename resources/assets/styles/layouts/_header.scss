@@ -26,10 +26,8 @@
   .nav {
     @apply list-reset flex flex-wrap;
 
-    margin-left: 30px;
-
     a {
-      @apply inline-block px-5 py-3 text-xl text-white border-none;
+      @apply inline-block px-2 py-3 text-xl text-white border-none;
 
       font-family: benton-sans-condensed, sans-serif;
       font-weight: 600;
@@ -41,7 +39,7 @@
     }
 
     li {
-      margin-left: 20px;
+      margin-left: 10px;
       transition: all 0.4s;
 
       &:hover,
@@ -69,7 +67,7 @@
 
   .brand {
     img {
-      max-width: 200px;
+      max-width: 150px;
       margin: 10px 0;
     }
   }
@@ -177,6 +175,36 @@
     li {
       padding: 10px 15px;
       border-bottom: 1px solid #ddd;
+    }
+  }
+}
+
+@screen xl {
+  .banner {
+    .brand {
+      max-width: 200px;
+    }
+
+    .nav {
+      li {
+        margin-left: 0;
+      }
+
+      a {
+        @apply px-5 py-3 text-xl;
+      }
+    }
+  }
+}
+
+@screen xxl {
+  .banner {
+    .nav {
+      margin-left: 30px;
+
+      li {
+        margin-left: 20px;
+      }
     }
   }
 }
