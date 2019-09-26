@@ -63,6 +63,8 @@
     display: block;
     opacity: 1;
     height: auto;
+    z-index: 99999;
+    box-shadow: 7px 7px 6px rgba(0, 0, 0, 0.2);
   }
 
   .brand {
