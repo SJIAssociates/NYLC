@@ -33,7 +33,22 @@ class FrontPage extends Controller
         'image'   =>   get_the_post_thumbnail_url( $featured_story ),
       );
 }
+  public function landmark(){
 
+    $newest_landmark = get_posts([
+      'post_type'       => 'landmark',
+      'posts_per_page'  => 1
+    ]);
+
+    return array_map( function($post){
+      return [
+          'excerpt'   => get_the_excerpt( $post->ID ),
+          'permalink' => get_permalink( $post->ID ),
+          'title'     => get_the_title( $post->ID ),
+          'image' => get_the_post_thumbnail_url($post->ID),
+      ];
+    }, $newest_landmark);
+  }
   use Partials\ServiceBoxes;
 
 }

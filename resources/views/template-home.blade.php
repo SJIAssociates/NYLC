@@ -61,16 +61,9 @@
 	<div class='container'>
 		<div class='text-center'><h2><span class='bg-white'>Explore NY</span></h2></div>
 		<p class='text-black font-bold text-center w-1/2 mx-auto xxl:mb-10'>Visit some of New York’s best hidden gems as well as some of the classic iconic landmarks.</p>
-		<div class='landmark-card'>
-  		  <div class='bg-image' style="background: url( @asset('images/SS_Dyckman_farmhouse.jpg') ); background-size:cover; background-position: center center;"></div>
-  		  <div class='card w-2/5 my-24 ml-32 p-12 xxl:px-32 xxl:py-24 xxl:my-48'>
-    		  <h3>Dyckman Farmhouse Museum</h3>
-    		  <p>The oldest remaining farmhouse in Manhattan is a Dutch Colonial style house constructed of fieldstone, brick, and wood.</p>
-    		  <a href='' class='btn block mb-6'>Watch the Video</a>
-    		  <br>
-    		  <a ref="" class='archive-link'>Explore other NY Landmarks <i class="fas fa-chevron-right"></i></a>
-  		  </div>
-		</div>
+    @foreach($landmark as $item)
+      @include('partials/landmark-card', $item)
+    @endforeach
 	</div>
 </section>
 @endsection

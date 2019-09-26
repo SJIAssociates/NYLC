@@ -6,6 +6,10 @@
 {!! $breadcrumbs !!}
 </div>
 @else
+
+@if ( is_singular('landmark') )
+ {!! $tour_video!!}
+@endif
   <div class="container">
   {!! $breadcrumbs !!}
   </div>
