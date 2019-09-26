@@ -156,7 +156,6 @@ class App extends Controller
         $sidebarRepeater = get_field('sidebar_content');
         if( isset($sidebarRepeater) ) {
 
-
             return array_map(function ($item) {
                 return [
                     'title'       => $item['title'],
@@ -168,5 +167,26 @@ class App extends Controller
           return false;
         }
       endif;
+    }
+
+    public function subPages()
+    {
+      $pages = get_field('grants');
+
+      if(isset($pages) ){
+
+        return array_map(function ($item) {
+            return [
+                'title'       => $item->post_title,
+                'content'     => $item->post_excerpt,
+                'link'        => get_permalink($item->ID),
+                'thumbnail'   => get_the_post_thumbnail_url( $item->ID, 'medium')
+            ];
+        }, $pages ?? [] );
+
+      } else {
+        return false;
+      }
+
     }
 }
