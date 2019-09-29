@@ -296,3 +296,10 @@ function admin_styles() {
 	echo '<style type="text/css">#adminmenu li.wp-menu-separator {margin: 0; background: #444;}  .column-featured_image img{ height: 50px;}</style>';
 }
 add_action('admin_head', __NAMESPACE__ .'\\admin_styles');
+// -------------------------------------------------------------
+// Homepage Thumbnail
+// -------------------------------------------------------------
+function news_thumbnail() {
+  add_image_size( 'news_thumb', 600, 400, array( 'center', 'cetner' ) );
+}
+add_action('init', __NAMESPACE__ .'\\news_thumbnail');

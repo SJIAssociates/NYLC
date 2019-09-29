@@ -139,16 +139,6 @@
   }
 }
 
-@screen lg {
-  .archive,
-  .blog {
-    .news-card {
-      width: 46%;
-      margin: 1% 2%;
-    }
-  }
-}
-
 @screen xl {
   .full-section {
     @apply py-20;
@@ -167,14 +157,6 @@
   .success-box {
     h3 {
       max-width: 66%;
-    }
-  }
-
-  .archive,
-  .blog {
-    .news-card {
-      width: 31%;
-      margin: 1% 1%;
     }
   }
 }
