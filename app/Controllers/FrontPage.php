@@ -17,9 +17,9 @@ class FrontPage extends Controller
         return [
             'content'   => get_the_excerpt( $post->ID ),
             'time'      => get_the_time('F d, Y', $post->ID),
-            'permalink' => get_permalink( $post->ID ),
+            'permalink' => get_permalink( $post->ID),
             'title'     => get_the_title( $post->ID ),
-            'thumbnail' => get_the_post_thumbnail_url($post->ID) ?: \App\asset_path('images/profile-placeholder.jpg'),
+            'thumbnail' => get_the_post_thumbnail_url($post->ID,'medium') ?: \App\asset_path('images/profile-placeholder.jpg'),
         ];
     }, $news_loop);
   }
@@ -30,7 +30,7 @@ class FrontPage extends Controller
       return (object) array(
         'title'   =>   get_the_title($featured_story),
         'link'    =>   get_the_permalink( $featured_story),
-        'image'   =>   get_the_post_thumbnail_url( $featured_story ),
+        'image'   =>   get_the_post_thumbnail_url( $featured_story),
       );
 }
   public function landmark(){
