@@ -178,9 +178,9 @@ class App extends Controller
         return array_map(function ($item) {
             return [
                 'title'       => $item->post_title,
-                'content'     => $item->post_excerpt,
-                'link'        => get_permalink($item->ID),
-                'thumbnail'   => get_the_post_thumbnail_url( $item->ID, 'medium')
+                'excerpt'     => get_the_excerpt( $item->ID),
+                'permalink'   => get_the_permalink($item->ID),
+                'thumbnail'   => get_the_post_thumbnail_url( $item->ID, 'news_thumb')
             ];
         }, $pages ?? [] );
 
