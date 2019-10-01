@@ -1,4 +1,4 @@
-<article @php post_class('w-full py-5 border-b-2 flex flex-wrap pr-10') @endphp data-lat="{!! $location->lat !!}" data-long="{!! $location->lng !!}">
+<article @php post_class('marker w-full py-5 border-b-2 flex flex-wrap pr-10') @endphp data-lat="{!! ArchiveLandmark::lat(); !!}" data-long="{!! ArchiveLandmark::lng(); !!}">
   <div class="w-full lg:w-3/5 lg:pr-10">
     <h2 class="entry-title">
       <a href="{{ get_permalink() }}" class='text-black hover:text-red'>{!! get_the_title() !!}</a>

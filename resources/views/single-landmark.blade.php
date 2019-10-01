@@ -13,7 +13,7 @@
         <div class='widget'>
           <h3>Addres</h3>
           <address>
-            {!! $location->properAddress !!}
+            {!! SingleLandmark::locationAddress() !!}
           </address>
         </div>
         <div class='widget'>
