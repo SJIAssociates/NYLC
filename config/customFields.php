@@ -232,5 +232,243 @@ acf_add_local_field_group(array(
 	'active' => true,
 	'description' => '',
 ));
+/*
+Name: Landmark::Contact
+Fields: location_email,location_number
+Location: Post_type -> Landmark
+*/
+acf_add_local_field_group(array(
+	'key' => 'group_5d8bd9d7cf7d6',
+	'title' => 'Landmark::Contact',
+	'fields' => array(
+		array(
+			'key' => 'field_5d8bd9ee939bb',
+			'label' => 'Location Email',
+			'name' => 'location_email',
+			'type' => 'email',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => '',
+			'placeholder' => '',
+			'prepend' => '',
+			'append' => '',
+		),
+		array(
+			'key' => 'field_5d8bda18939bc',
+			'label' => 'Phone Number',
+			'name' => 'location_number',
+			'type' => 'text',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => '',
+			'placeholder' => '',
+			'prepend' => '',
+			'append' => '',
+			'maxlength' => '',
+		),
+	),
+	'location' => array(
+		array(
+			array(
+				'param' => 'post_type',
+				'operator' => '==',
+				'value' => 'landmark',
+			),
+		),
+	),
+	'menu_order' => 0,
+	'position' => 'side',
+	'style' => 'default',
+	'label_placement' => 'top',
+	'instruction_placement' => 'label',
+	'hide_on_screen' => '',
+	'active' => true,
+	'description' => '',
+));
+/*
+Name: Landmark::Profile
+Fields: website,landmark_facebook,landmark_twitter
+Location: Post_type -> Landmark
+*/
+acf_add_local_field_group(array(
+	'key' => 'group_5d8bda97c0e79',
+	'title' => 'Landmark::Profile',
+	'fields' => array(
+		array(
+			'key' => 'field_5d8bda9d187d2',
+			'label' => 'Website',
+			'name' => 'website',
+			'type' => 'url',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => '',
+			'placeholder' => '',
+		),
+		array(
+			'key' => 'field_5d8bdaa9187d3',
+			'label' => 'Facebook',
+			'name' => 'landmark_facebook',
+			'type' => 'url',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => '',
+			'placeholder' => '',
+		),
+		array(
+			'key' => 'field_5d8bdab6187d4',
+			'label' => 'Twitter',
+			'name' => 'landmark_twitter',
+			'type' => 'url',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => '',
+			'placeholder' => '',
+		),
+	),
+	'location' => array(
+		array(
+			array(
+				'param' => 'post_type',
+				'operator' => '==',
+				'value' => 'landmark',
+			),
+		),
+	),
+	'menu_order' => 0,
+	'position' => 'side',
+	'style' => 'default',
+	'label_placement' => 'top',
+	'instruction_placement' => 'label',
+	'hide_on_screen' => '',
+	'active' => true,
+	'description' => '',
+));
+/*
+Name: Landmark::Tourist in Your Own Town
+Fields: video_embed
+Location: Post_type -> Landmark
+*/
+acf_add_local_field_group(array(
+	'key' => 'group_5d8bdb591fede',
+	'title' => 'Landmarks::Tourist in Your Own Town',
+	'fields' => array(
+		array(
+			'key' => 'field_5d8bdb6295e0b',
+			'label' => 'Video Embed',
+			'name' => 'video_embed',
+			'type' => 'oembed',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'width' => '',
+			'height' => '',
+		),
+	),
+	'location' => array(
+		array(
+			array(
+				'param' => 'post_type',
+				'operator' => '==',
+				'value' => 'landmark',
+			),
+		),
+	),
+	'menu_order' => 0,
+	'position' => 'acf_after_title',
+	'style' => 'default',
+	'label_placement' => 'top',
+	'instruction_placement' => 'label',
+	'hide_on_screen' => '',
+	'active' => true,
+	'description' => '',
+));
+/*
+Name: Landmark::Tourist in Your Own Town
+Fields: location
+Location: Post_type -> Landmark & Site
+*/
+acf_add_local_field_group(array(
+	'key' => 'group_5d6fdf13950f9',
+	'title' => 'Location',
+	'fields' => array(
+		array(
+			'key' => 'field_5d6fee69a854d',
+			'label' => 'Location',
+			'name' => 'location',
+			'type' => 'google_map',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'center_lat' => '',
+			'center_lng' => '',
+			'zoom' => '',
+			'height' => '',
+		),
+	),
+	'location' => array(
+		array(
+			array(
+				'param' => 'post_type',
+				'operator' => '==',
+				'value' => 'site',
+			),
+		),
+		array(
+			array(
+				'param' => 'post_type',
+				'operator' => '==',
+				'value' => 'landmark',
+			),
+		),
+	),
+	'menu_order' => 0,
+	'position' => 'normal',
+	'style' => 'default',
+	'label_placement' => 'top',
+	'instruction_placement' => 'label',
+	'hide_on_screen' => '',
+	'active' => true,
+	'description' => '',
+));
 
 endif;
