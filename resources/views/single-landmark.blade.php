@@ -13,7 +13,7 @@
         <div class='widget'>
           <h3>Addres</h3>
           <address>
-            {!! $location !!}
+            {!! $location->properAddress !!}
           </address>
         </div>
         <div class='widget'>
