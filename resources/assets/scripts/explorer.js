@@ -16,10 +16,7 @@
 function new_map( $el ) {
 
 	// var
-	var $markers = $el.find('.marker');
-
-	console.log($markers)
-
+	var $markers = $(document).find('.marker');
 
 	// vars
 	var args = {
@@ -37,7 +34,7 @@ function new_map( $el ) {
 	// add a markers reference
 	map.markers = [];
 
-
+	console.log(map.markers);
 	// add markers
 	$markers.each(function(){
 
@@ -170,7 +167,52 @@ jQuery(document).ready(function($){
 
 	});
 
+	$(document).on('facetwp-loaded', function() {
+		console.log('facet reload')
+			$('.map-list-container').animate({ scrollTop: 0 }, 500);
+
+			// Remove All Markers
+			remove_markers();
+
+			//Grab all Markers on Page Currently
+			var $markers = $(document).find('.marker');
+
+			// add a markers reference
+			map.markers = [];
+
+			console.log(map.markers);
+			// add markers
+			$markers.each(function(){
+
+		    add_marker( $(this), map );
+
+			});
+
+	 });
 
 });
 
+
+
+/*
+*  remove_markers
+*
+*  This function will remove the markers
+*
+*  @type	function
+*  @date	10/01/2019
+*  @since	4.3.0
+*
+*  @param	map (Google Map object)
+*  @return	n/a
+*/
+
+
+function remove_markers() {
+	//Loop through all the markers and remove
+ for (var i = 0; i < map.markers.length; i++) {
+		 map.markers[i].setMap(null);
+ }
+ markers = [];
+}
 })(jQuery);

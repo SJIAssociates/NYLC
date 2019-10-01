@@ -2,46 +2,33 @@
 
 @section('content')
   @include('partials.page-header')
+  <section>
+    <div class='container'>
+      <div class='w-full md:w-2/3 mx-auto my-16 xl:text-2xl'>
+        <h3 class='text-center'>Discover the best of New York, from hidden gems  to iconic landmarks, through our “Tourist in your own Town” Video Series.</h3>
+      </div>
+    </div>
+  </section>
   <div class='container'>
     <div class="content">
-      <div class='flex'>
-        <main class="main py-8 lg:w-1/2 xxl:py-12 map-list-container">
+      <div class='flex border-b-2 border-t-2 relative'>
+        <div class='w-full lg:w-1/2 borough-facet border-b-2 absolute bg-white'>
+            @php echo do_shortcode('[facetwp facet="borough"]'); @endphp
+        </div>
+        <main class="main lg:w-1/2 map-list-container lg:mt-20">
           <div class='flex flex-wrap'>
             @while (have_posts()) @php the_post() @endphp
               @include('partials.content-'.get_post_type())
             @endwhile
-
-            {!! get_the_posts_navigation() !!}
-            @php rewind_posts(); @endphp
           </div>
         </main>
-        <div class='map-container py-8 lg:w-1/2 xxl:py-12'>
-          <div class='acf-map'>
-            @while (have_posts()) @php the_post() @endphp
-            @if( !empty( ArchiveLandmark::lat() ) ):
-            <div class="marker" data-lat="{!! ArchiveLandmark::lat(); !!}" data-lng="{!! ArchiveLandmark::lng(); !!}">
-                  <h4><a href="{!! get_the_permalink() !!}" rel="bookmark"> {!! get_the_title() !!}</a></h4>
-                  <?php echo $location->properAddress; ?>
-          	</div>
-            @endif
-            @endwhile
-          </div>
+        <div class='map-container lg:w-1/2'>
+          <div class='acf-map'></div>
         </div>
+    </div>
+    <div class="navigation mb-10 mt-5">
+      <?php echo facetwp_display( 'pager' ); ?>
     </div>
   </div>
 </div>
-<style>
-.acf-map {
-	width: 100%;
-	height: 600px;
-}
-.map-list-container {
-  height: 600px;
-  overflow-y: scroll;
-}
-/* fixes potential theme css conflict */
-.acf-map img {
-   max-width: inherit !important;
-}
-</style>
 @endsection
