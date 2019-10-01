@@ -13,22 +13,9 @@ class SingleLandmark extends Controller
       $output .= '</div></div>';
       return $output;
   }
-  public function location()
-  {
-    $location = get_field('location');
-    // Address, City, State zip
-    $Fulladdress = $location['address'];
 
-    $numberAddress = explode(",",$Fulladdress)[0];
-    $city = explode(",",$Fulladdress)[1];
-    $state = explode(",",$Fulladdress)[2];
+  use Partials\location;
 
-    $lat = $location['lat'];
-    $lng = $location['lng'];
-
-    return $numberAddress . ",<br />" . $city . ", " . $state;
-
-  }
   public function contact()
   {
     return (object) array(
