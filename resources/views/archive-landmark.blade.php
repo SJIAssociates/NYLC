@@ -15,7 +15,7 @@
         <div class='w-full lg:w-1/2 borough-facet border-b-2 absolute bg-white'>
             @php echo do_shortcode('[facetwp facet="borough"]'); @endphp
         </div>
-        <main class="main lg:w-1/2 map-list-container lg:mt-20">
+        <main class="main lg:w-1/2 map-list-container lg:pt-20">
           <div class='flex flex-wrap'>
             @while (have_posts()) @php the_post() @endphp
               @include('partials.content-'.get_post_type())
