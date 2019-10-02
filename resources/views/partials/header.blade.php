@@ -13,8 +13,8 @@
       </div>
       <div class='w-full lg:w-1/4 lg:block hidden text-right'>
         {!! get_search_form() !!}
-        <a href="#" class='uppercase text-white text-sm font-bold'>Join Us</a>
-        <a href="#" class='btn btn-donate'>Donate</a>
+        <a href="/join" class='uppercase text-white text-sm font-bold'>Join Us</a>
+        <a href="/donate" class='btn btn-donate'>Donate</a>
       </div>
       <button id='mobile-menu' class='lg:hidden menu-toggle' type='button'>
         <span class='bar top'></span>

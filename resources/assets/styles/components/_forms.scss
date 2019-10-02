@@ -33,3 +33,56 @@
     @apply bg-white text-red;
   }
 }
+
+.fsForm {
+  .fsRequiredLabel {
+    text-transform: uppercase;
+    color: black;
+  }
+
+  .fsFieldRow {
+    input[type="text"],
+    input[type="email"],
+    input[type="number"],
+    input[type="tel"] {
+      border: 1px solid black;
+    }
+
+    .fsCurrencyPrefix {
+      height: 50px;
+      padding-top: 8px;
+      border-left: 1px solid black;
+      border-bottom: 1px solid black;
+      border-top: 1px solid black;
+      margin-right: 0 !important;
+      padding-right: 4px;
+
+      + .fsFormatNumber {
+        height: 50px;
+        border-left: 0 solid;
+        width: 100px !important;
+        font-weight: bold;
+        font-size: 1.25em;
+        color: green;
+      }
+    }
+
+    .fsSubmitButton {
+      background: $primary;
+      padding: 15px 30px;
+      text-transform: uppercase;
+    }
+  }
+}
+
+.template-form {
+  .form-bg {
+    max-height: 80vh;
+    height: 80vh;
+    overflow-y: scroll;
+
+    h1 + span {
+      max-width: 466px;
+    }
+  }
+}
