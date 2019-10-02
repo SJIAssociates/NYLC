@@ -5,9 +5,9 @@
 @include('partials.page-header')
 <div class='container'>
 <div class="content flex">
-  @if( $grant_sidebar != false)
+  @if( $page_sidebar != false)
   <aside class='sidebar py-8 lg:w-1/3 xxl:py-12 pr-10'>
-    @foreach($grant_sidebar as $item )
+    @foreach($page_sidebar as $item )
       <div class='grant-sidebar widget'>
         <h3>{!! $item['title'] !!}</h3>
         {!! $item['content'] !!}
@@ -15,7 +15,7 @@
     @endforeach
   </aside>
   @endif
-  @if( $grant_sidebar != false)
+  @if( $page_sidebar != false)
     <main class="main py-8 xl:w-2/3 xxl:py-12 xxl:mx-auto">
   @else
     <main class="main py-8 lg:w-2/3 xxl:py-12 ">

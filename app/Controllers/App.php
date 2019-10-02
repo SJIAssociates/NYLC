@@ -145,13 +145,11 @@ class App extends Controller
 
     } // end the_breadcrumb()
 
-    public function grantSidebar()
+    public function pageSidebar()
     {
       global $post;
+
       if( !is_404() ):
-        $current = $post->ID;
-        $parent = $post->post_parent;
-        $parent_title = get_the_title( $parent );
 
         $sidebarRepeater = get_field('sidebar_content');
         if( isset($sidebarRepeater) ) {

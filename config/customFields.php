@@ -470,5 +470,99 @@ acf_add_local_field_group(array(
 	'active' => true,
 	'description' => '',
 ));
+/*
+Name: Landmark::Tourist in Your Own Town
+Fields: location
+Location: Post_type -> Landmark & Site
+*/
+acf_add_local_field_group(array(
+	'key' => 'group_5d79984523190',
+	'title' => 'Page::Sidebar',
+	'fields' => array(
+		array(
+			'key' => 'field_5d79985c0c7b1',
+			'label' => 'Sidebar Content',
+			'name' => 'sidebar_content',
+			'type' => 'repeater',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'collapsed' => '',
+			'min' => 0,
+			'max' => 0,
+			'layout' => 'table',
+			'button_label' => '',
+			'sub_fields' => array(
+				array(
+					'key' => 'field_5d7998ba0c7b2',
+					'label' => 'Title',
+					'name' => 'title',
+					'type' => 'text',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'wrapper' => array(
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'default_value' => '',
+					'placeholder' => '',
+					'prepend' => '',
+					'append' => '',
+					'maxlength' => '',
+				),
+				array(
+					'key' => 'field_5d7998c00c7b3',
+					'label' => 'Content',
+					'name' => 'content',
+					'type' => 'wysiwyg',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'wrapper' => array(
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'default_value' => '',
+					'tabs' => 'all',
+					'toolbar' => 'full',
+					'media_upload' => 1,
+					'delay' => 0,
+				),
+			),
+		),
+	),
+	'location' => array(
+			array(
+				array(
+					'param' => 'post_template',
+					'operator' => '==',
+					'value' => 'default',
+				),
+			),
+			array(
+				array(
+					'param' => 'post_template',
+					'operator' => '==',
+					'value' => 'views/template-form.blade.php',
+				),
+			),
+		),
+		'menu_order' => 0,
+		'position' => 'normal',
+		'style' => 'default',
+		'label_placement' => 'top',
+		'instruction_placement' => 'label',
+		'hide_on_screen' => '',
+		'active' => true,
+		'description' => '',
+	));
 
 endif;
