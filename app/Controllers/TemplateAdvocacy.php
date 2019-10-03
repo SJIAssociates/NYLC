@@ -25,7 +25,8 @@ class TemplateAdvocacy extends Controller
     }, $news_loop);
   }
 
-  public function advocacyLoopContinued(){
+  public function advocacyLoopContinued()
+  {
 
     $news_loop_continue = get_posts([
       'post_type' => 'post',
