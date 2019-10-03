@@ -471,9 +471,9 @@ acf_add_local_field_group(array(
 	'description' => '',
 ));
 /*
-Name: Landmark::Tourist in Your Own Town
-Fields: location
-Location: Post_type -> Landmark & Site
+Name: Page::Sidebar
+Fields: Repeater
+Location: Default Pages | Forms Pages
 */
 acf_add_local_field_group(array(
 	'key' => 'group_5d79984523190',
@@ -557,6 +557,82 @@ acf_add_local_field_group(array(
 		),
 		'menu_order' => 0,
 		'position' => 'normal',
+		'style' => 'default',
+		'label_placement' => 'top',
+		'instruction_placement' => 'label',
+		'hide_on_screen' => '',
+		'active' => true,
+		'description' => '',
+	));
+	/*
+	Name: Archive Header images
+	Fields: Repeater
+	Location: Default Pages | Forms Pages
+	*/
+	acf_add_local_field_group(array(
+		'key' => 'group_5d9604a4455fe',
+		'title' => 'Archive::Headers',
+		'fields' => array(
+			array(
+				'key' => 'field_5d9604b4464dd',
+				'label' => 'Explore NY Image',
+				'name' => 'explore_image',
+				'type' => 'image',
+				'instructions' => '',
+				'required' => 0,
+				'conditional_logic' => 0,
+				'wrapper' => array(
+					'width' => '',
+					'class' => '',
+					'id' => '',
+				),
+				'return_format' => 'array',
+				'preview_size' => 'medium',
+				'library' => 'all',
+				'min_width' => '',
+				'min_height' => '',
+				'min_size' => '',
+				'max_width' => '',
+				'max_height' => '',
+				'max_size' => '',
+				'mime_types' => '',
+			),
+			array(
+				'key' => 'field_5d9604dd37dbf',
+				'label' => 'Sacred Sites Image',
+				'name' => 'sacred_sites_image',
+				'type' => 'image',
+				'instructions' => '',
+				'required' => 0,
+				'conditional_logic' => 0,
+				'wrapper' => array(
+					'width' => '',
+					'class' => '',
+					'id' => '',
+				),
+				'return_format' => 'array',
+				'preview_size' => 'medium',
+				'library' => 'all',
+				'min_width' => '',
+				'min_height' => '',
+				'min_size' => '',
+				'max_width' => '',
+				'max_height' => '',
+				'max_size' => '',
+				'mime_types' => '',
+			),
+		),
+		'location' => array(
+			array(
+				array(
+					'param' => 'options_page',
+					'operator' => '==',
+					'value' => 'theme-general-settings',
+				),
+			),
+		),
+		'menu_order' => 0,
+		'position' => 'side',
 		'style' => 'default',
 		'label_placement' => 'top',
 		'instruction_placement' => 'label',
