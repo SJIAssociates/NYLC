@@ -34,6 +34,22 @@
   }
 }
 
+/** Contact 7 form */
+.wpcf7-form {
+  input[type="text"],
+  input[type="email"],
+  input[type="number"],
+  input[type="tel"] {
+    border: 1px solid black;
+  }
+
+  input[type="submit"] {
+    background: $primary;
+    padding: 15px 30px;
+  }
+}
+
+/** FormStack form */
 .fsForm {
   .fsRequiredLabel {
     text-transform: uppercase;
@@ -75,6 +91,7 @@
   }
 }
 
+/** Form Page */
 .template-form {
   .form-bg {
     max-height: 80vh;
