@@ -3,7 +3,7 @@
     <?php echo get_the_term_list( $post->ID, 'Borough', '<span class="borough text-red font-bold uppercase inlin-block relative ml-8">', ', ', ', NY</span>' ) ?>
     @if( !empty( ArchiveLandmark::lat() ) )
     <div class='marker' data-lat="{!! ArchiveLandmark::lat(); !!}" data-lng="{!! ArchiveLandmark::lng(); !!}">
-      <h4><a href="{{ get_permalink() }}" class='text-black hover:text-red'>{!! get_the_title() !!}</a></h4>      
+      <h4><a href="{{ get_permalink() }}" class='text-black hover:text-red'>{!! get_the_title() !!}</a></h4>
     </div>
     @endif
     <h2 class="entry-title mt-5 mb-0">
@@ -15,6 +15,6 @@
     </div>
   </div>
   <div class="w-full lg:w-2/5">
-    {!! the_post_thumbnail('news_thumb') !!}
+    <a href="{{ get_permalink() }}">{!! the_post_thumbnail('news_thumb') !!}</a>
   </div>
 </article>
