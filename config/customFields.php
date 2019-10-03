@@ -1,6 +1,26 @@
 <?php
+/*
+
+Footer Sign Up
+Theme settings
+Home Carousel
+
+Landmark Contacts
+Landmark Profile
+LandMark: Tourist Vidoes
+LandMark Location (And Sacred Sites)
+
+Page: Sidebar
+Page: News
+
+Archive: Header Image
+*/
 if( function_exists('acf_add_local_field_group') ):
-//Footer Sign Up
+	/*
+	Name: Footer Signup
+	Fields: signup_form
+	Location: Theme Options
+	*/
 acf_add_local_field_group(array(
 	'key' => 'group_5d4af733c821c',
 	'title' => 'Footer:SignupForm',
@@ -471,6 +491,134 @@ acf_add_local_field_group(array(
 	'description' => '',
 ));
 /*
+Name: Archive Header images
+Fields: Repeater
+Location: Default Pages | Forms Pages
+*/
+acf_add_local_field_group(array(
+	'key' => 'group_5d9604a4455fe',
+	'title' => 'Archive::Headers',
+	'fields' => array(
+		array(
+			'key' => 'field_5d9604b4464dd',
+			'label' => 'Explore NY Image',
+			'name' => 'explore_image',
+			'type' => 'image',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'return_format' => 'array',
+			'preview_size' => 'medium',
+			'library' => 'all',
+			'min_width' => '',
+			'min_height' => '',
+			'min_size' => '',
+			'max_width' => '',
+			'max_height' => '',
+			'max_size' => '',
+			'mime_types' => '',
+		),
+		array(
+			'key' => 'field_5d9604dd37dbf',
+			'label' => 'Sacred Sites Image',
+			'name' => 'sacred_sites_image',
+			'type' => 'image',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'return_format' => 'array',
+			'preview_size' => 'medium',
+			'library' => 'all',
+			'min_width' => '',
+			'min_height' => '',
+			'min_size' => '',
+			'max_width' => '',
+			'max_height' => '',
+			'max_size' => '',
+			'mime_types' => '',
+		),
+	),
+	'location' => array(
+		array(
+			array(
+				'param' => 'options_page',
+				'operator' => '==',
+				'value' => 'theme-general-settings',
+			),
+		),
+	),
+	'menu_order' => 0,
+	'position' => 'side',
+	'style' => 'default',
+	'label_placement' => 'top',
+	'instruction_placement' => 'label',
+	'hide_on_screen' => '',
+	'active' => true,
+	'description' => '',
+));
+/*
+Name: Page::News
+Fields: category
+Location: Default Pages
+Purpose: Adding the news boxes to pages (mainly used for grant pages)
+*/
+acf_add_local_field_group(array(
+	'key' => 'group_5d9628ce9600b',
+	'title' => 'Page:News',
+	'fields' => array(
+		array(
+			'key' => 'field_5d9628dc7eb0b',
+			'label' => 'Category',
+			'name' => 'category',
+			'type' => 'taxonomy',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'taxonomy' => 'category',
+			'field_type' => 'select',
+			'allow_null' => 1,
+			'add_term' => 0,
+			'save_terms' => 0,
+			'load_terms' => 0,
+			'return_format' => 'object',
+			'multiple' => 0,
+		),
+	),
+	'location' => array(
+		array(
+			array(
+				'param' => 'page_template',
+				'operator' => '==',
+				'value' => 'default',
+			),
+		),
+	),
+	'menu_order' => 10,
+	'position' => 'side',
+	'style' => 'default',
+	'label_placement' => 'top',
+	'instruction_placement' => 'label',
+	'hide_on_screen' => '',
+	'active' => true,
+	'description' => '',
+));
+
+/*
 Name: Page::Sidebar
 Fields: Repeater
 Location: Default Pages | Forms Pages
@@ -557,133 +705,6 @@ acf_add_local_field_group(array(
 		),
 		'menu_order' => 0,
 		'position' => 'normal',
-		'style' => 'default',
-		'label_placement' => 'top',
-		'instruction_placement' => 'label',
-		'hide_on_screen' => '',
-		'active' => true,
-		'description' => '',
-	));
-	/*
-	Name: Archive Header images
-	Fields: Repeater
-	Location: Default Pages | Forms Pages
-	*/
-	acf_add_local_field_group(array(
-		'key' => 'group_5d9604a4455fe',
-		'title' => 'Archive::Headers',
-		'fields' => array(
-			array(
-				'key' => 'field_5d9604b4464dd',
-				'label' => 'Explore NY Image',
-				'name' => 'explore_image',
-				'type' => 'image',
-				'instructions' => '',
-				'required' => 0,
-				'conditional_logic' => 0,
-				'wrapper' => array(
-					'width' => '',
-					'class' => '',
-					'id' => '',
-				),
-				'return_format' => 'array',
-				'preview_size' => 'medium',
-				'library' => 'all',
-				'min_width' => '',
-				'min_height' => '',
-				'min_size' => '',
-				'max_width' => '',
-				'max_height' => '',
-				'max_size' => '',
-				'mime_types' => '',
-			),
-			array(
-				'key' => 'field_5d9604dd37dbf',
-				'label' => 'Sacred Sites Image',
-				'name' => 'sacred_sites_image',
-				'type' => 'image',
-				'instructions' => '',
-				'required' => 0,
-				'conditional_logic' => 0,
-				'wrapper' => array(
-					'width' => '',
-					'class' => '',
-					'id' => '',
-				),
-				'return_format' => 'array',
-				'preview_size' => 'medium',
-				'library' => 'all',
-				'min_width' => '',
-				'min_height' => '',
-				'min_size' => '',
-				'max_width' => '',
-				'max_height' => '',
-				'max_size' => '',
-				'mime_types' => '',
-			),
-		),
-		'location' => array(
-			array(
-				array(
-					'param' => 'options_page',
-					'operator' => '==',
-					'value' => 'theme-general-settings',
-				),
-			),
-		),
-		'menu_order' => 0,
-		'position' => 'side',
-		'style' => 'default',
-		'label_placement' => 'top',
-		'instruction_placement' => 'label',
-		'hide_on_screen' => '',
-		'active' => true,
-		'description' => '',
-	));
-	/*
-	Name: Page::News
-	Fields: category
-	Location: Default Pages
-	Purpose: Adding the news boxes to pages (mainly used for grant pages)
-	*/
-	acf_add_local_field_group(array(
-		'key' => 'group_5d9628ce9600b',
-		'title' => 'Page:News',
-		'fields' => array(
-			array(
-				'key' => 'field_5d9628dc7eb0b',
-				'label' => 'Category',
-				'name' => 'category',
-				'type' => 'taxonomy',
-				'instructions' => '',
-				'required' => 0,
-				'conditional_logic' => 0,
-				'wrapper' => array(
-					'width' => '',
-					'class' => '',
-					'id' => '',
-				),
-				'taxonomy' => 'category',
-				'field_type' => 'select',
-				'allow_null' => 1,
-				'add_term' => 0,
-				'save_terms' => 0,
-				'load_terms' => 0,
-				'return_format' => 'object',
-				'multiple' => 0,
-			),
-		),
-		'location' => array(
-			array(
-				array(
-					'param' => 'page_template',
-					'operator' => '==',
-					'value' => 'default',
-				),
-			),
-		),
-		'menu_order' => 10,
-		'position' => 'side',
 		'style' => 'default',
 		'label_placement' => 'top',
 		'instruction_placement' => 'label',
