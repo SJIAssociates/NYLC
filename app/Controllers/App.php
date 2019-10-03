@@ -57,7 +57,7 @@ class App extends Controller
       if( is_home() ) {
         $newsID = get_option('page_for_posts', true);
         $img = get_the_post_thumbnail_url($newsID);
-      }elseif(is_archive('landmark') ) {
+      }elseif(is_post_type_archive('landmark') ) {
         $exploreImg = get_field('explore_image', 'options');
         $img = $exploreImg['url'];
       }else {
@@ -190,4 +190,6 @@ class App extends Controller
       }
 
     }
+
+    use Partials\CategoryLoops;
 }
