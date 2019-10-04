@@ -42,7 +42,7 @@
     		  <div class='flex'>
       		  <div class='w-full w-1/2 flex flex-col pr-8'>
       		    <h3 class='mb-10'>{{ $annual_report->description }}</h3>
-      		    <div class="">
+      		    <div class="button-container">
         		    <a href="{{ $annual_report->link }}" class='btn bg-red text-white inline-block mb-12 hover:no-underline'>View 2019 Annual Report</a><br>
       		    </div>
       		    <a href="{{ $annual_report->archive_link }}" class='archive-link hover:no-underline hover:no-border'>View all annual reports and 990s <i class="fas fa-chevron-right"></i></a>
@@ -55,10 +55,10 @@
 		</div>
   </div>
 </section>
-<section class='full-section'>
+<section class='full-section bg-blue-grey'>
   <div class='container'>
     <div class="text-center">
-      <h2><span class='bg-white'>Press</span></h2>
+      <h2><span class='bg-blue-grey'>Press</span></h2>
     </div>
       <div class='flex flex-wrap py-5 xxl:py-10 mx-auto xl:w-4/5'>
         @php $i = 0; @endphp
@@ -77,24 +77,26 @@
     </div>
   </div>
 </section>
-<section class='full-section'>
+<section class='full-section' id="contactSection">
   <div class='container'>
     <div class="text-center">
       <h2><span class='bg-white'>Contact Us</span></h2>
     </div>
-    <div class='flex mx-auto xl:w-4/5'>
-      <div class='w-full md:w-2/3'>
-        @php echo do_shortcode('[contact-form-7 id="1192" title="Contact form 1"]'); @endphp
+    <div class='flex mx-auto xl:w-4/5 mt-10'>
+      <div class='w-full md:w-1/2 lg:px-10'>
+          @php echo do_shortcode('[contact-form-7 id="1192" title="Contact form 1"]'); @endphp
       </div>
-      <div class='w-full md:w-1/3'>
-        @php dynamic_sidebar('sidebar-footer') @endphp
-        <p>Have a preservation question? <a href="">Email our experts.</a></p>
-			<p class='text-grey-500 social-links'>Follow Us:
-				<a href="{{ $social->twitter }}" target="_blank" title="twitter" class="text-grey-darkest hover:text-primary hover:no-underline"><i class="fab fa-twitter"></i></a>
-				<a href="{{ $social->facebook }}" target="_blank" title="facebook" class="text-grey-darkest hover:text-primary hover:no-underline"><i class="fab fa-facebook-f"></i></a>
-				<a href="{{ $social->instagram }}" target="_blank" title="instagram" class="text-grey-darkest hover:text-primary hover:no-underline"><i class="fab fa-instagram"></i></a>
-			</p>
-
+      <div class='w-full md:w-1/2 text-xl lg:px-10'>
+        <div class='content-info'>
+            @php dynamic_sidebar('sidebar-footer') @endphp
+            <p>Have a preservation question? <a href="">Email our experts.</a></p>
+    			<p class='text-grey-500 social-links'>Follow Us:
+    				<a href="{{ $social->twitter }}" target="_blank" title="twitter" class="text-grey-darkest hover:text-primary hover:no-underline"><i class="fab fa-twitter"></i></a>
+    				<a href="{{ $social->facebook }}" target="_blank" title="facebook" class="text-grey-darkest hover:text-primary hover:no-underline"><i class="fab fa-facebook-f"></i></a>
+            <a href="{{ $social->youtube }}" target="_blank" title="youtube" class="text-grey-darkest hover:text-primary hover:no-underline"><i class="fab fa-youtube"></i></a>
+            <a href="{{ $social->instagram }}" target="_blank" title="instagram" class="text-grey-darkest hover:text-primary hover:no-underline"><i class="fab fa-instagram"></i></a>
+    			</p>
+        </div>
       </div>
     </div>
 
