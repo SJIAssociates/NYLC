@@ -13,6 +13,10 @@
 
 .img-bg {
   min-height: 150px;
+
+  h1 {
+    text-shadow: 0 0 30px #111;
+  }
 }
 
 .full-section {
@@ -21,18 +25,7 @@
   min-height: 300px;
 
   h2 {
-    @apply text-center text-5xl text-red relative inline-block mx-auto;
-
-    &::before {
-      position: absolute;
-      top: 50%;
-      left: -30px;
-      right: -30px;
-      content: " ";
-      height: 3px;
-      background: $primary;
-      z-index: 10;
-    }
+    @apply text-center text-5xl text-primary relative inline-block mx-auto;
 
     span {
       @apply px-5 relative;
@@ -44,6 +37,11 @@
 
   h3 {
     font-family: benton-sans-condensed, sans-serif;
+  }
+
+  .archive-link:hover svg {
+    margin-left: 5px;
+    transition: all 0.4s;
   }
 }
 //Landmark Card
@@ -137,11 +135,26 @@
       order: 1;
     }
   }
+
+  .full-section {
+    h2 {
+      &::before {
+        position: absolute;
+        top: 50%;
+        left: -30px;
+        right: -30px;
+        content: " ";
+        height: 3px;
+        background: $primary;
+        z-index: 10;
+      }
+    }
+  }
 }
 
 @screen xl {
   .full-section {
-    @apply py-20;
+    @apply py-16;
   }
 
   .img-bg {

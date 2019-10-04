@@ -3,7 +3,7 @@
   @apply flex items-start;
 
   .search-field {
-    @apply block appearance-none w-full py-2 px-2 mb-0 text-base leading-normal bg-red text-red border-none border-grey;
+    @apply block appearance-none w-full py-2 px-2 mb-0 text-base leading-normal bg-primary text-red border-none border-grey;
 
     transition: all 0.4s;
 
@@ -23,14 +23,14 @@
 }
 
 .search-form .search-submit {
-  @apply inline-block align-middle text-center select-none border-none font-normal whitespace-no-wrap py-2 px-4 text-sm leading-normal no-underline text-white bg-red uppercase;
+  @apply inline-block align-middle text-center select-none border-none font-normal whitespace-no-wrap py-2 px-4 text-sm leading-normal no-underline text-white bg-primary uppercase;
 
   font-family: benton-sans-compressed, sans-serif;
   transition: all 0.4s;
   height: 40px;
 
   &:hover {
-    @apply bg-white text-red;
+    @apply bg-white text-primary;
   }
 }
 
@@ -39,13 +39,18 @@
   input[type="text"],
   input[type="email"],
   input[type="number"],
-  input[type="tel"] {
+  input[type="tel"],
+  textarea {
     border: 1px solid black;
+    padding: 10px;
   }
 
   input[type="submit"] {
     background: $primary;
     padding: 15px 30px;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 500;
   }
 }
 
@@ -62,6 +67,7 @@
     input[type="number"],
     input[type="tel"] {
       border: 1px solid black;
+      transition: all 0.4s;
     }
 
     .fsCurrencyPrefix {

@@ -28,10 +28,10 @@ import { library, dom } from '@fortawesome/fontawesome-svg-core';
 
 import { faPhone , faEnvelope, faChevronRight, faSearch, faChevronUp, faChevronDown, faRoad, faSearchPlus, faMapMarker, faList, faArrowLeft, faTimes} from '@fortawesome/free-solid-svg-icons';
 // import the Facebook and Twitter icons
-import { faFacebookF, faTwitter, faInstagram } from '@fortawesome/free-brands-svg-icons';
+import { faFacebookF, faTwitter, faInstagram, faYoutube } from '@fortawesome/free-brands-svg-icons';
 
 // add the imported icons to the library
-library.add(faFacebookF, faTwitter, faInstagram, faPhone, faEnvelope, faChevronRight, faSearch, faChevronUp, faChevronDown, faRoad, faSearchPlus, faMapMarker, faList, faArrowLeft, faTimes);
+library.add(faFacebookF, faTwitter, faInstagram, faPhone, faYoutube, faEnvelope, faChevronRight, faSearch, faChevronUp, faChevronDown, faRoad, faSearchPlus, faMapMarker, faList, faArrowLeft, faTimes);
 
 // tell FontAwesome to watch the DOM and add the SVGs when it detects icon markup
 dom.watch();
