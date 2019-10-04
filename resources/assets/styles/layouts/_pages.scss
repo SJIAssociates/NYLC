@@ -19,6 +19,13 @@
   }
 }
 
+#contactSection {
+  .content-info {
+    border-bottom: none;
+    padding: 0;
+  }
+}
+
 .full-section {
   @apply py-8;
 
@@ -128,6 +135,7 @@
   text-align: center;
   margin: 0 auto;
 }
+
 //Responsive
 @screen md {
   .success-box {

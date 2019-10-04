@@ -45,12 +45,25 @@
     padding: 10px;
   }
 
+  label {
+    text-transform: uppercase;
+  }
+
   input[type="submit"] {
-    background: $primary;
+    background: $secondary;
+    border: 2px solid white;
     padding: 15px 30px;
     color: white;
     text-transform: uppercase;
     font-weight: 500;
+    transition: all 0.4s;
+
+    &:hover {
+      background: white;
+      color: $secondary;
+      border-color: $secondary;
+      cursor: pointer;
+    }
   }
 }
 
