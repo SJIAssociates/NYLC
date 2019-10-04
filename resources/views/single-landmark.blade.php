@@ -4,7 +4,7 @@
 
 @include('partials.page-header')
 <div class='text-center mx-auto'>
-  <?php echo get_the_term_list( $post->ID, 'Borough', '<span class="borough text-red font-bold uppercase inlin-block relative">', ', ', ', NY</span>' ) ?>
+  <?php echo get_the_term_list( $post->ID, 'Borough', '<span class="borough text-primary font-bold uppercase inlin-block relative">', ', ', ', NY</span>' ) ?>
 </div>
 <div class='container'>
   <div class="content">

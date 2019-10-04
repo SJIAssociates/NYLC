@@ -33,6 +33,11 @@
   height: 800px;
 }
 
+/* fixes potential theme css conflict */
+.acf-map img {
+  max-width: inherit !important;
+}
+
 .map-list-container {
   height: 800px;
   overflow-y: scroll;
@@ -68,11 +73,6 @@
   }
 }
 
-/* fixes potential theme css conflict */
-.acf-map img {
-  max-width: inherit !important;
-}
-
 .navigation .facetwp-page {
   padding: 15px 20px;
 }
@@ -85,4 +85,34 @@
 .facetwp-page.active {
   background: black;
   color: white;
+}
+
+.entry-content {
+  .content {
+    h2 {
+      position: relative;
+      color: black;
+
+      &::before {
+        position: relative;
+        background: none;
+      }
+    }
+  }
+
+  .ssba {
+    background: #efefef;
+    padding: 10px;
+
+    .ssba-share-text {
+      text-transform: uppercase;
+      color: black;
+      font-family: benton-sans-condensed, sans-serif;
+      font-weight: bold;
+    }
+
+    br {
+      display: none;
+    }
+  }
 }

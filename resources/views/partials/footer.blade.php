@@ -1,5 +1,5 @@
 <section class='full-section bg-red xl:py-24' id="supportHome">
-	<div class='container'>
+	<div class='px-8 mx-auto'>
 		<div class='text-center'><h2><span class='text-white'>Support Us</span></h2></div>
 		<div class='flex justify-center flex-wrap'>
   		  <div class='card w-full p-5 bg-white text-center my-5 lg:mx-5 lg:w-2/5 md:p-10'>

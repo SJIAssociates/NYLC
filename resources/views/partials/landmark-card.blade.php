@@ -13,7 +13,7 @@ Variables:
 --}}
 <div class='landmark-card'>
     <div class='bg-image' style="background: url( {!! $image !!} ); background-size:cover; background-position: center center;"></div>
-    <div class='card w-2/5 my-24 ml-32 p-10 xxl:px-20 xxl:py-16 xxl:my-48'>
+    <div class='card w-full lg:w-2/5 lg:my-24 lg:ml-32 p-10 xxl:px-20 xxl:py-16 xxl:my-48'>
       <h3 class='text-3xl xxl:text-4xl'>{!! $title !!}</h3>
       <p>{!! $excerpt !!}</p>
       <a href='{!! $permalink !!}' class='btn block mb-6'>Watch the Video</a>

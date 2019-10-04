@@ -30,7 +30,7 @@
 </section>
 
 @if( $sub_pages != false)
-<section class='sub_pages'>
+<section class='sub_pages full-section bg-blue-grey'>
   <div class='container'>
     <div class='flex flex-wrap'>
       @foreach($sub_pages as $item )

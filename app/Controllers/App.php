@@ -71,7 +71,7 @@ class App extends Controller
 
     public function breadcrumbs()
     {
-      $showOnHome = 0; // 1 - show breadcrumbs on the homepage, 0 - don't show
+      $showOnHome = 1; // 1 - show breadcrumbs on the homepage, 0 - don't show
       $delimiter = '&gt;</span>'; // delimiter between crumbs
       $home = 'Home'; // text for the 'Home' link
       $showCurrent = 1; // 1 - show current post/page title in breadcrumbs, 0 - don't show
@@ -93,8 +93,10 @@ class App extends Controller
       }elseif (is_post_type_archive() ) {
         $post_type = get_post_type_object(get_post_type());
         $archive_title = get_the_archive_title();
-          $output .= str_replace('Archives:','',$archive_title);
-
+        $output .= str_replace('Archives:','',$archive_title);
+      } elseif( is_home() ) {
+          $home = get_option('page_for_posts', true);
+          $output .= get_the_title($home);
       } elseif (is_single() && !is_attachment()) {
           if (is_singular('tribe_events')) {
             $post_type = get_post_type_object(get_post_type());

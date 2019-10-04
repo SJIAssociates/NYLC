@@ -16,6 +16,7 @@
   @if( !is_singular('tribe_events') )
   <section class='page-title py-5 xxl:py-10 text-center'>
     <h1 class='text-center text-black xxl:text-5xl xxl:w-1/2 mx-auto'>{!! App::title() !!}</h1>
+    @if(is_singular('staff') )<span class="text-primary font-bold block uppercase my-2"><?php the_staff_title(); ?></span> @endif
   </section>
   @endif
 @endif
