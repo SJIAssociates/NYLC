@@ -67,7 +67,7 @@
 
   .brand {
     img {
-      max-width: 150px;
+      width: 150px;
       margin: 10px 0;
     }
   }
@@ -80,6 +80,7 @@
     font-weight: bold;
     font-size: 14px;
     margin-top: 0;
+    border-color: $primary;
   }
 
   .nav .sub-menu .current_page_item a {
@@ -181,8 +182,8 @@
 
 @screen xl {
   .banner {
-    .brand {
-      max-width: 200px;
+    .brand img {
+      width: 200px;
     }
 
     .nav {
