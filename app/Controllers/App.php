@@ -60,6 +60,8 @@ class App extends Controller
       }elseif(is_post_type_archive('landmark') ) {
         $exploreImg = get_field('explore_image', 'options');
         $img = $exploreImg['url'];
+      }elseif(is_singular('staff')){
+        $img = get_the_post_thumbnail_url() ?: \App\asset_path('images/profile-placeholder.jpg');
       }else {
         $img = get_the_post_thumbnail_url() ?? FALSE;
       }
@@ -88,6 +90,11 @@ class App extends Controller
           $output .= $before . 'Archive by category "' . single_cat_title('', false) . '"' . $after;
       } elseif (is_search()) {
           $output .= $before . 'Search results for "' . get_search_query() . '"' . $after;
+      }elseif (is_post_type_archive() ) {
+        $post_type = get_post_type_object(get_post_type());
+        $archive_title = get_the_archive_title();
+          $output .= str_replace('Archives:','',$archive_title);
+
       } elseif (is_single() && !is_attachment()) {
           if (is_singular('tribe_events')) {
             $post_type = get_post_type_object(get_post_type());
