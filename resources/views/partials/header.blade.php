@@ -1,5 +1,5 @@
-<header class="banner bg-red">
-  <div class="px-8 xl:w-11/12 mx-auto">
+<header class="banner bg-primary">
+  <div class="px-8 mx-auto">
     <div class='flex items-start'>
       <div class='w-full lg:w-3/4 flex row items-center'>
           <a class="brand" href="{{ home_url('/') }}">

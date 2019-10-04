@@ -51,7 +51,7 @@
 }
 
 #supportHome {
-  @apply bg-red;
+  @apply bg-primary;
 
   h2 {
     margin-bottom: 50px;
@@ -68,7 +68,7 @@
   }
 
   h2 span {
-    @apply bg-red;
+    @apply bg-primary;
   }
 }
 
