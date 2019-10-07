@@ -16,10 +16,11 @@ add_action('wp_enqueue_scripts', function () {
     wp_enqueue_style( 'AdobeBenton' ,'https://use.typekit.net/nwk0uyd.css',false, null);
 
     wp_enqueue_script('sage/main.js', asset_path('scripts/main.js'), ['jquery'], null, true);
-    wp_enqueue_script('sage/explorer.js', asset_path('scripts/explorer.js'), ['jquery'], '1.0.0', true);
-    wp_enqueue_script( 'google-api', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyDVIoaRu1IQ3d-3REFNb9IhYFhUagwWlpw', null, null, true); // Add in your key
-
-
+    
+    if( is_post_type_archive('landmark') ) {
+      wp_enqueue_script('sage/explorer.js', asset_path('scripts/explorer.js'), ['jquery'], '1.0.0', true);
+      wp_enqueue_script( 'google-api', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyDVIoaRu1IQ3d-3REFNb9IhYFhUagwWlpw', null, null, true); // Add in your key
+    }
 
     if (is_single() && comments_open() && get_option('thread_comments')) {
         wp_enqueue_script('comment-reply');
