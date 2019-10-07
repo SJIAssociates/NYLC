@@ -27,7 +27,7 @@
   }
 
   a {
-    @apply text-black;
+    @apply text-black font-bold;
 
     &:hover {
       @apply text-primary;

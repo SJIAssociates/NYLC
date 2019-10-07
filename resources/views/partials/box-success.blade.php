@@ -11,7 +11,7 @@
           </div>
         </div>
         <div class='box-image w-full md:w-1/2'>
-          <img src="{!! $thumbnail !!}">
+          <a href="{!! $permalink !!}"><img src="{!! $thumbnail !!}"></a>
         </div>
       </div>
     </div>
