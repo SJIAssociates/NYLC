@@ -4,8 +4,54 @@
   }
 }
 
+.carousel-container {
+  position: relative;
+  top: 0;
+  left: 0%;
+  margin: 0;
+  width: 100%;
+}
+
+.carousel-container img {
+  position: absolute;
+  top: 0;
+  -webkit-animation-name: fade;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-duration: 18s;
+  animation-name: fade;
+  animation-iteration-count: infinite;
+  animation-duration: 18s;
+}
+
+@-webkit-keyframes fade {
+  0% { opacity: 0; }
+  20% { opacity: 1; }
+  33% { opacity: 1; }
+  53% { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+@keyframes fade {
+  0% { opacity: 0; }
+  20% { opacity: 1; }
+  33% { opacity: 1; }
+  53% { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+#f1 {
+  -webkit-animation-delay: -6s;
+  animation-delay: -6s;
+}
+
+#f2 {
+  -webkit-animation-delay: -12s;
+  animation-delay: -12s;
+}
+
 #homeLanding {
   min-height: 400px;
+  overflow: hidden;
 
   @screen xl {
     min-height: 80vh;

@@ -6,12 +6,14 @@ use Sober\Controller\Controller;
 
 class FrontPage extends Controller
 {
-  public function newsLoop(){
+  public function newsLoop()
+  {
 
     $news_loop = get_posts([
       'post_type' => 'post',
       'posts_per_page' => 3
     ]);
+
 
    return array_map(function ($post) {
         return [
@@ -24,16 +26,20 @@ class FrontPage extends Controller
     }, $news_loop);
   }
 
-  public function featuredSuccess() {
-  $featured_story = get_field('featured_success_story',false, false);
+  public function featuredSuccess()
+  {
 
-      return (object) array(
-        'title'   =>   get_the_title($featured_story),
-        'link'    =>   get_the_permalink( $featured_story),
-        'image'   =>   get_the_post_thumbnail_url( $featured_story),
-      );
-}
-  public function landmark(){
+    $featured_story = get_field('featured_success_story',false, false);
+
+    return (object) array(
+      'title'   =>   get_the_title($featured_story),
+      'link'    =>   get_the_permalink( $featured_story),
+      'image'   =>   get_the_post_thumbnail_url( $featured_story),
+    );
+  }
+
+  public function landmark()
+  {
 
     $newest_landmark = get_posts([
       'post_type'       => 'landmark',
@@ -48,6 +54,21 @@ class FrontPage extends Controller
           'image' => get_the_post_thumbnail_url($post->ID),
       ];
     }, $newest_landmark);
+  }
+
+  public function carouselImages(){
+
+    $carousel = get_field('image_carousel');
+
+    //Maybe do something with a limit here
+    return array_map(function ($item) {
+        return [
+            'url' => $item[image]['url'],
+            'alt' => $item[image]['alt'],
+            'master'  => $item[image]
+        ];
+    }, $carousel ?? [] );
+
   }
   use Partials\ServiceBoxes;
 
