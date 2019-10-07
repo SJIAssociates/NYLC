@@ -78,13 +78,16 @@
 }
 
 .facetwp-page:hover {
-  background: black;
-  color: white;
+  background: white;
+  color: black;
+  border: 1px solid white;
+  border-bottom: 1px solid black;
 }
 
 .facetwp-page.active {
   background: black;
   color: white;
+  border: 1px solid black;
 }
 
 .entry-content {

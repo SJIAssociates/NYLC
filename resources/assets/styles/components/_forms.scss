@@ -2,13 +2,17 @@
 .search-form {
   @apply flex items-start;
 
+  &:focus,
+  &:hover {
+    @apply bg-white text-grey-dark;
+  }
+
   .search-field {
-    @apply block appearance-none w-full py-2 px-2 mb-0 text-base leading-normal bg-primary text-red border-none border-grey;
+    @apply block appearance-none w-full py-2 px-2 mb-0 text-base leading-normal bg-primary text-primary border-none border-grey;
 
     transition: all 0.4s;
 
-    &:hover,
-    &:focus {
+    &:hover {
       @apply bg-white text-grey-dark;
     }
   }
@@ -41,7 +45,7 @@
   input[type="number"],
   input[type="tel"],
   textarea {
-    border: 1px solid black;
+    border: 1px solid black !important;
     padding: 10px;
   }
 
@@ -74,7 +78,15 @@
     color: black;
   }
 
+  .fsSubmit .fsSubmitButton {
+    background: $primary;
+    padding: 15px 30px;
+    text-transform: uppercase;
+  }
+
   .fsFieldRow {
+    transition: all 0.4s;
+
     input[type="text"],
     input[type="email"],
     input[type="number"],
@@ -94,18 +106,12 @@
 
       + .fsFormatNumber {
         height: 50px;
-        border-left: 0 solid;
+        border-left: none !important;
         width: 100px !important;
         font-weight: bold;
         font-size: 1.25em;
         color: green;
       }
-    }
-
-    .fsSubmitButton {
-      background: $primary;
-      padding: 15px 30px;
-      text-transform: uppercase;
     }
   }
 }
@@ -119,6 +125,12 @@
 
     h1 + span {
       max-width: 466px;
+    }
+  }
+
+  .main {
+    h2 {
+      font-size: 2em;
     }
   }
 }
