@@ -6,20 +6,25 @@ use Sober\Controller\Controller;
 
 class TemplateStaff extends Controller
 {
-  public function StaffList(){
+  public function boardList(){
 
-    // Get Repeater
-    $pressRepeater = get_field('staff_repeater');
 
-   return array_map(function ($item) {
+    return (object) array(
+      'leaders'   =>  get_field('board_leaders'),
+      'col1'      =>  get_field('board_members_column_1'),
+      'col2'      =>  get_field('board_members_column_2'),
+      'col3'      =>  get_field('board_members_column_3')
+    );
+  }
 
-        return [
-            'name'         => $item['name']  ?? null,
-            'description'  => $item['description']  ?? null,
-            'image'        => $item['image']['url']  ?? \App\asset_path('images/profile-placeholder.jpg'),
-            'email'        => $item['email'] ?? null,
-            'title'        => $item['title']  ?? null,
-        ];
-    }, $pressRepeater ?? [] );
+  public function advisorList(){
+
+
+    return (object) array(
+      'col1'      =>  get_field('advisor_members_column_1'),
+      'col2'      =>  get_field('advisor_members_column_2'),
+      'col3'      =>  get_field('advisor_members_column_3'),
+      'col4'      =>  get_field('advisor_members_column_4')
+    );
   }
 }
