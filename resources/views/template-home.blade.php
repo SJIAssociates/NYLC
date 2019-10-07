@@ -8,7 +8,7 @@
 <section class='full-section flex items-center justify-center relative' id='homeLanding'>
   <div class='carousel-container absolute'>
     @foreach($carousel_images as $image)
-      <img src='{!! $image["url"] !!}' alt='{!! $image["alt"] !!}' class='w-full absolute' id='f{!! $loop->index !!}'>
+      <div style="background: url({!! $image['url'] !!}); background-size: cover; background-position: 50% 50%;"  class='w-full carouselImg' id='f{!! $loop->index !!}'></div>
     @endforeach
 
   </div>

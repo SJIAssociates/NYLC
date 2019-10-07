@@ -63,9 +63,7 @@ class FrontPage extends Controller
     //Maybe do something with a limit here
     return array_map(function ($item) {
         return [
-            'url' => $item[image]['url'],
-            'alt' => $item[image]['alt'],
-            'master'  => $item[image]
+            'url' => $item['image']['url'],
         ];
     }, $carousel ?? [] );
 
