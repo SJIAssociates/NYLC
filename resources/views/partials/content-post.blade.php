@@ -5,6 +5,8 @@
           <h3 class='mb-5 text-2xl mb-0 xxl:text-3xl'>
             <a href="{!! get_the_permalink(); !!}" class='text-black hover:text-red'>{!! the_title();  !!}</a>
           </h3>
+          <time class="updated font-bold mb-1" datetime="{{ get_post_time('c', true) }}">{{ get_the_date() }}</time>
+
           <span class='categories block mb-3'>
           @php
 
@@ -17,6 +19,7 @@
             }
             @endphp
           </span>
+
           <div class='flex-grow'>
           {!! the_excerpt(); !!}
         </div>
