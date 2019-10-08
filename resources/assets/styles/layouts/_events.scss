@@ -28,3 +28,57 @@
     font-size: 16px;
   }
 }
+
+#tribe-bar-form {
+  background: none;
+
+  .tribe-bar-submit {
+    margin-left: 0;
+  }
+
+  .tribe-bar-search-filter {
+    width: 50%;
+  }
+
+  .tribe-bar-submit input[type="submit"] {
+    background: $primary;
+    color: white;
+    padding: 10px;
+    margin-top: 17px;
+  }
+
+  #tribe-bar-date,
+  #tribe-bar-search {
+    border: 1px solid black;
+    padding: 15px 10px;
+  }
+}
+
+//Month Header
+.tribe-events-list-separator-month {
+  text-align: center;
+  font-size: 50px;
+  background: none;
+  position: relative;
+  color: $primary;
+
+  &::before {
+    position: absolute;
+    top: 50%;
+    left: -30px;
+    right: -30px;
+    content: " ";
+    height: 3px;
+    background: $primary;
+    z-index: 10;
+    margin: 0 auto;
+    width: 50%;
+  }
+
+  span {
+    background: white;
+    position: relative;
+    z-index: 1000;
+    padding: 10px;
+  }
+}
