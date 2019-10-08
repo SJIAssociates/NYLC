@@ -7,7 +7,7 @@
             <p>{!! $excerpt !!}</p>
           </div>
           <div>
-            <a href="{!! $permalink !!}" class='btn bg-red text-white inline-block hover:no-underline'>Read The Story</a><br>
+            <a href="{!! $permalink !!}" class='btn bg-red text-white inline-block hover:no-underline'>Learn More</a><br>
           </div>
         </div>
         <div class='box-image w-full md:w-1/2'>
@@ -15,5 +15,4 @@
         </div>
       </div>
     </div>
-
 </div>
