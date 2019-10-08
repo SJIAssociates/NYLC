@@ -126,6 +126,12 @@
     @apply bg-grey-lightest;
 
     width: 100%;
+
+    .categories a {
+      @apply text-black;
+
+      font-weight: bold;
+    }
   }
 }
 
