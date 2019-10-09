@@ -26,20 +26,6 @@
     padding: 10px 5px;
   }
 
-  a {
-    @apply text-black font-bold;
-
-    &:hover {
-      @apply text-primary;
-    }
-  }
-
-  .widget_ssba_widget {
-    h3 {
-      text-align: center;
-    }
-  }
-
   .ssba a {
     display: block;
     text-align: center;
@@ -47,6 +33,14 @@
 
   .widget {
     margin-bottom: 25px;
+  }
+
+  .widget a {
+    @apply text-black font-bold;
+
+    &:hover {
+      @apply text-primary;
+    }
   }
 
   .tribe-venue {
