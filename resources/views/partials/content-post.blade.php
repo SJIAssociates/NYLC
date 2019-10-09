@@ -2,10 +2,10 @@
   <div class='news-card w-full bg-white mb-5 lg:mb-10 items-stretch relative p-12 lg:p-16 xxl:p-20'>
     <div class='flex flex-wrap'>
         <div class='box-content w-full md:w-1/2 flex flex-wrap flex-col md:pr-8'>
-          <h3 class='mb-5 text-2xl mb-0 xxl:text-3xl'>
+          <h3 class='text-2xl mb-1 xxl:text-3xl'>
             <a href="{!! get_the_permalink(); !!}" class='text-black hover:text-red'>{!! the_title();  !!}</a>
           </h3>
-          <time class="updated font-bold mb-1" datetime="{{ get_post_time('c', true) }}">{{ get_the_date() }}</time>
+          <time class="updated font-bold mb-5" datetime="{{ get_post_time('c', true) }}"><i class="fas fa-clock"></i> {{ get_the_date() }}</time>
 
           <span class='categories block mb-3'>
           @php
