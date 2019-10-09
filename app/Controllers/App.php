@@ -164,12 +164,15 @@ class App extends Controller
       if( !is_404() ):
 
         $sidebarRepeater = get_field('sidebar_content');
-        if( isset($sidebarRepeater) ) {
+
+        if( $sidebarRepeater ) {
 
             return array_map(function ($item) {
                 return [
                     'title'       => $item['title'],
-                    'content' => $item['content'],
+                    'content'     => $item['content'],
+                    'cta_text'    => $item['cta_text'],
+                    'cta_link'    => $item['cta_link'],
                 ];
             }, $sidebarRepeater ?? [] );
 
@@ -183,7 +186,7 @@ class App extends Controller
     {
       $pages = get_field('grants');
 
-      if(isset($pages) ){
+      if( isset($pages) ){
 
         return array_map(function ($item) {
             return [

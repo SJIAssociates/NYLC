@@ -643,7 +643,7 @@ acf_add_local_field_group(array(
 			'collapsed' => '',
 			'min' => 0,
 			'max' => 0,
-			'layout' => 'table',
+			'layout' => 'block',
 			'button_label' => '',
 			'sub_fields' => array(
 				array(
@@ -655,7 +655,7 @@ acf_add_local_field_group(array(
 					'required' => 0,
 					'conditional_logic' => 0,
 					'wrapper' => array(
-						'width' => '',
+						'width' => '33%',
 						'class' => '',
 						'id' => '',
 					),
@@ -666,6 +666,29 @@ acf_add_local_field_group(array(
 					'maxlength' => '',
 				),
 				array(
+					'key' => 'field_5d7998c00c7bc',
+					'label' => 'Button Text',
+					'name' => 'cta_text',
+					'instructions' => 'Text that appears in the button. The Button will be placed below the content.',
+					'type' => 'text',
+					'wrapper' => array(
+						'width' => '33%',
+						'class' => '',
+						'id' => '',
+					),
+				),
+				array(
+					'key' => 'field_5d7998c00c7bd',
+					'label' => 'Button Link',
+					'name' => 'cta_link',
+					'type' => 'page_link',
+					'wrapper' => array(
+						'width' => '33%',
+						'class' => '',
+						'id' => '',
+					),
+				),
+				array(
 					'key' => 'field_5d7998c00c7b3',
 					'label' => 'Content',
 					'name' => 'content',
@@ -674,7 +697,7 @@ acf_add_local_field_group(array(
 					'required' => 0,
 					'conditional_logic' => 0,
 					'wrapper' => array(
-						'width' => '',
+						'width' => '100%',
 						'class' => '',
 						'id' => '',
 					),
