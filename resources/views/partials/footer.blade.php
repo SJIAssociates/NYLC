@@ -32,10 +32,10 @@
 			@php dynamic_sidebar('sidebar-footer') @endphp
 			<p>Have a preservation question? <a href="">Email our experts.</a></p>
 			<p class='text-grey-500 social-links'>Follow Us:
-				<a href="{{ $social->twitter }}" target="_blank" title="twitter" class="text-grey-darkest hover:text-primary hover:no-underline"><i class="fab fa-twitter"></i></a>
-				<a href="{{ $social->facebook }}" target="_blank" title="facebook" class="text-grey-darkest hover:text-primary hover:no-underline"><i class="fab fa-facebook-f"></i></a>
-				<a href="{{ $social->youtube }}" target="_blank" title="youtube" class="text-grey-darkest hover:text-primary hover:no-underline"><i class="fab fa-youtube"></i></a>
-				<a href="{{ $social->instagram }}" target="_blank" title="instagram" class="text-grey-darkest hover:text-primary hover:no-underline"><i class="fab fa-instagram"></i></a>
+				<a href="{{ $social->twitter }}" 		target="_blank" title="twitter" class="text-grey-darkest hover:text-primary hover:no-underline"  rel='noopener'><i class="fab fa-twitter"></i></a>
+				<a href="{{ $social->facebook }}" 	target="_blank" title="facebook" class="text-grey-darkest hover:text-primary hover:no-underline" rel='noopener'><i class="fab fa-facebook-f"></i></a>
+				<a href="{{ $social->youtube }}" 		target="_blank" title="youtube" class="text-grey-darkest hover:text-primary hover:no-underline"	 rel='noopener'><i class="fab fa-youtube"></i></a>
+				<a href="{{ $social->instagram }}" 	target="_blank" title="instagram" class="text-grey-darkest hover:text-primary hover:no-underline" rel='noopener'><i class="fab fa-instagram"></i></a>
 			</p>
 		</div>
 		<div class='w-full md:w-2/3'>
@@ -48,7 +48,7 @@
   <div class='container'>
 	  <div class='flex flex-wrap'>
 			<div class='w-full'>
-				<a href="#" class='btn border border-black'>Trustee Login</a>
+				<a href="/trustee" class='btn border border-black'>Trustee Login</a>
 			</div>
 		  <div class='md:w-1/2 copyright'>
 			  <p class='text-sm'>&copy; @php echo date("Y") @endphp {{ get_bloginfo('name', 'display') }}. All Rights Reserved.</p>
