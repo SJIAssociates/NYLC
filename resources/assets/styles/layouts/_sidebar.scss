@@ -33,13 +33,17 @@
 
   .widget {
     margin-bottom: 25px;
-  }
 
-  .widget a {
-    @apply text-black font-bold;
+    a {
+      @apply text-black font-bold;
 
-    &:hover {
-      @apply text-primary;
+      &:hover {
+        @apply text-primary;
+      }
+    }
+
+    .current-cat a {
+      color: $primary;
     }
   }
 
