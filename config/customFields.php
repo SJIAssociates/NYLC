@@ -735,4 +735,45 @@ acf_add_local_field_group(array(
 		'active' => true,
 		'description' => '',
 	));
+
+	/*
+	Name: Page::Sidebar
+	Fields: Repeater
+	Location: Default Pages | Forms Pages
+	*/
+	acf_add_local_field_group(array(
+		'key' => 'group_eventticket',
+		'title' => 'Tickets',
+		'fields' => array(
+			array(
+				'key' => 'field_5d79985c0c7z1',
+				'label' => 'Ticket Link',
+				'name' => 'ticket Link',
+				'type' => 'url',
+				'instructions' => 'Copy/Paste the Event Brite or other Webpage URL below',
+				'required' => 0,
+				'conditional_logic' => 0,
+			),
+		),
+		'location' => array(
+				array(
+					array(
+						'param' => 'post_type',
+						'operator' => '==',
+						'value' => 'tribe_events',
+					),
+				),
+			),
+			'menu_order' => 0,
+			'position' => 'side',
+			'style' => 'default',
+			'label_placement' => 'top',
+			'instruction_placement' => 'label',
+			'hide_on_screen' => '',
+			'active' => true,
+			'description' => '',
+		));
+
+
+
 endif;
