@@ -34,7 +34,7 @@
       @include('partials/box-success', $item)
     @endforeach
 
-    <a href="/success_stories" class='archive-link underline text-black mx-auto block w-1/2 text-center uppercase font-bold hover:text-primary'>View all Success Stories <i class='fa fa-chevron-right'></i></a>
+    <a href="/what-we-do/success-stories/" class='archive-link underline text-black mx-auto block w-1/2 text-center uppercase font-bold hover:text-primary'>View all Success Stories <i class='fa fa-chevron-right'></i></a>
   </div>
 </section>
 
