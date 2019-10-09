@@ -3,23 +3,29 @@
 @section('content')
 
 @include('partials.page-header')
-<section class='full-section main-content'>
+<section class='main-content'>
   <div class='container'>
-    <div class="content flex">
+    <div class="content flex flex-wrap">
       @if( $page_sidebar != false)
-      <aside class='sidebar py-8 lg:w-1/3 xxl:py-12 pr-10'>
+      <aside class='sidebar w-full py-8 lg:w-1/3 xxl:py-12 pr-10 xxl:pr-24'>
         @foreach($page_sidebar as $item )
-          <div class='grant-sidebar widget'>
+          <div class='grant-sidebar'>
             <h3>{!! $item['title'] !!}</h3>
             {!! $item['content'] !!}
+
+            @if( !empty($item['cta_text']) )
+              <a href="{!! $item['cta_text'] !!}" class='btn text-white inline-block text-sm'>{!! $item['cta_text'] !!}</a>
+            @endif
+
+
           </div>
         @endforeach
       </aside>
       @endif
-      @if( $page_sidebar != false)
-        <main class="main py-8 xl:w-2/3 xxl:py-12 xxl:mx-auto">
+      @if( $page_sidebar == false)
+        <main class="main w-full py-8 lg:w-2/3 xxl:py-12 xxl:mx-auto">
       @else
-        <main class="main py-8 lg:w-2/3 xxl:py-12 ">
+        <main class="main w-full py-8 lg:w-2/3 xxl:py-12 ">
       @endif
         @while(have_posts()) @php the_post() @endphp
           @include('partials.content-page')
