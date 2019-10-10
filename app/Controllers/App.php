@@ -83,32 +83,44 @@ class App extends Controller
       $output = '<div id="crumbs" class="py-3"><a href="' . $homeLink . '" class="underline text-black home-crumb">' . $home . '</a> <span class="delimiter home-delimiter">' . $delimiter . ' ';
 
       if (is_category()) {
+
           $thisCat = get_category(get_query_var('cat'), false);
           if ($thisCat->parent != 0) {
               $output .= get_category_parents($thisCat->parent, true, ' <span class="delimiter">' . $delimiter . ' ');
           }
           $output .= $before . 'Archive by category "' . single_cat_title('', false) . '"' . $after;
+
       } elseif (is_search()) {
+
           $output .= $before . 'Search results for "' . get_search_query() . '"' . $after;
+
       }elseif (is_post_type_archive() ) {
+
         $post_type = get_post_type_object(get_post_type());
         $archive_title = get_the_archive_title();
         $output .= str_replace('Archives:','',$archive_title);
+
       } elseif( is_home() ) {
+
           $home = get_option('page_for_posts', true);
           $output .= get_the_title($home);
+
       } elseif (is_single() && !is_attachment()) {
+
           if (is_singular('tribe_events')) {
             $post_type = get_post_type_object(get_post_type());
             $output .= '<a href="/events/" class="text-black underline">Events</a>';
           }
+
           elseif (get_post_type() != 'post') {
+            
               $post_type = get_post_type_object(get_post_type());
               $slug = $post_type->rewrite;
               $output .= '<a href="' . $homeLink . '/' . $slug['slug'] . '/" class="text-black underline">' . $post_type->labels->singular_name . '</a>';
               if ($showCurrent == 1) {
                   $output .= ' ' . $delimiter . ' ' . $before . get_the_title() . $after;
               }
+
           } else {
               $cat = get_the_category();
               $cat = $cat[0];
