@@ -28,12 +28,71 @@
   height: 100%;
 }
 
+.entry-content {
+  .content {
+    h2 {
+      position: relative;
+      color: black;
+
+      &::before {
+        position: relative;
+        background: none;
+      }
+    }
+  }
+
+  .ssba {
+    background: #efefef;
+    padding: 10px;
+
+    .ssba-share-text {
+      text-transform: uppercase;
+      color: black;
+      font-family: benton-sans-condensed, sans-serif;
+      font-weight: bold;
+    }
+
+    br {
+      display: none;
+    }
+  }
+}
+
+.post-password-form {
+  padding: 25px;
+  border-radius: 3px;
+  background: #efefef;
+  border: 1px solid #eee;
+  margin: 30px auto;
+  max-width: 500px;
+
+  input[type="password"] {
+    padding: 10px;
+  }
+
+  input[type="submit"] {
+    color: white;
+    padding: 10px 25px;
+    text-transform: uppercase;
+    background: $primary;
+    border: 2px solid;
+    transition: all 0.4s;
+
+    &:hover {
+      cursor: pointer;
+      background: white;
+      color: $primary;
+      border: 2px solid $primary;
+    }
+  }
+}
+
+/* Explore NY */
 .acf-map {
   width: 100%;
   height: 800px;
 }
 
-/* fixes potential theme css conflict */
 .acf-map img {
   max-width: inherit !important;
 }
@@ -88,34 +147,4 @@
   background: black;
   color: white;
   border: 1px solid black;
-}
-
-.entry-content {
-  .content {
-    h2 {
-      position: relative;
-      color: black;
-
-      &::before {
-        position: relative;
-        background: none;
-      }
-    }
-  }
-
-  .ssba {
-    background: #efefef;
-    padding: 10px;
-
-    .ssba-share-text {
-      text-transform: uppercase;
-      color: black;
-      font-family: benton-sans-condensed, sans-serif;
-      font-weight: bold;
-    }
-
-    br {
-      display: none;
-    }
-  }
 }

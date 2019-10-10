@@ -6,7 +6,7 @@
     <div class="content">
       <div class='flex'>
       @if(App\display_sidebar())
-        <aside class="sidebar py-8 xl:w-1/4 pr-5 xxl:py-12">
+        <aside class="sidebar py-8 xl:w-1/4 pr-5 xxl:py-12 xxl:pr-24">
           @include('partials.sidebar')
         </aside>
       @endif

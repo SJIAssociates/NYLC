@@ -7,7 +7,7 @@
   <div class='container'>
     <div class="content flex flex-wrap">
       @if( $page_sidebar != false)
-      <aside class='sidebar w-full lg:w-1/3 pr-8 xxl:py-12 xxl:pr-40'>
+      <aside class='sidebar w-full lg:w-1/3 pr-8 xxl:py-12 xxl:pr-24'>
         @foreach($page_sidebar as $item )
           <div class='grant-sidebar'>
             <h3>{!! $item['title'] !!}</h3>
