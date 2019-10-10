@@ -113,7 +113,7 @@ class App extends Controller
           }
 
           elseif (get_post_type() != 'post') {
-            
+
               $post_type = get_post_type_object(get_post_type());
               $slug = $post_type->rewrite;
               $output .= '<a href="' . $homeLink . '/' . $slug['slug'] . '/" class="text-black underline">' . $post_type->labels->singular_name . '</a>';
@@ -207,7 +207,7 @@ class App extends Controller
                 'permalink'   => get_the_permalink($item->ID),
                 'thumbnail'   => get_the_post_thumbnail_url( $item->ID, 'news_thumb')
             ];
-        }, $pages ?? [] );
+        }, $pages);
 
       } else {
         return false;

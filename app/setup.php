@@ -16,7 +16,7 @@ add_action('wp_enqueue_scripts', function () {
     wp_enqueue_style( 'AdobeBenton' ,'https://use.typekit.net/nwk0uyd.css',false, null);
 
     wp_enqueue_script('sage/main.js', asset_path('scripts/main.js'), ['jquery'], null, true);
-    
+
     if( is_post_type_archive('landmark') ) {
       wp_enqueue_script('sage/explorer.js', asset_path('scripts/explorer.js'), ['jquery'], '1.0.0', true);
       wp_enqueue_script( 'google-api', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyDVIoaRu1IQ3d-3REFNb9IhYFhUagwWlpw', null, null, true); // Add in your key
@@ -308,3 +308,33 @@ function news_thumbnail() {
   add_image_size( 'news_thumb', 600, 400, array( 'center', 'cetner' ) );
 }
 add_action('init', __NAMESPACE__ .'\\news_thumbnail');
+
+// -------------------------------------------------------------
+// Fix Titles for Archives
+// -------------------------------------------------------------
+add_filter( 'get_the_archive_title', function ($title) {
+
+    if ( is_category() ) {
+
+            $title = single_cat_title( '', false );
+
+        } elseif ( is_tag() ) {
+
+            $title = single_tag_title( '', false );
+
+        } elseif ( is_author() ) {
+
+            $title = '<span class="vcard">' . get_the_author() . '</span>' ;
+
+        }
+
+    return $title;
+
+});
+// -------------------------------------------------------------
+// Trustee Portal Automatically Logs out
+// -------------------------------------------------------------
+function custom_password_cookie_expiry( $expires ) {
+    return time() + 3600;  // 3600 seconds is 1 hour. (60 Minutes * 60 seconds)
+}
+add_filter( 'post_password_expires', __NAMESPACE__  .'\\custom_password_cookie_expiry' );
