@@ -37,6 +37,7 @@ the_title( '<h1 class="text-center text-black xxl:text-5xl py-5 xxl:py-10">', '<
     ?>
   </aside>
   <div class="tribe-events-single main py-8 lg:w-2/3 xxl:py-12">
+		<?php the_post_thumbnail(); ?>
     <h2 class='bold text-black text-2xl xxl:text-4xl mb-2'>About the Event</h2>
   	<!-- Notices -->
   	<?php tribe_the_notices() ?>

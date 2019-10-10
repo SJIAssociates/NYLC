@@ -1,3 +1,4 @@
+
 <?php
 /**
  * Single Event Meta (Details) Template
@@ -123,8 +124,14 @@ $website = tribe_get_event_website_link();
 
 			<dt class="tribe-events-event-cost-label"> <?php esc_html_e( 'Cost', 'the-events-calendar' ) ?> </dt>
 			<dd class="tribe-events-event-cost"> <?php esc_html_e( $cost ); ?> </dd>
+			<br />
 		<?php endif ?>
+		<?php
 
+		$ticketLink = get_field('ticket_link');
+		if( ! empty($ticketLink)):
+			echo '<a href="' . $ticketLink . '" class="btn text-white block text-center w-full mb-5" taget="_blank" rel="noopener" >Tickets</a>';
+		endif; ?>
 		<?php
 		echo tribe_get_event_categories(
 			get_the_id(), array(

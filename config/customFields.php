@@ -14,6 +14,8 @@ Page: Sidebar
 Page: News
 
 Archive: Header Image
+
+Event: Tickets
 */
 if( function_exists('acf_add_local_field_group') ):
 	/*
@@ -748,7 +750,7 @@ acf_add_local_field_group(array(
 			array(
 				'key' => 'field_5d79985c0c7z1',
 				'label' => 'Ticket Link',
-				'name' => 'ticket Link',
+				'name' => 'ticket_link',
 				'type' => 'url',
 				'instructions' => 'Copy/Paste the Event Brite or other Webpage URL below',
 				'required' => 0,
