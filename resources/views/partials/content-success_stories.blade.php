@@ -8,7 +8,7 @@
           </div>
         </div>
         <div class='box-image w-full md:w-1/2'>
-          <img src="{!! get_the_post_thumbnail_url() !!}">
+          <img src="{!! get_the_post_thumbnail_url() !!}" alt='{!! $title !!}'>
         </div>
       </div>
     </div>

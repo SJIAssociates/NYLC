@@ -18,7 +18,8 @@ class TemplateWhat extends Controller
          return [
            'title'       => get_the_title( $post->ID ),
            'permalink'   => get_permalink( $post->ID ),
-           'image'       => get_the_post_thumbnail($post->ID, 'large'),
+           'excerpt'     => '',
+           'thumbnail'   => get_the_post_thumbnail_url($post->ID, 'large'),
          ];
      }, $latest_success);
   }

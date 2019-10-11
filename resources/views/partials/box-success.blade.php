@@ -11,7 +11,7 @@
           </div>
         </div>
         <div class='box-image   w-full lg:w-1/2'>
-          <a href="{!! $permalink !!}"><img src="{!! $thumbnail !!}"></a>
+          <a href="{!! $permalink !!}"><img src="{!! $thumbnail !!}" alt='{!! $title !!}'></a>
         </div>
       </div>
     </div>

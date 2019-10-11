@@ -51,7 +51,7 @@
               <div class="">
                 <a href="{!! $featured_success->link !!}" class='btn bg-red text-white inline-block mb-12 hover:no-underline'>Read The Story</a><br>
               </div>
-              <a href="/what-we-do/success-story" class='archive-link hover:no-underline hover:no-border'>View All Success Stories <i class="fas fa-chevron-right"></i></a>
+              <a href="/what-we-do/success-stories" class='archive-link hover:no-underline hover:no-border'>View All Success Stories <i class="fas fa-chevron-right"></i></a>
             </div>
             <div class='box-image w-full md:w-1/2'>
               <img src="{!! $featured_success->image !!}" alt="{!! $featured_success->title !!}">
