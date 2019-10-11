@@ -115,8 +115,10 @@ class App extends Controller
           elseif (get_post_type() != 'post') {
 
               $post_type = get_post_type_object(get_post_type());
+              $archive_link = get_post_type_archive_link($post_type->name);
               $slug = $post_type->rewrite;
-              $output .= '<a href="' . $homeLink . '/' . $slug['slug'] . '/" class="text-black underline">' . $post_type->labels->singular_name . '</a>';
+
+              $output .= '<a href="' . $archive_link . '/" class="text-black underline">' . $post_type->labels->singular_name . '</a>';
               if ($showCurrent == 1) {
                   $output .= ' ' . $delimiter . ' ' . $before . get_the_title() . $after;
               }
