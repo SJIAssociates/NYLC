@@ -110,9 +110,23 @@ class App extends Controller
           if (is_singular('tribe_events')) {
             $post_type = get_post_type_object(get_post_type());
             $output .= '<a href="/events/" class="text-black underline">Events</a>';
-          }
 
-          elseif (get_post_type() != 'post') {
+          } elseif (is_singular('success_stories')) {
+
+            $output .= '<a href="/what-we-do/" class="text-black underline">What We Do</a>';
+            $output .= ' ' . $delimiter . ' ';
+              $output .= '<a href="/what-we-do/success-stories/" class="text-black underline">Success Stories</a>';
+            $output .= ' ' . $delimiter . ' ';
+            $output .= $before . get_the_title() . $after;
+
+          } elseif (is_singular('staff')) {
+
+            $output .= '<a href="/who-we-are/" class="text-black underline">Who We Are</a>';
+            $output .= ' ' . $delimiter . ' ';
+              $output .= '<a href="/who-we-are/board-staff/" class="text-black underline">Board & Staff</a>';
+            $output .= ' ' . $delimiter . ' ';
+            $output .= $before . get_the_title() . $after;
+          } elseif (get_post_type() != 'post') {
 
               $post_type = get_post_type_object(get_post_type());
               $archive_link = get_post_type_archive_link($post_type->name);
@@ -200,7 +214,7 @@ class App extends Controller
     {
       $pages = get_field('grants');
 
-      if( isset($pages) ){
+      if( !empty($pages) ){
 
         return array_map(function ($item) {
             return [
