@@ -54,7 +54,7 @@ class App extends Controller
 
     public function headerImage()
     {
-      if( is_home() ) {
+      if( is_home()() || is_category ) {
         $newsID = get_option('page_for_posts', true);
         $img = get_the_post_thumbnail_url($newsID);
 
@@ -68,7 +68,7 @@ class App extends Controller
 
       }elseif(is_post_type_archive('success_stories') ) {
         $archiveImg = get_field('success_stories_archive_img', 'options');
-        $img = $archiveImg['url'];
+        $img = $archiveImg['url'];       
 
       }elseif(is_singular('staff')){
 
