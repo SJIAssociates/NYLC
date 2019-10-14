@@ -6,7 +6,8 @@ use Sober\Controller\Controller;
 
 class TemplateStaff extends Controller
 {
-  public function boardList(){
+  public function boardList()
+  {
 
 
     return (object) array(
@@ -17,14 +18,14 @@ class TemplateStaff extends Controller
     );
   }
 
-  public function advisorList(){
-
+  public function advisorList()
+  {
 
     return (object) array(
       'col1'      =>  get_field('advisory_members_column_1'),
       'col2'      =>  get_field('advisory_members_column_2'),
       'col3'      =>  get_field('advisory_members_column_3'),
-      'col4'      =>  get_field('advisory_members_column_4')
+      'col4'      =>  get_field('advisory_members_column_4'),
     );
   }
 }
