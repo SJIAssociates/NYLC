@@ -209,6 +209,16 @@ acf_add_local_field_group(array(
 			'preview_size' => 'medium',
 			'library' => 'all',
 		),
+		array(
+			'key' => 'field_5d9604dd37a',
+			'label' => 'Success Stories Image',
+			'name' => 'success_stories_archive_img',
+			'type' => 'image',
+			'instructions' => '',
+			'return_format' => 'array',
+			'preview_size' => 'medium',
+			'library' => 'all',
+		),
 	),
 	'location' => array(
 		array(

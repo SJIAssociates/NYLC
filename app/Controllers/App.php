@@ -57,11 +57,23 @@ class App extends Controller
       if( is_home() ) {
         $newsID = get_option('page_for_posts', true);
         $img = get_the_post_thumbnail_url($newsID);
+
       }elseif(is_post_type_archive('landmark') ) {
-        $exploreImg = get_field('explore_image', 'options');
-        $img = $exploreImg['url'];
+        $archiveImg = get_field('explore_image', 'options');
+        $img = $archiveImg['url'];
+
+      }elseif(is_post_type_archive('sacred_sites') ) {
+        $archiveImg = get_field('sacred_sites_image', 'options');
+        $img = $archiveImg['url'];
+
+      }elseif(is_post_type_archive('success_stories') ) {
+        $archiveImg = get_field('success_stories_archive_img', 'options');
+        $img = $archiveImg['url'];
+
       }elseif(is_singular('staff')){
+
         $img = get_the_post_thumbnail_url() ?: \App\asset_path('images/profile-placeholder.jpg');
+
       }else {
         $img = get_the_post_thumbnail_url() ?? FALSE;
       }
