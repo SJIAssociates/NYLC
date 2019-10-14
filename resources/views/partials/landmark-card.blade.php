@@ -18,6 +18,6 @@ Variables:
       <p>{!! $excerpt !!}</p>
       <a href='{!! $permalink !!}' class='btn block mb-6'>Watch the Video</a>
       <br>
-      <a href="/landmarks" class='archive-link hover:text-red hover:border-red'>Explore other NY Landmarks <i class="fas fa-chevron-right"></i></a>
+      <a href="/explore-ny" class='archive-link hover:text-red hover:border-red'>Explore other NY Landmarks <i class="fas fa-chevron-right"></i></a>
     </div>
 </div>
