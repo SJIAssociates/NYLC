@@ -21,10 +21,10 @@ class TemplateStaff extends Controller
 
 
     return (object) array(
-      'col1'      =>  get_field('advisor_members_column_1'),
-      'col2'      =>  get_field('advisor_members_column_2'),
-      'col3'      =>  get_field('advisor_members_column_3'),
-      'col4'      =>  get_field('advisor_members_column_4')
+      'col1'      =>  get_field('advisory_members_column_1'),
+      'col2'      =>  get_field('advisory_members_column_2'),
+      'col3'      =>  get_field('advisory_members_column_3'),
+      'col4'      =>  get_field('advisory_members_column_4')
     );
   }
 }

@@ -46,7 +46,7 @@
     <h3 class='font-bold text-4xl'>Advisory Council</h3>
     <div class='flex flex-wrap'>
     <div class="w-full md:w-1/2 lg:w-1/4 text-lg pr-5">
-      {!! $advisor_list->col1 !!}
+      {!! advisor_list->col1 !!}
     </div>
     <div class="w-full md:w-1/2 lg:w-1/4 text-lg pr-5">
       <p>
