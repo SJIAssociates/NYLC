@@ -5,7 +5,7 @@
 @extends('layouts.app')
 
 @section('content')
-<section class='full-section main-content'>
+<section class='main-content'>
   @while(have_posts()) @php the_post() @endphp
     @include('partials.page-header')
     <div class='container'>
