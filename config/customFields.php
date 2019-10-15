@@ -539,35 +539,36 @@ acf_add_local_field_group(array(
 
 acf_add_local_field_group(array(
 	'key' => 'page_group_1',
-	'title' => 'subtitle',
+	'title' => 'Sub Title For Page',
 	'fields' => array (
 		array (
-			'key' => 'field_1',
+			'key' => 'field_5d79985c0c7sdf',
 			'label' => 'Sub Title',
 			'name' => 'sub_title',
 			'type' => 'text',
 		)
 	),
-	'location' => array (
-		array (
-			array (
-				'param' => 'post_template',
-				'operator' => '==',
-				'value' => 'views/template-advocacy.blade.php',
-			),
-			array (
-				'param' => 'page',
-				'operator' => '==',
-				'value' => 'Grants & Loans',
+	'location' => array(
+			array(
+				array(
+					'param' => 'page_template',
+					'operator' => '==',
+					'value' => 'default',
+				),
+				array(
+					'param' => 'page',
+					'operator' => '==',
+					'value' => '9',
+				),
 			),
 		),
-	),
-	'position' => 'high',
-	'style' => 'default',
-	'label_placement' => 'top',
-	'instruction_placement' => 'label',
-	'hide_on_screen' => '',
-	'active' => true,
-	'description' => '',
+		'menu_order' => 0,
+		'position' => 'acf_after_title',
+		'style' => 'seamless',
+		'label_placement' => 'top',
+		'instruction_placement' => 'label',
+		'hide_on_screen' => '',
+		'active' => true,
+		'description' => '',
 ));
 endif;
