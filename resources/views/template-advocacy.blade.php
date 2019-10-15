@@ -11,6 +11,9 @@
     @include('partials.page-header')
     <div class='container'>
       <div class='w-full md:w-2/3 mx-auto my-10 text-xl xl:text-2xl'>
+        @if( $subtitle )
+        <h2 class='text-black text-center text-2xl lg:text-3xl mx-auto w-full lg:w-3/4'>{{ $subtitle }}</h2>
+        @endif
         @include('partials.content-page')
       </div>
     </div>

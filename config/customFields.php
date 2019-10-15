@@ -10,8 +10,6 @@ LandMark Location (And Sacred Sites)
 Page: Sidebar
 Page: News
 
-Archive: Header Image
-
 Event: Tickets
 */
 if( function_exists('acf_add_local_field_group') ):
@@ -499,7 +497,7 @@ acf_add_local_field_group(array(
 /*
 Name: Page::Sidebar
 Fields: Repeater
-Location: Default Pages | Forms Pages
+Location: Page:Grants & Loans or Advocacy Page
 */
 acf_add_local_field_group(array(
 		'key' => 'group_eventticket',
@@ -533,7 +531,43 @@ acf_add_local_field_group(array(
 			'active' => true,
 			'description' => '',
 		));
+	/*
+	Name: Page::Subheader
+	Fields: text
+	Location: Default Pages | Advocacy
+	*/
 
-
-
+acf_add_local_field_group(array(
+	'key' => 'page_group_1',
+	'title' => 'subtitle',
+	'fields' => array (
+		array (
+			'key' => 'field_1',
+			'label' => 'Sub Title',
+			'name' => 'sub_title',
+			'type' => 'text',
+		)
+	),
+	'location' => array (
+		array (
+			array (
+				'param' => 'post_template',
+				'operator' => '==',
+				'value' => 'views/template-advocacy.blade.php',
+			),
+			array (
+				'param' => 'page',
+				'operator' => '==',
+				'value' => 'Grants & Loans',
+			),
+		),
+	),
+	'position' => 'high',
+	'style' => 'default',
+	'label_placement' => 'top',
+	'instruction_placement' => 'label',
+	'hide_on_screen' => '',
+	'active' => true,
+	'description' => '',
+));
 endif;

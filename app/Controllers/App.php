@@ -243,5 +243,15 @@ class App extends Controller
 
     }
 
+    public function subtitle()
+    {
+      $subtitle = get_field('sub_title');
+
+      if($subtitle):
+        return $subtitle;
+      else:
+        return false;
+      endif;
+    }
     use Partials\CategoryLoops;
 }
