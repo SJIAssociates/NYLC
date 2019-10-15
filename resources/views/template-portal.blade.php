@@ -26,6 +26,10 @@
 
             </div>
           @endforeach
+
+          @if (has_nav_menu('trustee_navigation'))
+            {!! wp_nav_menu(['theme_location' => 'trustee_navigation', 'menu_class' => 'nav']) !!}
+          @endif
         </aside>
         @endif
         @if( $page_sidebar == false)
