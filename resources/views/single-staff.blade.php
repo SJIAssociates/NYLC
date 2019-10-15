@@ -14,7 +14,7 @@
           <div class='widget'>
             <h3>Contact</h3>
             <span class="profile-contact">
-              <i class='fa fa-envelope text-primary'></i> <a href="mailto:<?php the_staff_email(); ?>"><?php the_staff_email(); ?></a>
+              <a href="mailto:<?php the_staff_email(); ?>"><?php the_staff_email(); ?></a>
             </span>
           </div>
         </aside>
