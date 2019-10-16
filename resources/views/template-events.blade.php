@@ -37,7 +37,7 @@
 <section class='full-section'>
   <div class='container'>
     <div class='text-center mx-auto my-8'>
-      <h2><span class='bg-white'>Annual Awards</span></h2>
+      <h2><span class='bg-white'>Annual Events</span></h2>
     </div>
       <div class='flex flex-wrap'>
         @foreach($annual_events as $item)
@@ -57,45 +57,27 @@
   <div class='container'>
     <div class='text-center mx-auto my-8'><h2><span class='bg-white'>Additional Events</span></h2></div>
 
+    @foreach($event_type_list as $item)
       <div class='flex success-box'>
-          <div class='w-full p-5 md:p-24 bg-blue-grey my-8'>
+          <div class='w-full lg:p-12 xl:p-24 bg-blue-grey my-8'>
             <div class='flex flex-wrap'>
-              <div class='box-content w-full md:w-1/2 flex flex-wrap flex-col md:pr-8'>
-                <h3 class='mb-10'>Sacred Sites</h3>
-                <span class='block mb-5 uppercase font-bold'>1 Event Scheduled</span>
-                <p>
-                  The Chairman's Award is bla bla bla bla
+              <div class='box-content w-full lg:w-1/2 flex flex-wrap flex-col  p-5 lg:p-0 lg:pr-8'>
+                <h3 class='mb-10'>{!! $item['title'] !!}</h3>
+                <span class='block mb-5 uppercase font-bold'>{!! $item['count']!!}  Event Scheduled</span>
+                <p class='text-xl'>
+                  {!! $item['description'] !!}
                 </p>
                 <div>
-                  <a href="" class='btn bg-red text-white inline-block mb-12 hover:no-underline'>Learn About Sacred Sites</a><br>
+                  <a href="{!! $item['permalink'] !!}" class='btn bg-red text-white inline-block hover:no-underline'>View Events</a><br>
                 </div>
               </div>
-              <div class='box-image w-full md:w-1/2'>
-                <img src="">
+              <div class='box-image w-full lg:w-1/2'>
+                <img src="{!! $item['thumbnail']['sizes']['news_thumb'] !!}" alt="{!! $item['title'] !!}">
               </div>
             </div>
           </div>
       </div>
-
-      <div class='flex success-box'>
-          <div class='w-full p-5 md:p-24 bg-blue-grey my-8'>
-            <div class='flex flex-wrap'>
-              <div class='box-content w-full md:w-1/2 flex flex-wrap flex-col md:pr-8'>
-                <h3 class='mb-10'>Professional Circle</h3>
-                <span class='block mb-5 uppercase font-bold'>1 Event Scheduled</span>
-                <p>
-                  The Chairman's Award is bla bla bla bla
-                </p>
-                <div>
-                  <a href="" class='btn bg-red text-white inline-block mb-12 hover:no-underline'>Learn About Sacred Sites</a><br>
-                </div>
-              </div>
-              <div class='box-image w-full md:w-1/2'>
-                <img src="">
-              </div>
-            </div>
-          </div>
-      </div>
+      @endforeach
 
   </div>
 </section>

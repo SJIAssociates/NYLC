@@ -10,6 +10,13 @@
   }
 }
 
+.tribe-events-list .type-tribe_events {
+  padding: 2em;
+  .tribe-events-event-image {
+    width: 100%;
+  }
+}
+
 .tribe-events-event-meta {
   background: none !important;
   border: none !important;
@@ -17,6 +24,10 @@
   .tribe-events-meta-group {
     width: 100%;
     padding: 0;
+  }
+
+  .tribe-events-abbr {
+    text-decoration: none;
   }
 
   .tribe-events-single-section-title {
