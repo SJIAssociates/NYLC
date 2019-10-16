@@ -41,4 +41,22 @@ class TemplateEvents extends Controller
         ];
     }, $annual_awards ?? [] );
   }
+
+  public function eventTypeList()
+  {
+
+    $annual_awards = get_field('featured_event_categories');
+
+    return array_map(function ($item) {
+
+        return [
+            'title'         => $item->name,
+            'description'   => $item->description,
+            'permalink'     => '/calendar/category/' . $item->slug,
+            'count'         => $item->count,
+            'thumbnail'     => get_field('category_image','term_' . $item->term_id),
+            'dump'          => $item
+        ];
+    }, $annual_awards ?? [] );
+  }
 }
