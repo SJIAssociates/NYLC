@@ -4,13 +4,13 @@
   @include('partials.page-header')
   <div class='container'>
     <div class="content">
-      <div class='flex'>
+      <div class='flex flex-wrap'>
       @if(App\display_sidebar())
-        <aside class="sidebar py-8 xl:w-1/4 pr-5 xxl:py-12 xxl:pr-24">
+        <aside class="sidebar w-full py-8 lg:w-1/3 pr-5 xxl:pr-24">
           @include('partials.sidebar')
         </aside>
       @endif
-        <main class="flex flex-wrap main py-8 xl:w-3/4 xxl:py-12">
+        <main class="main py-8 w-full lg:w-2/3 xxl:py-12">
           @if (!have_posts())
             <div class="alert alert-warning">
               {{ __('Sorry, no results were found.', 'sage') }}

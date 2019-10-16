@@ -1,3 +1,10 @@
 body#tinymce {
   margin: 12px !important;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body#tinymce blockquote {
+  padding: 0 10px;
+  border-left: 5px solid #eee;
+  margin-top: 10px;
 }
