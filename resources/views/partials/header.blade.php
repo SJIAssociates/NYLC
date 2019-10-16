@@ -3,7 +3,7 @@
     <div class='flex items-start'>
       <div class='w-full lg:w-3/4 flex row items-center'>
           <a class="brand" href="{{ home_url('/') }}">
-            <img src="@asset('images/logo.png')">
+            <img src="{!! $logo['url'] !!}">
           </a>
         <nav class="hidden lg:block nav-primary">
           @if (has_nav_menu('primary_navigation'))
