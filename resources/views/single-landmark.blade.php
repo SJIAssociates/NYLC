@@ -11,7 +11,7 @@
     <div class='flex'>
       <aside class='sidebar py-8 lg:w-1/3 xxl:py-12 pr-12 xl:pr-24'>
         <div class='widget'>
-          <h3>Addres</h3>
+          <h3>Address</h3>
           <address>
             {!! SingleLandmark::locationAddress() !!}
           </address>

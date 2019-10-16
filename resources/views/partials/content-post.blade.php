@@ -5,8 +5,7 @@
           <h3 class='text-2xl mb-1 xxl:text-3xl'>
             <a href="{!! get_the_permalink(); !!}" class='text-black hover:text-red'>{!! the_title();  !!}</a>
           </h3>
-          <time class="updated font-bold mb-5" datetime="{{ get_post_time('c', true) }}"><i class="fas fa-clock"></i> {{ get_the_date() }}</time>
-
+          <time class="updated font-bold mb-5" datetime="{{ get_post_time('c', true) }}"><i class="fas fa-clock"></i> {{  get_the_date('F Y') }}</time>
           <span class='categories block mb-3'>
           @php
 
