@@ -26,7 +26,7 @@
       </aside>
       @endif
       @if( $page_sidebar == false)
-        <main class="main w-full py-8 lg:w-2/3 xxl:py-12 xxl:mx-auto">
+        <main class="main w-full py-8 lg:w-2/3 xxl:py-12 mx-auto">
       @else
         <main class="main w-full py-8 lg:w-2/3 xxl:py-12 ">
       @endif
