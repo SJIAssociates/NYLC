@@ -10,10 +10,21 @@
   }
 }
 
-.tribe-events-list .type-tribe_events {
-  padding: 2em;
-  .tribe-events-event-image {
-    width: 100%;
+.tribe-events-list {
+  .type-tribe_events {
+    .tribe-events-event-image {
+      margin: 0 !important;
+      width: 100%;
+    }
+  }
+
+  .tribe-events-loop .tribe-event-featured {
+    background: $primary;
+    padding: 0;
+  }
+
+  .tribe-events-list-event-title a.tribe-events-read-more {
+    color: $primary !important;
   }
 }
 
@@ -72,6 +83,7 @@
   background: none;
   position: relative;
   color: $primary;
+  margin-bottom: 30px;
 
   &::before {
     position: absolute;

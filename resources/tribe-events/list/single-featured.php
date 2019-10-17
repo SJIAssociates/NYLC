@@ -26,7 +26,7 @@ $has_venue_address = ( ! empty( $venue_details['address'] ) ) ? ' location' : ''
 $organizer = tribe_get_organizer();
 
 ?>
-<div class='flex flex-wrap  p-5 lg:p-12'>
+<div class='flex flex-wrap p-5 lg:p-12'>
 	<div class="w-full lg:w-1/2">
 		<!-- Event Title -->
 		<?php do_action( 'tribe_events_before_the_event_title' ) ?>
@@ -87,7 +87,7 @@ $organizer = tribe_get_organizer();
 		<?php do_action( 'tribe_events_before_the_content' ); ?>
 		<div class="tribe-events-list-event-description tribe-events-content description entry-summary">
 			<?php echo tribe_events_get_the_excerpt( null, wp_kses_allowed_html( 'post' ) ); ?>
-			<a href="<?php echo esc_url( tribe_get_event_link() ); ?>" class="tribe-events-read-more btn text-white mt-10 inline-block" rel="bookmark"><?php esc_html_e( 'Find out more', 'the-events-calendar' ) ?> &raquo;</a>
+			<a href="<?php echo esc_url( tribe_get_event_link() ); ?>" class="tribe-events-read-more py-3 px-10 bg-white text-red mt-10 inline-block" rel="bookmark"><?php esc_html_e( 'Find out more', 'the-events-calendar' ) ?> &raquo;</a>
 
 		</div><!-- .tribe-events-list-event-description -->
 		<?php do_action( 'tribe_events_after_the_content' ); ?>
