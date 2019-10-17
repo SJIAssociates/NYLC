@@ -551,15 +551,17 @@ acf_add_local_field_group(array(
 	'location' => array(
 			array(
 				array(
-					'param' => 'page_template',
+					'param' => 'post_template',
 					'operator' => '==',
 					'value' => 'default',
 				),
+			),
+			array(
 				array(
 					'param' => 'page',
 					'operator' => '==',
 					'value' => '9',
-				),
+				),				
 			),
 		),
 		'menu_order' => 0,
