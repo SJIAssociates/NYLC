@@ -1,4 +1,4 @@
-@if ( $header_image != false && !is_single() )
+@if ( $header_image != false && !is_single() && !is_search() )
 <section class='img-bg flex justify-center items-center w-full' style="background-color: #ddd; background-image: url({{ $header_image }}); background-size: cover; background-position: 50% 50%;">
   <h1 class='text-center text-white text-4xl xl:text-5xl xxl:w-1/2'>{!! App::title() !!}</h1>
 </section>
