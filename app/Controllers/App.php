@@ -77,7 +77,7 @@ class App extends Controller
 
       }elseif(is_singular('staff')){
 
-        $img = get_the_post_thumbnail_url() ?: \App\asset_path('images/profile-placeholder.jpg');
+        $img = get_the_post_thumbnail_url() ?: \App\asset_path('images/placeholder-nylandmarks.png');
 
       }else {
         $img = get_the_post_thumbnail_url() ?? FALSE;

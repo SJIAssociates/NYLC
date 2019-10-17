@@ -20,7 +20,7 @@ trait CategoryLoops
               'time'      => get_the_time('F d, Y', $post->ID),
               'permalink' => get_permalink( $post->ID ),
               'title'     => get_the_title( $post->ID ),
-              'thumbnail' => get_the_post_thumbnail_url($post->ID) ?: \App\asset_path('images/profile-placeholder.jpg'),
+              'thumbnail' => get_the_post_thumbnail_url($post->ID) ?: \App\asset_path('images/placeholder-nylandmarks.png'),
           ];
       }, $news_posts);
     else:
@@ -33,7 +33,7 @@ trait CategoryLoops
     $category = get_field('category');
 
     if( $category ):
-    
+
     $news_loop_continue = get_posts([
       'post_type' => 'post',
       'category_name' => $category->name,
@@ -47,7 +47,7 @@ trait CategoryLoops
               'time'      => get_the_time('F d, Y', $post->ID),
               'permalink' => get_permalink( $post->ID ),
               'title'     => get_the_title( $post->ID ),
-              'thumbnail' => get_the_post_thumbnail_url($post->ID) ?: \App\asset_path('images/profile-placeholder.jpg'),
+              'thumbnail' => get_the_post_thumbnail_url($post->ID) ?: \App\asset_path('images/placeholder-nylandmarks.png'),
           ];
       }, $news_loop_continue);
     else:
