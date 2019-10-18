@@ -14,6 +14,7 @@
       <div class='flex border-b-2 border-t-2 relative'>
         <div class='w-full lg:w-1/2 borough-facet border-b-2 absolute bg-white'>
             @php echo do_shortcode('[facetwp facet="borough"]'); @endphp
+            @php echo do_shortcode('[facetwp facet="landmark_categories"]'); @endphp
         </div>
         <main class="main lg:w-1/2 map-list-container lg:pt-20">
           <div class='flex flex-wrap'>

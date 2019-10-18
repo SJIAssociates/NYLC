@@ -132,6 +132,9 @@
 
   .facetwp-facet {
     margin: 0;
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 10px;
 
     .facetwp-dropdown {
       border: 1px solid black;
