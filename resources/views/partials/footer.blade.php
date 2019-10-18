@@ -2,14 +2,14 @@
 	<div class='px-8 mx-auto'>
 		<div class='text-center'><h2><span class='text-white'>Support Us</span></h2></div>
 		<div class='flex justify-center flex-wrap'>
-  		  <div class='card w-full p-5 bg-white text-center my-5 lg:mx-5 lg:w-2/5 md:p-10'>
+  		  <div class='card w-full sm:w-3/4 p-5 bg-white text-center my-5 lg:mx-5 lg:w-2/5 md:p-10'>
     		  <h3 class='text-black text-4xl'>Donate</h3>
     		  <p class='font-grey my-5 m-auto md:w-3/4 block text-xl text-grey-darker '>Your donation helps us expand our reach and be your voice for preservation.</p>
     		  <a href="/donate" title="Make a Donation" class='btn btn-large border-red inline-block md:w-1/2'>Make A Donation</a>
   		  </div>
-  		  <div class='card w-full p-5 bg-white text-center my-5 lg:mx-5 lg:w-2/5 md:p-10'>
+  		  <div class='card w-full sm:w-3/4 p-5 bg-white text-center my-5 lg:mx-5 lg:w-2/5 md:p-10'>
     		  <h3 class='text-black text-4xl'>Become A Member</h3>
-    		  <p class='font-grey my-5 m-auto md:w-3/4 block text-xl text-grey-darker'>Join the Conservancy and be part of our mission to save New York’s extraordinary architectural heritage.</p>
+    		  <p class='font-grey my-5 m-auto block text-xl text-grey-darker'>Join the Conservancy and be part of our mission to save New York’s extraordinary architectural heritage.</p>
     		  <a href="/join" title="Make a Donation" class='btn btn-large border-red inline-block md:w-1/2 '>Join Us</a>
   		  </div>
 		</div>
@@ -54,9 +54,8 @@
 			  <p class='text-sm'>&copy; @php echo date("Y") @endphp {{ get_bloginfo('name', 'display') }}. All Rights Reserved.</p>
 		  </div>
 		  <nav class='md:w-1/2 text-right text-sm py-2'>
-			  <a href="#" class='text-grey-darkest pr-3 py-1 hover:text-red'>Terms of Service</a>
-			  <a href="#" class='text-grey-darkest pr-3 py-1 hover:text-red'>Privacy Policy</a>
-			  <a href="#" class='text-grey-darkest pr-3 py-1 hover:text-red'>Sitemap</a>
+			  <a href="/privacy-policy/" class='text-grey-darkest pr-3 py-1 hover:text-red'>Privacy Policy</a>
+			  <a href="/sitemap.xml" class='text-grey-darkest pr-3 py-1 hover:text-red'>Sitemap</a>
 		  </nav>
 	  </div>
   </div>
