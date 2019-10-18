@@ -536,7 +536,11 @@ acf_add_local_field_group(array(
 	Fields: text
 	Location: Default Pages | Advocacy
 	*/
-
+/*
+Name: Sub Title for Pages
+Fields: sub_title
+Location: Default Pages and Page ID 9
+*/
 acf_add_local_field_group(array(
 	'key' => 'page_group_1',
 	'title' => 'Sub Title For Page',
@@ -561,7 +565,7 @@ acf_add_local_field_group(array(
 					'param' => 'page',
 					'operator' => '==',
 					'value' => '9',
-				),				
+				),
 			),
 		),
 		'menu_order' => 0,
@@ -572,5 +576,37 @@ acf_add_local_field_group(array(
 		'hide_on_screen' => '',
 		'active' => true,
 		'description' => '',
+));
+/*
+Name: Category Images
+Fields: category_image
+Location: Default Pages and Page ID 9
+*/
+acf_add_local_field_group(array(
+	'key' => 'category_acf_1',
+	'title' => 'Category::Images',
+	'fields' => array (
+		array (
+			'key' => 'field_5d79985ccd4as',
+			'label' => 'Category Images',
+			'name' => 'category_image',
+			'type' => 'image',
+			'instructions' => '',
+			'return_format' => 'array',
+			'preview_size' => 'medium',
+			'library' => 'all',
+		)
+	),
+	'location' => array(
+			array(
+				array(
+					'param' => 'taxonomy',
+					'operator' => '==',
+					'value' => 'category',
+				),
+			),
+		),
+	'position' => 'acf_after_title',
+
 ));
 endif;

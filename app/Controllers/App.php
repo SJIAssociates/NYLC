@@ -59,9 +59,16 @@ class App extends Controller
 
     public function headerImage()
     {
-      if( is_home() || is_category() ) {
+      if( is_home() ) {
         $newsID = get_option('page_for_posts', true);
         $img = get_the_post_thumbnail_url($newsID);
+
+      }elseif( is_category() ) {
+
+        $term = get_queried_object();
+        $catImg = get_field('category_image',$term);
+        
+        $img = $catImg['url'];
 
       }elseif(is_post_type_archive('landmark') ) {
         $archiveImg = get_field('explore_image', 'options');
@@ -105,7 +112,7 @@ class App extends Controller
           if ($thisCat->parent != 0) {
               $output .= get_category_parents($thisCat->parent, true, ' <span class="delimiter">' . $delimiter . ' ');
           }
-          $output .= $before . 'Archive by category "' . single_cat_title('', false) . '"' . $after;
+          $output .= $before . 'Category: ' . single_cat_title('', false) . $after;
 
       } elseif (is_search()) {
 
@@ -127,6 +134,9 @@ class App extends Controller
           if (is_singular('tribe_events')) {
             $post_type = get_post_type_object(get_post_type());
             $output .= '<a href="/events/" class="text-black underline">Events</a>';
+            $output .= ' ' . $delimiter . ' ';
+            $output .= $before . get_the_title() . $after;
+
 
           } elseif (is_singular('success_stories')) {
 

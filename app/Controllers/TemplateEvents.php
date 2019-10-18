@@ -19,7 +19,7 @@ class TemplateEvents extends Controller
        return [
          'title'      =>  get_the_title( $post->ID ),
          'date'       =>  tribe_get_start_date($post->ID),
-         'image'      =>  get_the_post_thumbnail($post->ID),
+         'image'      =>  get_the_post_thumbnail($post->ID)  ?: \App\asset_path('images/placeholder-nylandmarks.png'),
          'excerpt'    =>  get_the_excerpt( $post->ID ),
          'link'       =>  get_the_permalink( $post->ID ),
        ];
@@ -54,7 +54,7 @@ class TemplateEvents extends Controller
             'description'   => $item->description,
             'permalink'     => '/calendar/category/' . $item->slug,
             'count'         => $item->count,
-            'thumbnail'     => get_field('category_image','term_' . $item->term_id),
+            'thumbnail'     => get_field('category_image','term_' . $item->term_id)  ?: \App\asset_path('images/placeholder-nylandmarks.png'),
             'dump'          => $item
         ];
     }, $annual_awards ?? [] );
