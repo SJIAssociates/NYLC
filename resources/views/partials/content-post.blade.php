@@ -24,7 +24,13 @@
         </div>
         </div>
         <div class='box-image w-full md:w-1/2'>
-          <a href="{!! get_the_permalink(); !!}" title="{!! the_title();  !!}">{!! the_post_thumbnail('news_thumb') !!}</a>
+          <a href="{!! get_the_permalink(); !!}" title="{!! the_title();  !!}">
+            @if(get_the_post_thumbnail_url() )
+              {!! the_post_thumbnail('news_thumb') !!}
+            @else
+              <img src="@asset('images/placeholder-nylandmarks.png')" alt="{!! the_title();  !!}" />
+            @endif
+          </a>
         </div>
     </div>
 </div>
