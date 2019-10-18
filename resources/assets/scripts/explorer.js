@@ -193,7 +193,13 @@ jQuery(document).ready(function($){
 });
 
 
-
+$(document).on('facetwp-loaded', function() {
+		 if (FWP.loaded) {
+				 $('html, body').animate({
+						 scrollTop: $('.facetwp-template').offset().top,
+				 }, 250);
+		 }
+ });
 /*
 *  remove_markers
 *

@@ -9,7 +9,7 @@ export default {
 			$('.menu-toggle').toggleClass('collapse');
 			$('#mobile-nav').toggleClass('open');
 		}
-		$('.menu-toggle').click(menuMorph);	    
+		$('.menu-toggle').click(menuMorph);
   },
   finalize() {
     // JavaScript to be fired on all pages, after page specific JS is fired
