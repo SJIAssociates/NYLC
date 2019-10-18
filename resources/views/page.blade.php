@@ -64,20 +64,20 @@
     <div class='flex flex-wrap py-10'>
       @foreach($news_loop_continued as $item)
         <div class='flex px-5 mb-10 w-full lg:w-1/2'>
-          <div class='w-4/5'>
+          <div class='w-4/5 pr-5'>
             <time class='text-red font-bold uppercase text-sm mb-3 block'>{!! $item['time'] !!}</time>
-            <h3 class='text-lg xxl:text-2xl font-bold'><a href="{!! $item['permalink'] !!}" class='text-black'>{!! $item['title'] !!}</a></h3>
+            <h3 class='text-lg xxl:text-2xl font-bold hover:text-primary'><a href="{!! $item['permalink'] !!}" class='text-black'>{!! $item['title'] !!}</a></h3>
             <p>{!! $item['content'] !!}</p>
           </div>
           <div class='w-1/5'>
-            <img src="{!! $item['thumbnail'] !!}" />
+            <a href="{!! $item['permalink'] !!}" class='text-black mt-10'><img src="{!! $item['thumbnail'] !!}" alt="{!! $item['title'] !!}" class='mt-5'/></a>
           </div>
         </div>
 
       @endforeach
     </div> <!-- Cont. Loop -->
     <div class='archive-link text-center'> <!-- Button -->
-      <a href="/category/{!! $category_title->link !!}" class='underline text-black'>View All Updates <i class='fa fa-chevron-right'></i></a>
+      <a href="/category/{!! $category_title->link !!}" class='underline text-black hover:text-primary'>View All Updates <i class='fa fa-chevron-right'></i></a>
     </div>
   </div>
 </section>
