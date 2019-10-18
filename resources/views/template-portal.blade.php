@@ -13,12 +13,13 @@
     <div class='container'>
       <div class="content flex flex-wrap">
         <aside class='sidebar w-full lg:w-1/3 pr-8 xxl:py-12 xxl:pr-32'>
+          <h3>Trustee Portal</h3>
           @if (has_nav_menu('trustee_navigation'))
             {!! wp_nav_menu(['theme_location' => 'trustee_navigation', 'menu_class' => 'nav']) !!}
           @endif
 
           @foreach($page_sidebar as $item )
-            <div class='grant-sidebar'>
+            <div class='grant-sidebar mt-10'>
               <h3>{!! $item['title'] !!}</h3>
               {!! $item['content'] !!}
               @if( !empty($item['cta_text']) )

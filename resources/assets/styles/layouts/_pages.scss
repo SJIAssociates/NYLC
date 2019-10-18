@@ -19,6 +19,12 @@
   }
 }
 
+.news_section_continued {
+  .img-block {
+    order: -1;
+  }
+}
+
 #contactSection {
   .content-info {
     border-bottom: none;
@@ -152,6 +158,12 @@
   .success-box {
     .box-image {
       order: 1;
+    }
+  }
+
+  .news_section_continued {
+    .img-block {
+      order: 0;
     }
   }
 
