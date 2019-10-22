@@ -35,9 +35,12 @@
 		<p class='text-black text-xxl text-center font-semibold my-3 xxl:mb-10'>Stay informed about the latest preservation issues.</p>
 		<div class='flex my-8 flex-wrap'>
       @foreach($news_loop as $item)
-        @include('partials/box-news')
+        @include('partials/box-news',$item)
       @endforeach
 		</div>
+    <div class='text-center w-full'>
+      <a href="/news" class='archive-link text-black hover:text-primary underline font-bold text-lg'>View All News <i class="fas fa-chevron-right"></i></a>
+    </div>
 	</div>
 </section>
 <section class='full-section'>
