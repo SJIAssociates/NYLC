@@ -101,6 +101,10 @@
   }
 }
 
+.meeting-list {
+  list-style: none;
+}
+
 .nav-previous a {
   padding: 15px 25px;
   color: white;
@@ -170,6 +174,20 @@
   background: black;
   color: white;
   border: 1px solid black;
+}
+
+#menu-trustee-portal {
+  li {
+    padding: 0 0 7px;
+  }
+
+  a {
+    @apply text-black text-xl capitalize;
+
+    &:hover {
+      @apply text-primary;
+    }
+  }
 }
 
 @screen lg {
