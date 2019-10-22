@@ -17,22 +17,21 @@
           @if (has_nav_menu('trustee_navigation'))
             {!! wp_nav_menu(['theme_location' => 'trustee_navigation', 'menu_class' => 'nav']) !!}
           @endif
-
-          @foreach($page_sidebar as $item )
-            <div class='grant-sidebar mt-10'>
-              <h3>{!! $item['title'] !!}</h3>
-              {!! $item['content'] !!}
-              @if( !empty($item['cta_text']) )
-                <a href="{!! $item['cta_link'] !!}" class='btn text-white inline-block text-sm'>{!! $item['cta_text'] !!}</a>
-              @endif
-            </div>
-          @endforeach
-
         </aside>
         <main class="main w-full py-8 lg:w-2/3 xxl:py-12 ">
           @while(have_posts()) @php the_post() @endphp
             @include('partials.content-page')
           @endwhile
+          <h2 class='mt-5 text-3xl'>{!! $section_title !!}</h2>
+          <ul class='m-0 p-0 meeting-list'>
+          @foreach($portal_calendar as $event)
+            <li class='text-black text-lg text-bold pb-3'>
+              <span class='date'>
+                <i class='fa fa-calendar'></i> {!! $event['date'] !!}</span> - <span class='underline'>{!! $event['title'] !!}
+              </span>
+            </li>
+          @endforeach
+          </ul>
         </main>
       </div>
     </div>
@@ -40,6 +39,9 @@
 @else
 <div class="container">
   <div class='content flex-flex-wrap'>
+
+    <?php if(defined('INVALID_POST_PASS')) _e('The password you entered is funky'); ?>
+
     {!! get_the_password_form() !!}
   </div>
 </div>
