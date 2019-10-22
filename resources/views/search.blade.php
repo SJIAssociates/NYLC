@@ -6,7 +6,7 @@
     <div class="content">
       <div class='flex flex-wrap xxl:w-3/4 mx-auto'>
   @if (!have_posts())
-    <div class="alert alert-warning">
+    <div class="alert alert-warning mx-auto lg:w-3/4">
       {{ __('Sorry, no results were found.', 'sage') }}
     </div>
     {!! get_search_form(false) !!}

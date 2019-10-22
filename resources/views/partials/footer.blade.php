@@ -19,7 +19,7 @@
 	<div class='container'>
 		<div class='w-full md:w-4/5 mx-auto'>
 	  	<h2 class='text-white text-4xl font-bold xl:mb-5'>Join Our Mailing List</h2>
-	  	<p class='text-white w-1/2 font-bold text-lg mb-5'>Sign up to receive our free E-Newsletter, informative alerts, our monthly Mystery Landmark contest, and our monthly Tourist in Your Own Town video series.</p>
+	  	<p class='text-white lg:w-1/2 font-bold text-lg mb-5'>Sign up to receive our free E-Newsletter, informative alerts, our monthly Mystery Landmark contest, and our monthly Tourist in Your Own Town video series.</p>
 	  	{!! $footer_form !!}
 		</div>
   </div>
