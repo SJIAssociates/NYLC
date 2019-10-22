@@ -60,6 +60,8 @@ class FrontPage extends Controller
 
     $carousel = get_field('image_carousel');
 
+    shuffle($carousel);
+    
     //Maybe do something with a limit here
     return array_map(function ($item) {
         return [
