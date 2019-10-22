@@ -41,7 +41,7 @@
     @apply text-center text-5xl text-primary relative inline-block mx-auto;
 
     span {
-      @apply px-5 relative;
+      @apply relative;
 
       z-index: 20;
       font-family: benton-sans-condensed, sans-serif;
@@ -65,13 +65,14 @@
     position: absolute;
     top: 0;
     width: 100%;
-    bottom: 0;
+    bottom: 60%;
     z-index: 10;
   }
 
   .card {
     @apply text-center bg-white;
 
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
     z-index: 20;
   }
 
@@ -87,7 +88,7 @@
 
 .success-box {
   h3 {
-    @apply text-4xl font-bold w-2/3;
+    @apply text-4xl font-bold;
   }
 
   .btn {
@@ -161,6 +162,12 @@
     }
   }
 
+  .landmark-card {
+    .bg-image {
+      bottom: 0;
+    }
+  }
+
   .news_section_continued {
     .img-block {
       order: 0;
@@ -178,6 +185,10 @@
         height: 3px;
         background: $primary;
         z-index: 10;
+      }
+
+      span {
+        @apply px-5;
       }
     }
   }

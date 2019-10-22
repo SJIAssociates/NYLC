@@ -16,7 +16,7 @@
     </div>
   @endwhile
   <section class='full-section' id="homeWhat">
-  	<div class='container flex'>
+  	<div class='container flex flex-wrap'>
       @foreach($service_boxes as $item )
 		    @include('partials/trio', $item)
       @endforeach

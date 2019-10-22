@@ -12,7 +12,7 @@
     @endforeach
 
   </div>
-	<div class='w-full sm:w-1/3 text-center relative'>
+	<div class='w-11/12 sm:w-2/3 lg:w-1/3 text-center relative'>
 		<h1 class=''>Preserving the City We Love</h1>
 		<p class='text-white mx-auto font-bold mb-5'>We're on the frontlines, protecting the unique landmarks and neighborhoods that make up the heart and soul of New York.</p>
 		<a href="" class='btn text-white my-4 px-12 inline-block'>About Us</a>
@@ -49,14 +49,14 @@
     <div class='flex success-box'>
         <div class='w-full p-5 md:p-24 bg-blue-grey my-8'>
           <div class='flex flex-wrap'>
-            <div class='w-full md:w-1/2 flex flex-wrap flex-col md:pr-8'>
-              <h3 class='mb-10'>{!! $featured_success->title !!}</h3>
+            <div class='w-full lg:w-1/2 flex flex-wrap flex-col lg:pr-8 text-center lg:text-left'>
+              <h3 class='lg:mb-10'>{!! $featured_success->title !!}</h3>
               <div class="">
                 <a href="{!! $featured_success->link !!}" class='btn bg-red text-white inline-block mb-12 hover:no-underline'>Read The Story</a><br>
               </div>
               <a href="/what-we-do/success-stories" class='archive-link hover:no-underline hover:no-border'>View All Success Stories <i class="fas fa-chevron-right"></i></a>
             </div>
-            <div class='box-image w-full md:w-1/2'>
+            <div class='box-image w-full lg:w-1/2 lg:text-left text-center'>
               <img src="{!! $featured_success->image !!}" alt="{!! $featured_success->title !!}">
             </div>
           </div>
@@ -67,7 +67,7 @@
 <section class='full-section' id='exploreHome'>
 	<div class='container'>
 		<div class='text-center'><h2><span class='bg-white'>Explore NY</span></h2></div>
-		<p class='text-black font-bold text-center w-1/2 mx-auto xxl:mb-10'>Visit some of New York’s best hidden gems as well as some of the classic iconic landmarks.</p>
+		<p class='text-black font-bold text-center w-full lg:w-1/2 mx-auto xxl:mb-10'>Visit some of New York’s best hidden gems as well as some of the classic iconic landmarks.</p>
     @foreach($landmark as $item)
       @include('partials/landmark-card', $item)
     @endforeach
