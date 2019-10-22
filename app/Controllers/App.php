@@ -67,7 +67,7 @@ class App extends Controller
 
         $term = get_queried_object();
         $catImg = get_field('category_image',$term);
-        
+
         $img = $catImg['url'];
 
       }elseif(is_post_type_archive('landmark') ) {
@@ -132,10 +132,11 @@ class App extends Controller
       } elseif (is_single() && !is_attachment()) {
 
           if (is_singular('tribe_events')) {
+
             $post_type = get_post_type_object(get_post_type());
             $output .= '<a href="/events/" class="text-black underline">Events</a>';
             $output .= ' ' . $delimiter . ' ';
-            $output .= $before . get_the_title() . $after;
+            $output .= $before . tribe_get_events_title() . $after;
 
 
           } elseif (is_singular('success_stories')) {

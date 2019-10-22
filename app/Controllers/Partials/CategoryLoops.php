@@ -17,7 +17,7 @@ trait CategoryLoops
      return array_map(function ($post) {
           return [
               'content'   => get_the_excerpt( $post->ID ),
-              'time'      => get_the_time('F d, Y', $post->ID),
+              'time'      => get_the_time('F, Y', $post->ID),
               'permalink' => get_permalink( $post->ID ),
               'title'     => get_the_title( $post->ID ),
               'thumbnail' => get_the_post_thumbnail_url($post->ID, 'news_thumb') ?: \App\asset_path('images/placeholder-nylandmarks.png'),
@@ -44,7 +44,7 @@ trait CategoryLoops
      return array_map(function ($post) {
           return [
               'content'   => get_the_excerpt( $post->ID ),
-              'time'      => get_the_time('F d, Y', $post->ID),
+              'time'      => get_the_time('F, Y', $post->ID),
               'permalink' => get_permalink( $post->ID ),
               'title'     => get_the_title( $post->ID ),
               'thumbnail' => get_the_post_thumbnail_url($post->ID, 'news_thumb') ?: \App\asset_path('images/placeholder-nylandmarks.png'),

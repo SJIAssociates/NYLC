@@ -49,13 +49,31 @@ class TemplateEvents extends Controller
 
     return array_map(function ($item) {
 
+        $tribeCategory = get_posts(
+          [
+            'post_type'   => 'tribe_events',
+            'meta_query'  => array(
+      					   array(
+                  'key' => '_EventStartDate',
+      						'value' => date('Y-m-d') . ' 00:00:00',
+      						'compare' => '>='
+      					     )
+    				      ),
+            'tax_query'   => array(
+                    array(
+                        'taxonomy' => 'tribe_events_cat',
+                        'field'    => 'slug',
+                        'terms'    => $item->slug
+                    )
+                )
+          ]);
+
         return [
             'title'         => $item->name,
             'description'   => $item->description,
             'permalink'     => '/calendar/category/' . $item->slug,
-            'count'         => $item->count,
+            'count'         => count($tribeCategory),
             'thumbnail'     => get_field('category_image','term_' . $item->term_id)  ?: \App\asset_path('images/placeholder-nylandmarks.png'),
-            'dump'          => $item
         ];
     }, $annual_awards ?? [] );
   }
