@@ -40,7 +40,7 @@
 		<div class='flex success-box'>
   		  <div class='w-full p-12 xl:p-24 bg-blue-grey my-8'>
     		  <div class='flex'>
-      		  <div class='w-full w-1/2 flex flex-col pr-8'>
+      		  <div class='w-full w-1/2 flex flex-col pr-8 justify-center'>
       		    <h3 class='mb-10'>{{ $annual_report->description }}</h3>
       		    <div class="button-container">
         		    <a href="{{ $annual_report->link }}" class='btn bg-red text-white inline-block mb-12 hover:no-underline'>View 2019 Annual Report</a><br>
