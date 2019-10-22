@@ -177,9 +177,17 @@
     padding: 0;
     list-style: none;
 
-    li {
-      padding: 10px 15px;
+    > li {
+      padding: 0;
       border-bottom: 1px solid #ddd;
+
+      > a {
+        display: block;
+        padding: 10px 15px;
+        color: #333;
+        font-weight: 700;
+        text-transform: uppercase;
+      }
     }
 
     .menu-item-has-children {
@@ -188,6 +196,11 @@
 
     .sub-menu {
       list-style: none;
+
+      a {
+        padding: 10px 15px;
+        display: block;
+      }
     }
   }
 }
