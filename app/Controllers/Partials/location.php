@@ -17,6 +17,19 @@ trait location
       return  $numberAddress . ",<br />" . $city . ", " . $state;
     }
 
+    public static function codedAddress()
+    {
+
+      $location = get_field('location');
+      // Address, City, State zip
+      $Fulladdress = $location['address'];
+
+      $codedAddress = preg_replace('/\s+/', '+', $Fulladdress);
+
+
+      return  $codedAddress;
+    }
+
     public static function lat()
     {
       $location = get_field('location');
