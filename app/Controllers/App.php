@@ -131,6 +131,7 @@ class App extends Controller
 
       } elseif (is_single() && !is_attachment()) {
 
+          //Event
           if (is_singular('tribe_events')) {
 
             $post_type = get_post_type_object(get_post_type());
@@ -138,7 +139,7 @@ class App extends Controller
             $output .= ' ' . $delimiter . ' ';
             $output .= $before . tribe_get_events_title() . $after;
 
-
+          //Success Stories
           } elseif (is_singular('success_stories')) {
 
             $output .= '<a href="/what-we-do/" class="text-black underline">What We Do</a>';
@@ -147,6 +148,7 @@ class App extends Controller
             $output .= ' ' . $delimiter . ' ';
             $output .= $before . get_the_title() . $after;
 
+          //Staff
           } elseif (is_singular('staff')) {
 
             $output .= '<a href="/who-we-are/" class="text-black underline">Who We Are</a>';
@@ -154,6 +156,8 @@ class App extends Controller
               $output .= '<a href="/who-we-are/board-staff/" class="text-black underline">Board & Staff</a>';
             $output .= ' ' . $delimiter . ' ';
             $output .= $before . get_the_title() . $after;
+
+          //All other Post Types that aren't Post
           } elseif (get_post_type() != 'post') {
 
               $post_type = get_post_type_object(get_post_type());
@@ -165,6 +169,7 @@ class App extends Controller
                   $output .= ' ' . $delimiter . ' ' . $before . get_the_title() . $after;
               }
 
+          //Post
           } else {
               $cat = get_the_category();
               $cat = $cat[0];
@@ -180,7 +185,10 @@ class App extends Controller
               $output .=  $newsPage . ' ' . $delimiter . ' ';
               //$output .= $cats;
               if ($showCurrent == 1) {
-                  $output .= $before . get_the_title() . $after;
+
+                  $title = get_the_title();
+                  $cleanName = strip_tags($title);
+                  $output .= $before . $cleanName . $after;
               }
           }
       } elseif (is_page() && !$post->post_parent) {
