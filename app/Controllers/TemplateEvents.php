@@ -33,11 +33,30 @@ class TemplateEvents extends Controller
 
     return array_map(function ($item) {
 
+      $tribeCategory = get_posts(
+        [
+          'post_type'   => 'tribe_events',
+          'meta_query'  => array(
+                 array(
+                'key' => '_EventStartDate',
+                'value' => date('Y-m-d') . ' 00:00:00',
+                'compare' => '>='
+                   )
+                ),
+          'tax_query'   => array(
+                  array(
+                      'taxonomy' => 'tribe_events_cat',
+                      'field'    => 'slug',
+                      'terms'    => $item->slug
+                  )
+              )
+        ]);
+
         return [
             'title'         => $item->name,
             'description'   => $item->description,
             'permalink'     => '/calendar/category/' . $item->slug,
-            'count'         => $item->count,
+            'count'         => count($tribeCategory),
         ];
     }, $annual_awards ?? [] );
   }

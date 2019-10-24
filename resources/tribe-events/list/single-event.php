@@ -94,7 +94,9 @@ $organizer = tribe_get_organizer();
 	</div>
 	<div class="w-full lg:w-1/2">
 		<!-- Event Image -->
+		<a href="<?php echo esc_url( tribe_get_event_link() ); ?>">
 		<?php echo tribe_event_featured_image( null, 'medium' ); ?>
+		</a>
 	</div>
 </div>
 

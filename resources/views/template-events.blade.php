@@ -9,10 +9,10 @@
 <section>
   <div class='container'>
     <div class='flex success-box'>
-        <div class='w-full p-5 md:p-24 bg-blue-grey my-8'>
+        <div class='w-full lg:p-24 bg-blue-grey my-8'>
           @foreach($nearest_event as $item )
           <div class='flex flex-wrap'>
-            <div class='box-content w-full md:w-1/2 flex flex-wrap flex-col md:pr-8 justify-center'>
+            <div class='box-content w-full lg:w-1/2 flex flex-wrap flex-col p-5 md:pr-8 justify-center'>
               <span class='upcoming uppercase mb-5 font-bold'>Upcoming Event</span>
               <h3 class='mb-10'>{!! $item['title'] !!}</h3>
               <span class='block mb-5 uppercase font-bold'>{!! $item['date'] !!}</span>
@@ -23,9 +23,10 @@
                 <a href="{!! $item['link'] !!}" class='btn bg-red text-white inline-block hover:no-underline'>Learn More</a><br>
               </div>
             </div>
-            <div class='event-image w-full md:w-1/2'>
+            <div class='box-image w-full lg:w-1/2'>
+              <a href="{!! $item['link'] !!}" title="{!! $item['title'] !!}">
               {!! $item['image'] !!}
-
+              </a>
             </div>
           </div>
           @endforeach
@@ -72,7 +73,9 @@
                 </div>
               </div>
               <div class='box-image w-full lg:w-1/2'>
-                <img src="{!! $item['thumbnail']['sizes']['news_thumb'] !!}" alt="{!! $item['title'] !!}">
+                <a href="{!! $item['permalink'] !!}">
+                  <img src="{!! $item['thumbnail']['sizes']['news_thumb'] !!}" alt="{!! $item['title'] !!}">
+                </a>
               </div>
             </div>
           </div>
