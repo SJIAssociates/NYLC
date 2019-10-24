@@ -32,6 +32,15 @@
   }
 }
 
+.accordions .accordions-head {
+  border: 2px solid #372e2c;
+  margin-bottom: 4px;
+}
+
+.accordions .accordion-icons {
+  color: #372e2c;
+}
+
 .full-section {
   @apply py-8;
 
