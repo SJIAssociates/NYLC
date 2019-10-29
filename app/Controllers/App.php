@@ -137,7 +137,7 @@ class App extends Controller
             $post_type = get_post_type_object(get_post_type());
             $output .= '<a href="/events/" class="text-black underline">Events</a>';
             $output .= ' ' . $delimiter . ' ';
-            $output .= $before . tribe_get_events_title() . $after;
+            $output .= $before . get_the_ID() . $after;
 
           //Success Stories
           } elseif (is_singular('success_stories')) {
@@ -153,7 +153,7 @@ class App extends Controller
 
             $output .= '<a href="/who-we-are/" class="text-black underline">Who We Are</a>';
             $output .= ' ' . $delimiter . ' ';
-              $output .= '<a href="/who-we-are/board-staff/" class="text-black underline">Board & Staff</a>';
+            $output .= '<a href="/who-we-are/board-staff/" class="text-black underline">Board & Staff</a>';
             $output .= ' ' . $delimiter . ' ';
             $output .= $before . get_the_title() . $after;
 

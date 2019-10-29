@@ -18,10 +18,19 @@ if ( ! defined( 'ABSPATH' ) ) {
 $events_label_singular = tribe_get_event_label_singular();
 $events_label_plural   = tribe_get_event_label_plural();
 
-$event_id = get_the_ID();
+$event_id = get_the_ID(); ?>
 
+<div class="container">
+	<div id='crumbs' class='py-3'>
+		<a href="<?php echo get_bloginfo('url'); ?>" class='underline text-black home-crumb'>Home</a>
+		<span class='delimiter home-delimiter'>&gt;</span>
+		<a href="/events" class='text-black underline'>Events</a>
+		<span class='delimiter home-delimiter'>&gt;</span>
+		<span><?php the_title(); ?></span>
+	</div>
+</div>
 
-the_title( '<h1 class="text-center text-black xxl:text-5xl py-5 xxl:py-10">', '</h1>' ); ?>
+<?php the_title( '<h1 class="text-center text-black xxl:text-5xl py-5 xxl:py-10">', '</h1>' ); ?>
 
 <div class="flex">
   <aside class='sidebar py-8 lg:w-1/3 xxl:py-12 pr-12 xxl:pr-24'>
