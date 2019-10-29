@@ -341,3 +341,23 @@ function custom_password_cookie_expiry( $expires ) {
     return time() + 3600;  // 3600 seconds is 1 hour. (60 Minutes * 60 seconds)
 }
 add_filter( 'post_password_expires', __NAMESPACE__  .'\\custom_password_cookie_expiry' );
+
+
+// -------------------------------------------------------------
+// Clean Up
+// -------------------------------------------------------------
+function script_cleanup() {
+
+  if(is_front_page()  ) {
+    wp_dequeue_script('tribe-common');
+    wp_dequeue_script('tribe-tooltip-js');
+    wp_dequeue_script('simple-share-buttons-adder-ssba');
+
+    wp_dequeue_script('contact-form-7');
+  }
+  if(is_post_type_archive() ) {
+    wp_dequeue_script('simple-share-buttons-adder-ssba');
+  }
+
+}
+add_action('wp_footer', __NAMESPACE__ .'\\script_cleanup');
