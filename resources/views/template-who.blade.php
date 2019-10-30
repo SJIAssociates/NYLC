@@ -19,9 +19,9 @@
       <div class="text-center">
         <h2><span class='bg-grey-lightest'>Board & Staff</span></h2>
       </div>
-      <div class='flex flex-row py-5 items-stretch xl:px-24'>
+      <div class='flex flex-row py-10 items-stretch xl:px-24'>
         <div class='flex-1 w-full sm:w-1/2 flex flex-col pr-8 justify-center'>
-      		    <h3 class='mb-10 xxl:text-2xl'>{{ $staff_block->description }}</h3>
+      		    <h3 class='xxl:text-4xl xxl:pr-10'>{{ $staff_block->description }}</h3>
       		    <div class="">
         		    <a href="{{ $staff_block->link }}" class='btn bg-red text-white inline-block hover:no-underline'>Meet Our Board & Staff</a><br>
       		    </div>
