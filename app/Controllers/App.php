@@ -24,6 +24,10 @@ class App extends Controller
             }
             return __('Latest Posts', 'sage');
         }
+        if(is_tax('tribe_events_cat') ){
+          return single_term_title();
+        }
+
         if (is_archive() AND !is_category() AND !is_month() ) {
             return post_type_archive_title();
         }
@@ -120,9 +124,17 @@ class App extends Controller
 
       }elseif (is_post_type_archive() ) {
 
-        $post_type = get_post_type_object(get_post_type());
-        $archive_title = get_the_archive_title();
-        $output .= str_replace('Archives:','',$archive_title);
+        if(is_tax('tribe_events_cat')) {
+          $term = get_queried_object();
+
+          $output .= '<a href="/events/" class="text-black underline">Events</a>';
+          $output .= ' ' . $delimiter . ' ';
+          $output .=  $term->name;
+        } else {
+          $post_type = get_post_type_object(get_post_type());
+          $archive_title = get_the_archive_title();
+          $output .= str_replace('Archives:','',$archive_title);
+        }
 
       } elseif( is_home() ) {
 

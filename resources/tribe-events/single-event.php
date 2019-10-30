@@ -19,7 +19,7 @@ $events_label_singular = tribe_get_event_label_singular();
 $events_label_plural   = tribe_get_event_label_plural();
 
 $event_id = get_the_ID(); ?>
-
+<!-- BreadCrumbs -->
 <div class="container">
 	<div id='crumbs' class='py-3'>
 		<a href="<?php echo get_bloginfo('url'); ?>" class='underline text-black home-crumb'>Home</a>
@@ -29,11 +29,13 @@ $event_id = get_the_ID(); ?>
 		<span><?php the_title(); ?></span>
 	</div>
 </div>
-
-<?php the_title( '<h1 class="text-center text-black xxl:text-5xl py-5 xxl:py-10">', '</h1>' ); ?>
-
-<div class="flex">
-  <aside class='sidebar py-8 lg:w-1/3 xxl:py-12 pr-12 xxl:pr-24'>
+<div class='container'>
+	<?php the_title( '<h1 class="text-center text-black xxl:text-5xl py-5 xxl:py-10">', '</h1>' ); ?>
+	<?php tribe_the_notices() ?>
+</div>
+<div class='container'>
+	<div class="flex flex-wrap">
+  <aside class='sidebar py-8 lg:w-1/3 lg:pr-12 xxl:pr-24'>
     <!-- Event featured image, but exclude link -->
     <?php
       //echo tribe_event_featured_image( $event_id, 'full', false );
@@ -49,7 +51,7 @@ $event_id = get_the_ID(); ?>
 		<?php the_post_thumbnail(); ?>
     <h2 class='bold text-black text-2xl xxl:text-4xl mb-2'>About the Event</h2>
   	<!-- Notices -->
-  	<?php tribe_the_notices() ?>
+
   		<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
   			<!-- Event content -->
   			<?php do_action( 'tribe_events_single_event_before_the_content' ) ?>
@@ -60,4 +62,5 @@ $event_id = get_the_ID(); ?>
   			<?php do_action( 'tribe_events_single_event_after_the_content' ) ?>
   		</div> <!-- #post-x -->
   </div><!-- #tribe-events-content -->
+</div>
 </div>

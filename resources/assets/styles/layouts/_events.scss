@@ -10,7 +10,11 @@
   }
 }
 
-//Loop Image
+.tax-description {
+  border-bottom: 2px solid #b5c8d3;
+}
+
+//Loop
 .tribe-events-list {
   .type-tribe_events {
     .tribe-events-event-image {
@@ -18,15 +22,34 @@
       width: 100%;
     }
   }
+
+  .tribe-events-loop .type-tribe_events {
+    margin-bottom: 1em;
+    padding: 0;
+  }
+
+  .tribe-address {
+    display: inline-block;
+  }
+
+  .tribe-country-name,
+  .tribe-postal-code,
+  br {
+    display: none;
+  }
+
+  .tribe-events-gmap {
+    display: block;
+  }
 }
 
 //Loop: Details
 .tribe-events-venue-details,
 .tribe-event-schedule-details {
-  font-size: 16px;
+  font-size: 20px;
   line-height: 1.4em;
   font-weight: bold;
-  font-family: benton-sans-condensed, sans-serif;
+  font-family: benton-sans, sans-serif;
 }
 
 .tribe-events-loop .tribe-event-featured {
@@ -133,6 +156,14 @@
   a {
     color: white;
     background: $primary;
+    display: inline-block;
     padding: 15px 25px;
+    border: 2px solid white;
+
+    &:hover {
+      background: white;
+      color: $primary;
+      border: 2px solid $primary;
+    }
   }
 }
