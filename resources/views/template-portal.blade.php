@@ -26,9 +26,15 @@
           <ul class='m-0 p-0 meeting-list'>
           @foreach($portal_calendar as $event)
             <li class='text-black text-lg text-bold pb-3'>
-              <span class='date'>
-                <i class='fa fa-calendar'></i> {!! $event['date'] !!}</span> - <span class='underline'>{!! $event['title'] !!}
-              </span>
+              @if($event['date'])  <span class='date'><i class='fa fa-calendar'></i> {!! $event['date'] !!}</span> -@endif
+              @if( $event['file'] )
+                <span class='underline'>{!! $event['title'] !!}</span> <a href="{!! $event['file'] !!}" class='text-primary' download>Download File</a>
+              @else
+                <span class='underline'>{!! $event['title'] !!}</span>
+              @endif
+              <p>
+                orem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Accumsan sit amet nulla facilisi morbi tempus
+              </p>
             </li>
           @endforeach
           </ul>
