@@ -15,7 +15,7 @@
             <div class='box-content w-full lg:w-1/2 flex flex-wrap flex-col p-5 md:pr-8 justify-center'>
               <span class='upcoming uppercase mb-5 font-bold'>Upcoming Event</span>
               <h3 class='mb-10'>{!! $item['title'] !!}</h3>
-              <span class='block mb-5 uppercase font-bold'>{!! $item['date'] !!}</span>
+              <span class='block mb-5 uppercase font-bold text-primary'>{!! $item['date'] !!}</span>
               <p class='text-lg lg:text-xl'>
                 {!! $item['excerpt'] !!}
               </p>

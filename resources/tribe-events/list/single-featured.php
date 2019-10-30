@@ -27,7 +27,7 @@ $organizer = tribe_get_organizer();
 
 ?>
 <div class='flex flex-wrap p-5 lg:p-12'>
-	<div class="w-full lg:w-1/2">
+	<div class="w-full lg:w-1/2 lg:pr-10">
 		<!-- Event Title -->
 		<?php do_action( 'tribe_events_before_the_event_title' ) ?>
 		<h3 class="tribe-events-list-event-title">
@@ -94,7 +94,7 @@ $organizer = tribe_get_organizer();
 		</div><!-- .tribe-events-list-event-description -->
 		<?php do_action( 'tribe_events_after_the_content' ); ?>
 	</div>
-	<div class="w-full lg:w-1/2">
+	<div class="w-full lg:w-1/2 hidden lg:block">
 		<!-- Event Image -->
 		<?php echo tribe_event_featured_image( null, 'medium' ); ?>
 	</div>
