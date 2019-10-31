@@ -119,9 +119,8 @@
 /** Form Page */
 .template-form {
   .form-bg {
-    max-height: 80vh;
-    height: 80vh;
-    overflow-y: scroll;
+    height: 100vh;
+    overflow: hidden;
 
     h1 + span {
       max-width: 466px;
