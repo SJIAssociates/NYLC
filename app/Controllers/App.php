@@ -289,5 +289,17 @@ class App extends Controller
         return false;
       endif;
     }
+
+    public function footerLink()
+    {
+      $choice = get_field('page_or_email','options');
+
+      if( $choice == 'Email'){
+        return 'mailto:' . get_field('footer_email','options');
+      }else {
+        return get_field('footer_page','options');
+      }
+    }
+
     use Partials\CategoryLoops;
 }

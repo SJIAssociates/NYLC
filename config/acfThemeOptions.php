@@ -42,7 +42,7 @@ acf_add_local_field_group(array(
 			array(
 				'param' => 'options_page',
 				'operator' => '==',
-				'value' => 'theme-general-settings',
+				'value' => 'acf-options-footer',
 			),
 		),
 	),
@@ -62,32 +62,8 @@ Location: side
 */
 acf_add_local_field_group(array(
 	'key' => 'group_5d4af6ccac77d',
-	'title' => 'Theme Settings',
+	'title' => 'Social Media Channels',
 	'fields' => array(
-		array(
-			'key' => 'field_5d4af6d9ad38d',
-			'label' => 'Logo',
-			'name' => 'logo',
-			'type' => 'image',
-			'instructions' => '',
-			'required' => 0,
-			'conditional_logic' => 0,
-			'wrapper' => array(
-				'width' => '',
-				'class' => '',
-				'id' => '',
-			),
-			'return_format' => 'array',
-			'preview_size' => 'medium',
-			'library' => 'all',
-			'min_width' => '',
-			'min_height' => '',
-			'min_size' => '',
-			'max_width' => '',
-			'max_height' => '',
-			'max_size' => '',
-			'mime_types' => '',
-		),
 		array(
 			'key' => 'field_5d4af6ecad38e',
 			'label' => 'Facebook',
@@ -158,7 +134,7 @@ acf_add_local_field_group(array(
 			array(
 				'param' => 'options_page',
 				'operator' => '==',
-				'value' => 'theme-general-settings',
+				'value' => 'acf-options-footer',
 			),
 		),
 	),
@@ -174,7 +150,7 @@ acf_add_local_field_group(array(
 /*
 Name: Archive Header images
 Fields: Repeater
-Location: Default Pages | Forms Pages
+Location: Explore NY | Sacred Sites | News | Success Stories
 */
 acf_add_local_field_group(array(
 	'key' => 'group_5d9604a4455fe',
@@ -226,6 +202,157 @@ acf_add_local_field_group(array(
 				'param' => 'options_page',
 				'operator' => '==',
 				'value' => 'theme-general-settings',
+			),
+		),
+	),
+	'menu_order' => 0,
+	'position' => 'side',
+	'style' => 'default',
+	'label_placement' => 'top',
+	'instruction_placement' => 'label',
+	'hide_on_screen' => '',
+	'active' => true,
+	'description' => '',
+));
+/*
+Name: Header
+Fields: logo
+Location: side
+*/
+acf_add_local_field_group(array(
+	'key' => 'group_5d4af6ccacd',
+	'title' => 'Header',
+	'fields' => array(
+		array(
+			'key' => 'field_5d4af6d9ad38d',
+			'label' => 'Logo',
+			'name' => 'logo',
+			'type' => 'image',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'return_format' => 'array',
+			'preview_size' => 'medium',
+			'library' => 'all',
+			'min_width' => '',
+			'min_height' => '',
+			'min_size' => '',
+			'max_width' => '',
+			'max_height' => '',
+			'max_size' => '',
+			'mime_types' => '',
+		),
+	),
+	'location' => array(
+		array(
+			array(
+				'param' => 'options_page',
+				'operator' => '==',
+				'value' => 'theme-general-settings',
+			),
+		),
+	),
+	'menu_order' => 0,
+	'position' => 'side',
+	'style' => 'default',
+	'label_placement' => 'top',
+	'instruction_placement' => 'label',
+	'hide_on_screen' => '',
+	'active' => true,
+	'description' => '',
+));
+/*
+Name: Email Experts
+Fields: Email | Page | page_or_email
+Location: side
+*/
+acf_add_local_field_group(array(
+	'key' => 'group_5dbc737114c15',
+	'title' => 'Email Experts',
+	'fields' => array(
+		array(
+			'key' => 'field_5dbc750e2286d',
+			'label' => 'Where Should the Link Go',
+			'name' => 'page_or_email',
+			'type' => 'button_group',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'choices' => array(
+				'Email' => 'Email',
+				'Page' => 'Page',
+			),
+			'allow_null' => 0,
+			'default_value' => '',
+			'layout' => 'horizontal',
+			'return_format' => 'value',
+		),
+		array(
+			'key' => 'field_5dbc737ce387f',
+			'label' => 'Email',
+			'name' => 'footer_email',
+			'type' => 'email',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => array(
+				array(
+					array(
+						'field' => 'field_5dbc750e2286d',
+						'operator' => '==',
+						'value' => 'Email',
+					),
+				),
+			),
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => '',
+			'placeholder' => '',
+			'prepend' => '',
+			'append' => '',
+		),
+		array(
+			'key' => 'field_5dbc76127fc48',
+			'label' => 'Page',
+			'name' => 'footer_page',
+			'type' => 'link',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => array(
+				array(
+					array(
+						'field' => 'field_5dbc750e2286d',
+						'operator' => '==',
+						'value' => 'Page',
+					),
+				),
+			),
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'return_format' => 'url',
+		),
+	),
+	'location' => array(
+		array(
+			array(
+				'param' => 'options_page',
+				'operator' => '==',
+				'value' => 'acf-options-footer',
 			),
 		),
 	),

@@ -275,11 +275,17 @@ add_filter( 'excerpt_length', __NAMESPACE__ . '\\news_excerpt', 999 );
 if( function_exists('acf_add_options_page') ) {
 
 	acf_add_options_page(array(
-		'page_title' 	=> 'Theme General Settings',
+		'page_title' 	=> 'General Settings',
 		'menu_title'	=> 'Theme Settings',
 		'menu_slug' 	=> 'theme-general-settings',
 		'capability'	=> 'edit_posts',
 		'redirect'		=> false
+	));
+
+  acf_add_options_sub_page(array(
+		'page_title' 	=> 'Footer Settings',
+		'menu_title'	=> 'Footer',
+		'parent_slug'	=> 'theme-general-settings',
 	));
 }
 // -------------------------------------------------------------
@@ -361,3 +367,17 @@ function script_cleanup() {
 
 }
 add_action('wp_footer', __NAMESPACE__ .'\\script_cleanup');
+
+// -------------------------------------------------------------
+// Clean Up
+// -------------------------------------------------------------
+add_filter( 'the_seo_framework_title_from_generation', function( $title, $args ) {
+	/**
+	 * @link https://developer.wordpress.org/reference/functions/is_post_type_archive/
+	 */
+	if ( is_post_type_archive( 'landmark' ) ) {
+		$title = 'Explore NY';
+	}
+
+	return $title;
+}, 10, 2 );
