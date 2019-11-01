@@ -22,19 +22,20 @@
           @while(have_posts()) @php the_post() @endphp
             @include('partials.content-page')
           @endwhile
-          <h2 class='mt-5 text-3xl'>{!! $section_title !!}</h2>
+          <h2 class='mt-10 text-3xl mb-5'>{!! $section_title !!}</h2>
           <ul class='m-0 p-0 meeting-list'>
           @foreach($portal_calendar as $event)
-            <li class='text-black text-lg text-bold pb-3'>
-              @if($event['date'])  <span class='date'><i class='fa fa-calendar'></i> {!! $event['date'] !!}</span> -@endif
-              @if( $event['file'] )
-                <span class='underline'>{!! $event['title'] !!}</span> <a href="{!! $event['file'] !!}" class='text-primary' download>Download File</a>
-              @else
-                <span class='underline'>{!! $event['title'] !!}</span>
-              @endif
-              <p>
+            <li class='text-black text-lg text-bold mb-5 bg-grey-lightest flex'>
+              <div class='date-block text-3xl bg-primary w-48 text-center flex flex-wrap text-white content-center justify-center'>
+                <span class='date p-5 text-4xl uppercase font-light'>{!! $event['date'] !!}</span>
+              </div>
+              <div class="p-5 w-full">
+                <span class='font-bold text-2xl'>{!! $event['title'] !!}</span>
                 {!! $event['description'] !!}
-              </p>
+                @if( $event['file'] )
+                  <a href="{!! $event['file'] !!}" class='btn float-right text-sm m-0' download>Download File</a>
+                @endif
+              </div>
             </li>
           @endforeach
           </ul>
