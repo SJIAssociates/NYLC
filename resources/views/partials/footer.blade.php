@@ -27,10 +27,10 @@
 <footer class="content-info font-sans text-black">
   <div class="container">
 	 <div class='flex flex-wrap'>
-		<div class='w-full md:w-1/3'>
+		<div class='w-full md:w-1/4'>
   		  <h2 class='text-4xl font-bold'>Connect With Us</h2>
 			@php dynamic_sidebar('sidebar-footer') @endphp
-			<p>Have a preservation question? <a href="">Email our experts.</a></p>
+			<p>Have a preservation question? <a href="{!! $footer_link !!}" target="_blank">Email our experts.</a></p>
 			<p class='text-grey-500 social-links'>Follow Us:
 				<a href="{{ $social->twitter }}" 		target="_blank" title="twitter" class="text-grey-darkest hover:text-primary hover:no-underline"  rel='noopener'><i class="fab fa-twitter"></i></a>
 				<a href="{{ $social->facebook }}" 	target="_blank" title="facebook" class="text-grey-darkest hover:text-primary hover:no-underline" rel='noopener'><i class="fab fa-facebook-f"></i></a>
@@ -38,7 +38,7 @@
 				<a href="{{ $social->instagram }}" 	target="_blank" title="instagram" class="text-grey-darkest hover:text-primary hover:no-underline" rel='noopener'><i class="fab fa-instagram"></i></a>
 			</p>
 		</div>
-		<div class='w-full md:w-2/3'>
+		<div class='w-full md:w-3/4'>
       @if (has_nav_menu('footer_navigation'))
         {!! wp_nav_menu(['theme_location' => 'footer_navigation', 'menu_class' => '']) !!}
       @endif

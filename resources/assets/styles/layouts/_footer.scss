@@ -143,17 +143,14 @@
     border-bottom: 1px solid black;
   }
 
-  #menu-item-34,
+  //2176 is news
   #menu-item-2176 {
-    width: auto;
+    width: 19%;
   }
 
-  #menu-item-35 {
+  //2234 Explore
+  #menu-item-2234 {
     width: 15%;
-  }
-
-  #menu-item-38 {
-    width: 10%;
   }
 }
 
@@ -171,10 +168,10 @@
   #menu-footer-nav {
     > li {
       display: inline-block;
-      width: 22%;
+      width: 20%;
 
       > a {
-        margin-bottom: 25px;
+        margin-bottom: 10px;
         border: none;
       }
     }
