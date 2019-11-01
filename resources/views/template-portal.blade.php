@@ -33,7 +33,7 @@
                 <span class='underline'>{!! $event['title'] !!}</span>
               @endif
               <p>
-                orem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Accumsan sit amet nulla facilisi morbi tempus
+                {!! $event['description'] !!}
               </p>
             </li>
           @endforeach

@@ -8,7 +8,7 @@ class TemplatePortal extends Controller
 {
 
   protected $acf = true;
-  
+
   public function portalCalendar()
   {
 
@@ -29,6 +29,7 @@ class TemplatePortal extends Controller
             'title'       => $item['name'],
             'date'        => $item['date'],
             'file'        => $item['file'],
+            'description' => $item['description'],
             'past'        => $past,
         ];
     }, $events ?? [] );
