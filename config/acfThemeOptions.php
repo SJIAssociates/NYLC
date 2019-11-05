@@ -267,6 +267,41 @@ acf_add_local_field_group(array(
 	'description' => '',
 ));
 /*
+Name: Maps API Key
+Fields: map_api
+Location: side
+*/
+acf_add_local_field_group(array(
+	'key' => 'group_5d4af6dd',
+	'title' => 'API Keys',
+	'fields' => array(
+		array(
+			'key' => 'field_5d4af6',
+			'label' => 'Google Maps API',
+			'name' => 'google_maps_api',
+			'type' => 'text',
+			'instructions' => 'Enter the API Key to Enable Google Maps API.',
+		),
+	),
+	'location' => array(
+		array(
+			array(
+				'param' => 'options_page',
+				'operator' => '==',
+				'value' => 'theme-general-settings',
+			),
+		),
+	),
+	'menu_order' => 0,
+	'position' => 'side',
+	'style' => 'default',
+	'label_placement' => 'top',
+	'instruction_placement' => 'label',
+	'hide_on_screen' => '',
+	'active' => true,
+	'description' => '',
+));
+/*
 Name: Email Experts
 Fields: Email | Page | page_or_email
 Location: side

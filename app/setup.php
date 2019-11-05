@@ -18,7 +18,11 @@ add_action('wp_enqueue_scripts', function () {
     wp_enqueue_script('sage/main.js', asset_path('scripts/main.js'), ['jquery'], null, true);
 
     if( is_post_type_archive('landmark') or is_singular('landmark') ) {
-      wp_enqueue_script( 'google-api', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyDVIoaRu1IQ3d-3REFNb9IhYFhUagwWlpw', null, null, true); // Add in your key
+      $api = get_field('google_maps_api', 'options');
+
+      $googleMapLink = 'https://maps.googleapis.com/maps/api/js?key=' . $api;
+
+      wp_enqueue_script( 'google-api', $googleMapLink , null, null, true); // Add in your key
     }
 
     if( is_post_type_archive('landmark')) {
@@ -300,7 +304,9 @@ add_action( 'admin_menu', __NAMESPACE__ .'\\custom_menu_page_removing' );
 // -------------------------------------------------------------
 function my_acf_init() {
 
-	acf_update_setting('google_api_key', 'AIzaSyDVIoaRu1IQ3d-3REFNb9IhYFhUagwWlpw');
+  $api = get_field('google_maps_api', 'options');
+
+	acf_update_setting('google_api_key', $api);
 }
 
 add_action('acf/init', __NAMESPACE__ .'\\my_acf_init');
@@ -349,6 +355,32 @@ function custom_password_cookie_expiry( $expires ) {
 add_filter( 'post_password_expires', __NAMESPACE__  .'\\custom_password_cookie_expiry' );
 
 
+// -------------------------------------------------------------
+// Trustee Portal Password Error
+// -------------------------------------------------------------
+add_filter( 'the_password_form', __NAMESPACE__  .'\\wpse_71284_custom_post_password_msg' );
+
+/**
+ * Add a message to the password form.
+ *
+ * @wp-hook the_password_form
+ * @param   string $form
+ * @return  string
+ */
+function wpse_71284_custom_post_password_msg( $form )
+{
+    // No cookie, the user has not sent anything until now.
+    if ( ! isset ( $_COOKIE[ 'wp-postpass_' . COOKIEHASH ] ) )
+        return $form;
+
+    // Translate and escape.
+    $msg = esc_html__( 'Sorry, your password is wrong.', 'your_text_domain' );
+
+    // We have a cookie, but it doesn’t match the password.
+    $msg = "<p class='custom-password-message text-center'>$msg</p>";
+
+    return $msg . $form;
+}
 // -------------------------------------------------------------
 // Clean Up
 // -------------------------------------------------------------
