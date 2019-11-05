@@ -17,7 +17,18 @@ class TemplatePortal extends Controller
     return array_map(function ($item) {
 
         $today = time();
+
+        //Give us the YearMonthDate
         $eventDate = strtotime($item['date']);
+        $calendarDate = date_i18n( "Ymd", $eventDate );
+
+        //Give us the Time in His
+        $eventTime = "T" . $item['time'];
+
+        //Combine
+        $comboFormat = $calendarDate . $eventTime;
+
+
 
         if($today >= $eventDate):
           $past = TRUE;
@@ -26,11 +37,12 @@ class TemplatePortal extends Controller
         endif;
 
         return [
-            'title'       => $item['name'],
-            'date'        => $item['date'],
-            'file'        => $item['file'],
-            'description' => $item['description'],
-            'past'        => $past,
+            'title'         => $item['name'],
+            'date'          => $item['date'],
+            'time'          => $item['time'],
+            'calendarButton'=> $comboFormat,
+            'file'          => $item['file'],
+            'description'   => $item['description'],
         ];
     }, $events ?? [] );
 
