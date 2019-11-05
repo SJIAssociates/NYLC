@@ -32,6 +32,7 @@
   font-family: benton-sans-compressed, sans-serif;
   transition: all 0.4s;
   height: 40px;
+  min-width: 25%;
 
   &:hover {
     @apply bg-white text-primary;
