@@ -1,15 +1,17 @@
 @extends('layouts.app')
 
 @section('content')
-
-@include('partials.page-header')
-<div class='text-center mx-auto'>
-  <?php echo get_the_term_list( $post->ID, 'Borough', '<span class="borough text-primary font-bold uppercase inlin-block relative">', ', ', ', NY</span>' ) ?>
+<div class="container">
+  @include('partials.page-header')
+  <div class='text-center mx-auto'>
+    <?php echo get_the_term_list( $post->ID, 'Borough', '<span class="borough text-primary font-bold uppercase inlin-block relative">', ', ', ', NY</span>' ) ?>
+  </div>
 </div>
+
 <div class='container'>
   <div class="content">
     <div class='flex flex-wrap'>
-      <aside class='sidebar w-full py-8 lg:w-1/3 xxl:py-12 pr-12 xl:pr-24'>
+      <aside class='sidebar w-full py-8 lg:w-1/3 xxl:py-12 xl:pr-24'>
         <div class='widget'>
           <h3>Contact</h3>
           @if(!empty($contact->email) )<a href="mailto:{!! $contact->email !!}" class='text-black block hover:text-red mb-2'>{!! $contact->email !!}</a>@endif
@@ -30,7 +32,7 @@
           <div class="acf-map">
               <div class="marker" data-lat="{!! SingleLandmark::lat() !!}" data-lng="{!! SingleLandmark::lng() !!}"></div>
           </div>
-        </div>        
+        </div>
       </aside>
       <main class="main w-full py-8 lg:w-2/3 xxl:py-12">
         @while(have_posts()) @php the_post() @endphp
@@ -52,7 +54,7 @@
     </div>
     <div class='flex flex-wrap'>
         @if( $prev_landmark )
-        <div class="box w-full lg:w-1/2 px-10 mb-5">
+        <div class="box w-full lg:w-1/2 lg:px-10 mb-5">
           <img src='{!! $prev_landmark->thumb !!}' alt="{!! $prev_landmark->title !!}"/>
           <div class='text-center bg-white p-5 mx-auto w-3/4 -mt-24 relative'>
             <h3 class='text-2xl lg:text-3xl'><a href="{!! $prev_landmark->permalink !!}" class='text-black'>{!! $prev_landmark->title !!}</a></h3>
@@ -67,7 +69,7 @@
         </div>
         @endif
         @if( $next_landmark )
-        <div class="box w-full lg:w-1/2 px-10  mb-5">
+        <div class="box w-full lg:w-1/2 lg:px-10  mb-5">
           <img src='{!! $next_landmark->thumb !!}' alt="{!! $next_landmark->title !!}"/>
           <div class='text-center bg-white p-5 mx-auto w-3/4 -mt-24 relative'>
             <h3 class='text-2xl lg:text-3xl'><a href="{!! $next_landmark->permalink !!}" class='text-black'>{!! $next_landmark->title !!}</a></h3>

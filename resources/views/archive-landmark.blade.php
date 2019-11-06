@@ -4,7 +4,7 @@
   @include('partials.page-header')
   <section>
     <div class='container'>
-      <div class='w-full md:w-2/3 mx-auto my-16 xl:text-2xl'>
+      <div class='w-full md:w-2/3 mx-auto my-5 lg:my-16 xl:text-2xl'>
         <h3 class='text-center'>Discover the best of New York, from hidden gems  to iconic landmarks, through our “Tourist in your own Town” Video Series.</h3>
       </div>
     </div>
