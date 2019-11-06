@@ -38,6 +38,12 @@
       order: -1;
     }
   }
+
+  .news-card {
+    .box-image {
+      order: -1;
+    }
+  }
 }
 
 //Standard Post Styles
@@ -201,6 +207,12 @@
   .blog {
     .content {
       .main {
+        order: 0;
+      }
+    }
+
+    .news-card {
+      .box-image {
         order: 0;
       }
     }

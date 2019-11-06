@@ -1,7 +1,7 @@
 <div class='flex success-box w-full'>
-    <div class='w-full p-5 lg:p-24 bg-white my-8'>
+    <div class='w-full lg:p-5 lg:p-24 bg-white my-8'>
       <div class='flex flex-wrap'>
-        <div class='box-content w-full lg:w-1/2 flex flex-wrap flex-col lg:pr-8 justify-center'>
+        <div class='box-content p-5 w-full lg:w-1/2 flex flex-wrap flex-col lg:pr-8 justify-center'>
           <h3 class='mb-5 text-2xl mb-0'>{!! $title !!}</h3>
           <div class=''>
             <p class='lg:text-lg xxl:text-2xl'>{!! $excerpt !!}</p>
