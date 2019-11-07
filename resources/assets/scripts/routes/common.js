@@ -10,6 +10,8 @@ export default {
 			$('#mobile-nav').toggleClass('open');
 		}
 		$('.menu-toggle').click(menuMorph);
+
+    $('.ctct-disclosure a').attr('rel', 'noopener');
   },
   finalize() {
     // JavaScript to be fired on all pages, after page specific JS is fired
