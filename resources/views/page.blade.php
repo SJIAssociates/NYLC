@@ -3,7 +3,7 @@
 @section('content')
 
 @include('partials.page-header')
-<section class='main-content'>
+<section class='main-content' aria-label="Main Content Section"  >
   <div class='container'>
     @if( $subtitle )
     <h2 class='text-black text-center text-2xl lg:text-3xl mx-auto w-full lg:w-3/4 font-light mt-10 leading-normal'>{{ $subtitle }}</h2>
@@ -39,7 +39,7 @@
 </section>
 
 @if( $sub_pages != false)
-<section class='sub_pages full-section bg-blue-grey'>
+<section class='sub_pages full-section bg-blue-grey' aria-label="Sub Pages"  >
   <div class='container'>
     <div class='flex flex-wrap'>
       @foreach($sub_pages as $item )
@@ -51,7 +51,7 @@
 @endif
 
 @if( $news_loop != false)
-<section class='news_section full-section bg-blue-grey'>
+<section class='news_section full-section bg-blue-grey' aria-label="News Section"  >
   <div class='container'>
     <div class='text-center mb-10'>
       <h2><span class='bg-blue-grey'>{!! $category_title->name !!} Highlights</span></h2>

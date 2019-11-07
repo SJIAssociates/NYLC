@@ -2,7 +2,7 @@
 
 @section('content')
 
-<section class='main-content'>
+<section class='main-content' aria-label="Introduction Section"  >
   <div class='container'>
     <div class="content flex flex-wrap">
       @if( $page_sidebar != false)
@@ -33,7 +33,7 @@
     </div>
   </div>
 </section>
-<section class='full-section bg-blue-grey'>
+<section class='full-section bg-blue-grey' aria-label="Membership Levels Section"  >
   <div class='container'>
       <div class="text-center lg:mb-10">
         <h2><span class='bg-grey-lightest'>Membership Levels And Benefits</span></h2>
