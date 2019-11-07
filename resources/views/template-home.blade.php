@@ -18,7 +18,7 @@
 		<a href="" class='btn text-white my-4 px-12 inline-block'>About Us</a>
 	</div>
 </section>
-<section class='full-section' id="homeWhat">
+<section class='full-section' id="homeWhat" aria-label="What We Do Section"  >
 	<div class='container'>
 		<div class='text-center'><h2><span class='bg-white'>What We Do</span></h2></div>
 		<p class='text-center font-bold xxl:mb-10'>Our work enriches the quality of life for all New Yorkers.</p>
@@ -29,7 +29,7 @@
     </div>
 	</div>
 </section>
-<section class='full-section' id='homeNews'>
+<section class='full-section' id='homeNews' aria-label="The Three most recent news items">
 	<div class='container'>
 		<div class='text-center'><h2><span class='bg-grey'>News</span></h2></div>
 		<p class='text-black text-xxl text-center font-semibold my-3 xxl:mb-10'>Stay informed about the latest preservation issues.</p>
@@ -43,7 +43,7 @@
     </div>
 	</div>
 </section>
-<section class='full-section'>
+<section class='full-section' aria-label="The Featured Success Story"  >
   <div class='container'>
     <div class='text-center'><h2><span class='bg-white'>Success Stories</span></h2></div>
     <div class='flex success-box'>
@@ -64,7 +64,7 @@
     </div>
   </div>
 </section>
-<section class='full-section' id='exploreHome'>
+<section class='full-section' id='exploreHome' aria-label="The most recent Explore NY Video Landmark"  >
 	<div class='container'>
 		<div class='text-center'><h2><span class='bg-white'>Explore NY</span></h2></div>
 		<p class='text-black font-bold text-center w-full lg:w-1/2 mx-auto xxl:mb-10'>Visit some of New York’s best hidden gems as well as some of the classic iconic landmarks.</p>

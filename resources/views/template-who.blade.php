@@ -14,7 +14,7 @@
       </div>
     </div>
   @endwhile
-<section class='full-section bg-grey-lightest'>
+<section class='full-section bg-grey-lightest' aria-label="Board & Staff Section">
   <div class='container'>
       <div class="text-center">
         <h2><span class='bg-grey-lightest'>Board & Staff</span></h2>
@@ -32,7 +32,7 @@
       </div>
   </div>
 </section>
-<section class='full-section'>
+<section class='full-section' aria-label="Annual Reports Section"  >
   <div class='container'>
     <div class="text-center">
 		  <h2><span class='bg-white'>Annual Reports and 990s</span></h2>
@@ -55,7 +55,7 @@
 		</div>
   </div>
 </section>
-<section class='full-section bg-blue-grey'>
+<section class='full-section bg-blue-grey' aria-label="Press Section"  >
   <div class='container'>
     <div class="text-center">
       <h2><span class='bg-blue-grey'>Press</span></h2>
@@ -77,7 +77,7 @@
     </div>
   </div>
 </section>
-<section class='full-section' id="contactSection">
+<section class='full-section' id="contactSection" aria-label="Contact Us Section"  >
   <div class='container'>
     <div class="text-center">
       <h2><span class='bg-white'>Contact Us</span></h2>

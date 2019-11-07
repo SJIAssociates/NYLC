@@ -5,7 +5,7 @@
 @extends('layouts.app')
 
 @section('content')
-<section class='bg-grey-blue form-bg pt-10' style="background-color: #ddd; background-image: url({{ $header_image }}); background-size: cover; background-position: 50% 50%;">
+<section class='bg-grey-blue form-bg pt-10' style="background-color: #ddd; background-image: url({{ $header_image }}); background-size: cover; background-position: 50% 50%;" aria-label="Form Section"  >
   @while(have_posts()) @php the_post() @endphp
     <div class='container'>
       <div class='w-full bg-white xl:w-1/2 p-10 mt-10'>

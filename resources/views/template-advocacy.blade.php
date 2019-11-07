@@ -18,7 +18,7 @@
       </div>
     </div>
   @endwhile
-  <section class='full-section bg-blue-grey' id=''>
+  <section class='full-section bg-blue-grey' id='' aria-label="News Section"  >
   	<div class='container'>
   		<div class='text-center'><h2><span class='bg-blue-grey'>Advocacy Updates</span></h2></div>
   		<p class='text-black text-xxl text-center font-semibold my-3 xxl:mb-10'>Stay informed about the latest issues.</p>

@@ -15,14 +15,14 @@
       </div>
     </div>
   @endwhile
-  <section class='full-section' id="homeWhat">
+<section class='full-section' id="homeWhat" aria-label="NYLC Services Section"  >
   	<div class='container flex flex-wrap'>
       @foreach($service_boxes as $item )
 		    @include('partials/trio', $item)
       @endforeach
   	</div>
   </section>
-<section class='full-section bg-blue-grey'>
+<section class='full-section bg-blue-grey' aria-label="Most Recent Success Stories"  >
   <div class='container'>
     <div class="text-center">
 		  <h2><span class='bg-blue-grey'>Success Stories</span></h2>

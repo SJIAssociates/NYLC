@@ -16,7 +16,7 @@
   @endwhile
 </div>
 
-<section class='sub_pages full-section bg-blue-grey'>
+<section class='sub_pages full-section bg-blue-grey' aria-label="Board Members Section"  >
   <div class='container'>
     <h3 class='font-bold text-4xl'>Board</h3>
     <div class='flex flex-wrap'>
@@ -41,7 +41,7 @@
     </div>
   </div>
 </section>
-<section class='sub_pages full-section'>
+<section class='sub_pages full-section' aria-label="Advisory Board Section"  >
   <div class='container'>
     <h3 class='font-bold text-4xl'>Advisory Council</h3>
     <div class='flex flex-wrap'>

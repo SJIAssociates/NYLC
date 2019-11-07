@@ -9,7 +9,7 @@
 @include('partials.page-header')
 
 @if ( ! post_password_required( $post ) )
-  <section class='main-content'>
+  <section class='main-content' aria-label="Main Content"  >
     <div class='container'>
       <div class="content flex flex-wrap">
         <aside class='sidebar w-full lg:w-1/3 pr-8 xxl:py-12 xxl:pr-32'>
