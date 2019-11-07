@@ -1,9 +1,9 @@
-<header class="banner bg-primary">
+<header class="banner bg-primary" aria-label="Main Navigation"  >
   <div class="px-8 mx-auto">
     <div class='flex items-start'>
       <div class='w-full lg:w-3/4 flex row items-center'>
-          <a class="brand" href="{{ home_url('/') }}">
-            <img src="{!! $logo['url'] !!}">
+          <a class="brand" href="{{ home_url('/') }}" label="Logo for the NYLC. Link to the Homepage">
+            <img src="{!! $logo['url'] !!}" alt="Logo for the New York Landmark Conservancy">
           </a>
         <nav class="hidden lg:block nav-primary">
           @if (has_nav_menu('primary_navigation'))

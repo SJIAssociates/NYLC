@@ -1,4 +1,4 @@
-<section class='full-section bg-red xl:py-24' id="supportHome">
+<section class='full-section bg-red xl:py-24' id="supportHome" aria-label="Donation and Membereship Links">
 	<div class='px-8 mx-auto'>
 		<div class='text-center'><h2><span class='text-white'>Support Us</span></h2></div>
 		<div class='flex justify-center flex-wrap'>
@@ -15,7 +15,7 @@
 		</div>
 	</div>
 </section>
-<section id='newsletterSignup' class='py-8 bg-blue-grey xl:py-24'>
+<section id='newsletterSignup' class='py-8 bg-blue-grey xl:py-24' aria-label="Newsleter Signup">
 	<div class='container'>
 		<div class='w-full md:w-4/5 mx-auto'>
 	  	<h2 class='text-white text-4xl font-bold xl:mb-5'>Join Our Mailing List</h2>
@@ -24,7 +24,7 @@
 		</div>
   </div>
 </section>
-<footer class="content-info font-sans text-black">
+<footer class="content-info font-sans text-black"aria-label="Site Footer and Navigation">
   <div class="container">
 	 <div class='flex flex-wrap'>
 		<div class='w-full md:w-1/4'>
