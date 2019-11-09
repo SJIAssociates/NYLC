@@ -28,13 +28,13 @@
             <li class='text-black text-lg text-bold mb-5 bg-grey-lightest flex'>
               @if( $event['date'] )
               <div class='date-block text-3xl bg-primary w-48 text-center flex flex-wrap text-white content-center justify-center'>
-                <span class='date p-5 text-4xl uppercase font-light'>{!! $event['date'] !!}</span>
+                <span class='date p-5 text-3xl uppercase font-light'>{!! $event['date'] !!}</span>
               </div>
               @endif
               <div class="p-5 w-full">
                 <span class='font-bold text-2xl block'>{!! $event['title'] !!}</span>
                 {!! $event['description'] !!}
-                @if( $event['date'] )
+                @if( $event['date'] && !$event['past'])
                 <a href="http://www.google.com/calendar/render?action=TEMPLATE&text={!! $event['title'] !!}&dates={!! $event['calendarButton'] !!}/{!! $event['calendarButton'] !!}&ctz=America/New_York&trp=false&sprop=&sprop=name:"
                 target="_blank" rel="nofollow" class='text-xs mt-5 inline-block bg-grey-darker text-white rounded-lg px-2 py-1 uppercase'>+ Google Calendar</a>
                 @endif

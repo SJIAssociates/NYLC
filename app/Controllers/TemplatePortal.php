@@ -17,32 +17,43 @@ class TemplatePortal extends Controller
     return array_map(function ($item) {
 
         $today = time();
+        $past= false;
+        $shortDate = Null;
+        $comboFormat = Null;
+
 
         //Give us the YearMonthDate
-        $eventDate = strtotime($item['date']);
-        $calendarDate = date_i18n( "Ymd", $eventDate );
+        if($item['date']):
+          $eventDate = strtotime($item['date']);
+          $calendarDate = date_i18n( "Ymd", $eventDate );
 
-        //Give us the Time in His
-        $eventTime = "T" . $item['time'];
+          $shortDate = date('j M', $eventDate) . " <span class='font-bold text-4xl'>". date('Y', $eventDate) ."</span>";
 
-        //Combine
-        $comboFormat = $calendarDate . $eventTime;
+          //Give us the Time in His
+          $eventTime = "T" . $item['time'];
 
+          //Combine
+          $comboFormat = $calendarDate . $eventTime;
 
+          if($today >= $eventDate):
+            $past = TRUE;
+          else:
+            $past= false;
+          endif;
 
-        if($today >= $eventDate):
-          $past = TRUE;
         else:
-          $past= false;
+          $eventDate = false;
         endif;
+
 
         return [
             'title'         => $item['name'],
-            'date'          => $item['date'],
+            'date'          => $shortDate ?? Null,
             'time'          => $item['time'],
             'calendarButton'=> $comboFormat,
             'file'          => $item['file'],
             'description'   => $item['description'],
+            'past'          => $past,
         ];
     }, $events ?? [] );
 
