@@ -14,7 +14,8 @@ class TemplatePortal extends Controller
 
     $events = get_field('events_repeater');
 
-    return array_map(function ($item) {
+    if(is_array($events) ):
+      return array_map(function ($item) {
 
         $today = time();
         $past= false;
@@ -45,7 +46,6 @@ class TemplatePortal extends Controller
           $eventDate = false;
         endif;
 
-
         return [
             'title'         => $item['name'],
             'date'          => $shortDate ?? Null,
@@ -56,6 +56,9 @@ class TemplatePortal extends Controller
             'past'          => $past,
         ];
     }, $events ?? [] );
+    else:
+      return Null;
+    endif;
 
   }
 

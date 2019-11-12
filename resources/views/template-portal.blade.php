@@ -22,9 +22,10 @@
           @while(have_posts()) @php the_post() @endphp
             @include('partials.content-page')
           @endwhile
-          <h2 class='mt-10 text-3xl mb-5'>{!! $section_title !!}</h2>
+          @if($section_title)<h2 class='mt-10 text-3xl mb-5'>{!! $section_title !!}</h2>@endif
           <ul class='m-0 p-0 meeting-list'>
-          @foreach($portal_calendar as $event)
+            @if($portal_calendar)
+            @foreach($portal_calendar as $event)
             <li class='text-black text-lg text-bold mb-5 bg-grey-lightest flex'>
               @if( $event['date'] )
               <div class='date-block text-3xl bg-primary w-48 text-center flex flex-wrap text-white content-center justify-center'>
@@ -43,7 +44,63 @@
                 @endif
               </div>
             </li>
-          @endforeach
+            @endforeach
+            @endif
+          </ul>
+
+          <ul class='directory-portal'>
+            @php while(have_rows('directory')): the_row(); @endphp
+            <li class='directory-person p-10 border'>
+              <span class='text-2xl font-bold block'>{!! the_sub_field('name') !!}</span>
+              <strong>{!! the_sub_field('business') !!}</strong>
+              <div class='flex flex-wrap border-b-2 py-3'>
+                <div class='w-full lg:w-1/2'>
+                  <p>Business</p>
+                </div>
+                <div class='w-full lg:w-1/2'>
+
+                  <address>
+                    {!! the_sub_field('business_address') !!}
+                  </address>
+                </div>
+              </div>
+              <div class='flex flex-wrap border-b-2 py-3'>
+                <div class='w-full lg:w-1/3'>
+                  <p class='font-bold mb-0'>Work Phone</p>
+                  {!! the_sub_field('work_phone') !!}
+                </div>
+                <div class='w-full lg:w-1/3'>
+                  <p class='font-bold mb-0'>Work Fax</p>
+                  {!! the_sub_field('work_fax') !!}
+                </div>
+                <div class='w-full lg:w-1/3'>
+                  <p class='font-bold mb-0'>Email</p>
+                  {!! the_sub_field('email') !!}
+                </div>
+              </div>
+              <div class='flex flex-wrap border-b-2 py-3'>
+                <div class='w-full lg:w-1/2'>
+                  <p>Home Address</p>
+                </div>
+                <div class='w-full lg:w-1/2'>
+                  <address>
+                    {!! the_sub_field('home_address') !!}
+                  </address>
+                </div>
+              </div>
+              <div class='flex flex-wrap border-b-2 py-3'>
+                <div class='w-full lg:w-1/2'>
+                  <p>Spouse / Partner</p>
+                </div>
+                <div class='w-full lg:w-1/2'>
+                  <address>
+                    {!! the_sub_field('spouse_partner') !!}
+                  </address>
+                </div>
+              </div>
+
+            </li>
+            @endwhile
           </ul>
         </main>
       </div>
