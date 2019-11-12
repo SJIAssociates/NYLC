@@ -67,22 +67,6 @@
       }
     }
   }
-
-  .ssba {
-    background: #efefef;
-    padding: 10px;
-
-    .ssba-share-text {
-      text-transform: uppercase;
-      color: black;
-      font-family: benton-sans-condensed, sans-serif;
-      font-weight: bold;
-    }
-
-    br {
-      display: none;
-    }
-  }
 }
 
 .post-password-form {
@@ -122,6 +106,68 @@
   padding: 15px 25px;
   color: white;
   background: $primary;
+}
+
+.entry-share {
+  background: #efefef;
+  display: block;
+  width: 100%;
+  float: left;
+  padding: 10px;
+  border-radius: 3px;
+
+  .entry-share-btns {
+    margin-left: 0;
+    padding-left: 0;
+    list-style: none;
+
+    &::before {
+      content: "Share the Article:";
+    }
+
+    li {
+      display: inline-block;
+      margin: 0.25em;
+    }
+
+    a {
+      background: $primary;
+      display: block;
+      padding: 0.25em 0.75em;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      text-decoration: none;
+      border-radius: 6px;
+      font-size: 1em;
+      transition: all 0.4s;
+
+      &:hover {
+        background: #666;
+      }
+    }
+
+    .entry-share-btn-icon {
+      position: relative;
+      top: 3px;
+      display: inline-block;
+      fill: #fff;
+      stroke: none;
+    }
+
+    span {
+      display: inline-block;
+      padding-left: 0.4em;
+      color: white;
+    }
+
+    svg {
+      width: 1em;
+      height: 1em;
+      vertical-align: baseline;
+    }
+  }
 }
 
 /* Explore NY */

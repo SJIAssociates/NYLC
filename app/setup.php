@@ -389,17 +389,18 @@ function script_cleanup() {
   if(is_front_page()  ) {
     wp_dequeue_script('tribe-common');
     wp_dequeue_script('tribe-tooltip-js');
-    wp_dequeue_script('simple-share-buttons-adder-ssba');
 
     wp_dequeue_script('contact-form-7');
-  }
-  if(is_post_type_archive() ) {
-    wp_dequeue_script('simple-share-buttons-adder-ssba');
   }
 
 }
 add_action('wp_footer', __NAMESPACE__ .'\\script_cleanup');
 
+
+function remove_roots_share_buttons_assets() {
+  wp_dequeue_style('roots-share-buttons');
+}
+add_action('wp_enqueue_scripts',  __NAMESPACE__ .'\\remove_roots_share_buttons_assets');
 // -------------------------------------------------------------
 // Clean Up
 // -------------------------------------------------------------
