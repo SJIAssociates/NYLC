@@ -48,6 +48,13 @@
 
 //Standard Post Styles
 .entry-content {
+
+  ul li {
+      line-height: 1.5em;
+      font-family: benton-sans-condensed, sans-serif;
+      margin-bottom: 15px;
+  }
+
   .content {
     h2 {
       position: relative;
