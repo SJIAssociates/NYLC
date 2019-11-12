@@ -48,7 +48,6 @@ $event_id = get_the_ID(); ?>
     ?>
   </aside>
   <div class="tribe-events-single main py-8 lg:w-2/3 xxl:py-12">
-		<?php the_post_thumbnail(); ?>
     <h2 class='bold text-black text-2xl xxl:text-4xl mb-2'>About the Event</h2>
   	<!-- Notices -->
 
