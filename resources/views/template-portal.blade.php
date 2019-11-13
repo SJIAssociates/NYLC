@@ -51,54 +51,56 @@
           <ul class='directory-portal'>
             @php while(have_rows('directory')): the_row(); @endphp
             <li class='directory-person p-10 border'>
-              <span class='text-2xl font-bold block'>{!! the_sub_field('name') !!}</span>
-              <strong>{!! the_sub_field('business') !!}</strong>
-              <div class='flex flex-wrap border-b-2 py-3'>
-                <div class='w-full lg:w-1/2'>
-                  <p>Business</p>
+              <div class='w-full flex flex-wrap pb-3'>
+                @if( get_sub_field('profile_picture') )
+                  <img src="{!! the_sub_field('profile_picture') !!}" alt="{!! the_sub_field('name') !!} Profile Picture" class='lg:w-32 mr-8'/>
+                @endif
+                <div class="">
+                  <span class='text-2xl lg:text-3xl font-bold block'>{!! the_sub_field('name') !!}</span>
+                  <strong class='block py-1'>{!! the_sub_field('business') !!}</strong>
+                  <a href="mailto:{!! the_sub_field('email') !!}" title="Email for {!! the_sub_field('name') !!}" class='block py-1'>{!! the_sub_field('email') !!}</a>
+                  <a href="tel:{!! the_sub_field('personal_phone') !!}"  class='block py-1'>{!! the_sub_field('personal_phone') !!}</a>
                 </div>
-                <div class='w-full lg:w-1/2'>
-
+              </div>
+              @if(get_sub_field('business_address'))
+              <div class='flex flex-wrap border-t-2 py-3'><!-- Business -->
+                <div class='w-full lg:flex-1'>
+                  <p class='font-bold'>Work</p>
                   <address>
                     {!! the_sub_field('business_address') !!}
                   </address>
                 </div>
-              </div>
-              <div class='flex flex-wrap border-b-2 py-3'>
-                <div class='w-full lg:w-1/3'>
-                  <p class='font-bold mb-0'>Work Phone</p>
-                  {!! the_sub_field('work_phone') !!}
-                </div>
-                <div class='w-full lg:w-1/3'>
-                  <p class='font-bold mb-0'>Work Fax</p>
-                  {!! the_sub_field('work_fax') !!}
-                </div>
-                <div class='w-full lg:w-1/3'>
-                  <p class='font-bold mb-0'>Email</p>
-                  {!! the_sub_field('email') !!}
-                </div>
-              </div>
-              <div class='flex flex-wrap border-b-2 py-3'>
-                <div class='w-full lg:w-1/2'>
-                  <p>Home Address</p>
-                </div>
-                <div class='w-full lg:w-1/2'>
-                  <address>
-                    {!! the_sub_field('home_address') !!}
-                  </address>
-                </div>
-              </div>
-              <div class='flex flex-wrap border-b-2 py-3'>
-                <div class='w-full lg:w-1/2'>
-                  <p>Spouse / Partner</p>
-                </div>
-                <div class='w-full lg:w-1/2'>
-                  <address>
-                    {!! the_sub_field('spouse_partner') !!}
-                  </address>
-                </div>
-              </div>
+                <div class='w-full lg:flex-1'>
+                  <p class='font-bold mb-0 mt-5'>Work Phone</p>
+                  <span class='block mb-5'>{!! the_sub_field('work_phone') !!}</span>
 
+                  <p class='font-bold mb-0'>Work Fax</p>
+                  <span>{!! the_sub_field('work_fax') !!}</span>
+                </div>
+                @if(get_sub_field('assistant'))
+                <div class='w-full lg:flex-1'>
+                  <p class='font-bold mb-0 mt-5 mb-1'>Assistant</p>
+                  <span class='block'>{!! the_sub_field('assistant') !!}</span>
+                  <a href="mailto:{!! the_sub_field('assistant_email') !!}" title="Email for {!! the_sub_field('assistant') !!}" class='block py-1'>{!! the_sub_field('assistant_email') !!}</a>
+                  <a href="tel:{!! the_sub_field('assistant_phone') !!}"  class='block py-1'>{!! the_sub_field('assistant_phone') !!}</a>
+                </div>
+                @endif
+              </div>
+              @endif
+              @if(get_sub_field('home_address'))
+              <div class='flex flex-wrap border-t-2 pt-3'>
+                <div class='w-full lg:w-1/2'>
+                  <p class='font-bold'>Home</p>
+                  <address>{!! the_sub_field('home_address') !!}</address>
+                </div>
+                @if(get_sub_field('spouse_partner'))
+                <div class='w-full lg:w-1/2'>
+                  <p class='m-0 font-bold mt-3'>Spouse / Partner</p>
+                  <p class='m-0'>{!! the_sub_field('spouse_partner') !!}</p>
+                </div>
+                @endif
+              </div>
+              @endif
             </li>
             @endwhile
           </ul>

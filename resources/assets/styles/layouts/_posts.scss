@@ -48,11 +48,10 @@
 
 //Standard Post Styles
 .entry-content {
-
   ul li {
-      line-height: 1.5em;
-      font-family: benton-sans-condensed, sans-serif;
-      margin-bottom: 15px;
+    line-height: 1.5em;
+    font-family: benton-sans-condensed, sans-serif;
+    margin-bottom: 15px;
   }
 
   .content {
@@ -239,6 +238,17 @@
   background: black;
   color: white;
   border: 1px solid black;
+}
+
+.directory-portal {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  address {
+    font-style: normal;
+    line-height: 1.4em;
+  }
 }
 
 #menu-trustee-portal {
