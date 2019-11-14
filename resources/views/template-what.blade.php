@@ -8,9 +8,9 @@
 
   @while(have_posts()) @php the_post() @endphp
     @include('partials.page-header')
-    <span class='mx-auto block font-bold text-black text-center text-xl mt-5'>Our work enriches the quality of life for all New Yorkers.</span>
+    <span class='mx-auto block font-bold text-black text-center text-xl mt-5 px-3'>Our work enriches the quality of life for all New Yorkers.</span>
     <div class='container'>
-      <div class='w-full md:w-2/3 xxl:w-1/2 mx-auto mb-10 xl:text-2xl'>
+      <div class='w-full md:w-2/3 xxl:w-1/2 mx-auto mb-10 xl:text-2xl '>
         @include('partials.content-page')
       </div>
     </div>

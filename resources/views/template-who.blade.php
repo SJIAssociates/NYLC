@@ -39,15 +39,15 @@
     </div>
 		<div class='flex success-box'>
   		  <div class='w-full p-12 xl:p-24 bg-blue-grey my-8'>
-    		  <div class='flex'>
-      		  <div class='w-full w-1/2 flex flex-col pr-8 justify-center'>
+    		  <div class='flex flex-wrap'>
+      		  <div class='w-full lg:w-1/2 flex flex-col pr-8 justify-center'>
       		    <h3 class='mb-10'>{{ $annual_report->description }}</h3>
       		    <div class="button-container">
         		    <a href="{{ $annual_report->link }}" class='btn bg-red text-white inline-block mb-12 hover:no-underline'>View 2019 Annual Report</a><br>
       		    </div>
       		    <a href="{{ $annual_report->archive_link }}" class='archive-link hover:no-underline hover:no-border'>View all annual reports and 990s <i class="fas fa-chevron-right"></i></a>
       		  </div>
-      		  <div class='w-full w-1/2'>
+      		  <div class='w-full lg:w-1/2'>
         		  <img src="{{ $annual_report->image['url'] }}" alt="{{ $annual_report->image['alt'] }}">
       		  </div>
     		  </div>
@@ -82,11 +82,11 @@
     <div class="text-center">
       <h2><span class='bg-white'>Contact Us</span></h2>
     </div>
-    <div class='flex mx-auto xl:w-4/5 mt-10'>
-      <div class='w-full md:w-1/2 lg:px-10'>
+    <div class='flex flex-wrap mx-auto xl:w-4/5 mt-10'>
+      <div class='w-full lg:w-1/2 lg:px-10'>
           @php echo do_shortcode('[contact-form-7 id="1192" title="Contact form 1"]'); @endphp
       </div>
-      <div class='w-full md:w-1/2 text-xl lg:px-10'>
+      <div class='w-full lg:w-1/2 text-xl lg:px-10'>
         <div class='content-info'>
             @php dynamic_sidebar('sidebar-footer') @endphp
             <p>Have a preservation question? <a href="">Email our experts.</a></p>
