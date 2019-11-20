@@ -4,6 +4,9 @@
 
 <section class='main-content' aria-label="Introduction Section"  >
   <div class='container'>
+    @if( $subtitle )
+    <h2 class='text-black text-center text-2xl lg:text-3xl mx-auto w-full lg:w-3/4 font-light mt-10 leading-normal'>{{ $subtitle }}</h2>
+    @endif
     <div class="content flex flex-wrap">
       @if( $page_sidebar != false)
       <aside class='sidebar w-full lg:w-1/3 pr-8 xxl:py-12 xxl:pr-24'>
