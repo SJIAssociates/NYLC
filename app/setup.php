@@ -414,3 +414,15 @@ add_filter( 'the_seo_framework_title_from_generation', function( $title, $args )
 
 	return $title;
 }, 10, 2 );
+
+// -------------------------------------------------------------
+// Changes past event views to reverse chronological order
+// -------------------------------------------------------------
+function tribe_past_reverse_chronological ($post_object) {
+	$past_ajax = (defined( 'DOING_AJAX' ) && DOING_AJAX && $_REQUEST['tribe_event_display'] === 'past') ? true : false;
+	if(tribe_is_past() || $past_ajax) {
+		$post_object = array_reverse($post_object);
+	}
+	return $post_object;
+}
+add_filter('the_posts', __NAMESPACE__ .'\\tribe_past_reverse_chronological', 100);
