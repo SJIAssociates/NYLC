@@ -40,7 +40,7 @@
                 target="_blank" rel="nofollow" class='text-xs mt-5 inline-block bg-grey-darker text-white rounded-lg px-2 py-1 uppercase'>+ Google Calendar</a>
                 @endif
                 @if( $event['file'] )
-                  <a href="{!! $event['file'] !!}" class='btn float-right text-sm m-0' download>Download File</a>
+                  <a href="{!! $event['file'] !!}" class='btn float-right text-sm m-0' download>Download</a>
                 @endif
               </div>
             </li>
