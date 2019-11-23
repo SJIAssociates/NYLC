@@ -52,11 +52,13 @@ class TemplateEvents extends Controller
               )
         ]);
 
+
         return [
             'title'         => $item->name,
             'description'   => $item->description,
             'permalink'     => '/calendar/category/' . $item->slug,
             'count'         => count($tribeCategory),
+            'future_event'  => get_the_permalink($tribeCategory[0]->ID)
         ];
     }, $annual_awards ?? [] );
   }
