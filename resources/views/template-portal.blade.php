@@ -22,6 +22,10 @@
     top: 0;
     right: 0;
   }
+  .modal-header {
+    right: 15px;
+    position: absolute;
+  }
 </style>
 @if ( ! post_password_required( $post ) )
   <section class='main-content' aria-label="Main Content"  >
@@ -63,11 +67,12 @@
             @endif
           </ul>
 
-
+          <!-- Directory List -->
           <ul class='directory-portal flex flex-wrap'>
             @php while(have_rows('directory')): the_row(); @endphp
             <li data-id="@php echo  'person_' . get_row_index() @endphp" class='modal-open cursor-pointer py-2 w-full lg:w-1/2'>
               <span class='hover:text-primary w-full font-bold text-lg'>{!! the_sub_field('name') !!}</span>
+              <strong class='block py-1 text-primary'>{!! the_sub_field('business') !!}</strong>
               <div class='directory-person p-10 hidden' id="@php echo  'person_' . get_row_index() @endphp">
                 <div class='w-full flex flex-wrap pb-3'>
                   @if( get_sub_field('profile_picture') )
@@ -106,7 +111,7 @@
                 </div>
                 @endif
                 @if(get_sub_field('home_address'))
-                <div class='flex flex-wrap border-t-2 pt-3'>
+                <div class='flex flex-wrap border-t-2 py-3'>
                   <div class='w-full lg:w-1/2'>
                     <p class='font-bold'>Home</p>
                     <address>{!! the_sub_field('home_address') !!}</address>
@@ -117,6 +122,12 @@
                     <p class='m-0'>{!! the_sub_field('spouse_partner') !!}</p>
                   </div>
                   @endif
+                </div>
+                @endif
+                @if(get_sub_field('bio'))
+                <div class="flex flex-wrap border-t-2 pt-3">
+                  <h3 class='font-bold mb-1 mt-2 text-2xl'>About {!! the_sub_field('name') !!}</h3>
+                  {!! the_sub_field('bio') !!}
                 </div>
                 @endif
               </div>
@@ -131,8 +142,7 @@
   <div class="modal opacity-0 pointer-events-none fixed w-full h-full flex items-center justify-center">
       <div class="modal-overlay absolute w-full h-full bg-black opacity-50"></div>
 
-      <div class="modal-container bg-white w-11/12 md:max-w-md mx-auto rounded shadow-lg z-50 overflow-y-auto">
-
+      <div class="modal-container bg-white w-11/12 lg:max-w-lg mx-auto rounded shadow-lg z-50 overflow-y-auto">
         <div class="modal-close absolute cursor-pointer flex flex-col items-center mt-4 mr-4 text-white text-sm z-50">
           <svg class="fill-current text-white" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
             <path d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z"></path>
@@ -141,7 +151,7 @@
         </div>
 
         <!-- Add margin if you want to see some of the overlay behind the modal-->
-        <div class="modal-content py-4 text-left px-6">
+        <div class="modal-content py-4 text-left px-6 relative">
           <!--Title-->
           <div class="modal-header flex justify-between items-center pb-3">
             <div class="modal-close cursor-pointer z-50">

@@ -313,7 +313,7 @@ add_action('acf/init', __NAMESPACE__ .'\\my_acf_init');
 
 
 function admin_styles() {
-	echo '<style type="text/css">#adminmenu li.wp-menu-separator {margin: 0; background: #444;}  .column-featured_image img{ height: 50px;}</style>';
+	echo '<style type="text/css">#adminmenu li.wp-menu-separator {margin: 0; background: #444;}  .column-featured_image img{ height: 50px;}.acf-table .acf-row:nth-of-type(odd) .acf-fields{background: #FAFAFA;}</style>';
 }
 add_action('admin_head', __NAMESPACE__ .'\\admin_styles');
 // -------------------------------------------------------------
@@ -426,3 +426,30 @@ function tribe_past_reverse_chronological ($post_object) {
 	return $post_object;
 }
 add_filter('the_posts', __NAMESPACE__ .'\\tribe_past_reverse_chronological', 100);
+/*
+Plugin Name: Collapse ACF Repeaters by Default
+Description: Meant to be used with <a href="https://wordpress.org/plugins/advanced-custom-field-repeater-collapser/" target="_blank">Advanced Custom Fields Repeater &amp; Flexible Content Fields Collapser</a>, this plugin defaults to collapsing all fields.
+Plugin URI:  https://github.com/JulienMelissas/acf-collapser-collapse-default
+Author:      Julien Melissas
+Author URI:  http://www.julienmelissas.com
+Version:     1.0
+*/
+/* Load the javascript on the ACF admin pages */
+function collapse_acf_repeater() {
+    ?>
+    <script type="text/javascript">
+        (function($){
+
+            $(document).ready(function(){
+
+                $('.acf-row').addClass('-collapsed');
+                $('.acf-icon').addClass('collapsed');
+
+            });
+
+        })(jQuery);
+    </script>
+    <?php
+}
+
+add_action('acf/input/admin_head', __NAMESPACE__ .'\\collapse_acf_repeater');
