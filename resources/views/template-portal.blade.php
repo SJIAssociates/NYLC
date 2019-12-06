@@ -16,7 +16,10 @@
   }
   body.modal-active {
     overflow-x: hidden;
-    overflow-y: visible !important;
+    overflow-y: hidden;
+  }
+  .modal-content {
+    max-height: 100vh;
   }
   .modal-close.absolute {
     top: 0;
@@ -70,7 +73,7 @@
           <!-- Directory List -->
           <ul class='directory-portal flex flex-wrap'>
             @php while(have_rows('directory')): the_row(); @endphp
-            <li data-id="@php echo  'person_' . get_row_index() @endphp" class='modal-open cursor-pointer py-2 w-full lg:w-1/2'>
+            <li data-id="@php echo  'person_' . get_row_index() @endphp" class='directory-person modal-open cursor-pointer p-3 w-full lg:w-1/2  hover:text-primary cursor-pointer'>
               <span class='hover:text-primary w-full font-bold text-lg'>{!! the_sub_field('name') !!}</span>
               <strong class='block py-1 text-primary'>{!! the_sub_field('business') !!}</strong>
               <div class='directory-person p-10 hidden' id="@php echo  'person_' . get_row_index() @endphp">
