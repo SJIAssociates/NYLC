@@ -453,3 +453,12 @@ function collapse_acf_repeater() {
 }
 
 add_action('acf/input/admin_head', __NAMESPACE__ .'\\collapse_acf_repeater');
+
+/**
+* Removes or edits the 'Protected:' part from posts titles
+*/
+
+function remove_protected_text() {
+  return __('%s');
+}
+add_filter( 'protected_title_format',  __NAMESPACE__ .'\\remove_protected_text' );
