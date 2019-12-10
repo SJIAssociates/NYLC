@@ -245,7 +245,7 @@
   list-style: none;
   padding: 0;
   margin: 0;
-  border: 1px solid #ddd;
+  border-top: 10px solid $primary;
 
   .directory-person {
     transition: all 0.4s;
@@ -255,8 +255,7 @@
     }
   }
 
-  li:nth-child(4n+0),
-  li:nth-child(4n+1) {
+  li:nth-child(odd) {
     background: #fafafa;
   }
 
@@ -293,6 +292,17 @@
       .box-image {
         order: 0;
       }
+    }
+  }
+
+  .directory-portal {
+    li:nth-child(odd) {
+      background: inherit;
+    }
+
+    li:nth-child(4n+0),
+    li:nth-child(4n+1) {
+      background: #fafafa;
     }
   }
 

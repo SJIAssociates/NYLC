@@ -74,7 +74,30 @@
 }
 
 /** FormStack form */
+.fsBody {
+  padding: 0;
+}
+
 .fsForm {
+  padding: 0;
+
+  h3 {
+    font-size: 1.25em;
+    color: #333;
+    margin-bottom: 15px;
+  }
+
+  .fsLabel {
+    color: #333 !important;
+    font-size: 1.5em !important;
+    font-family: benton-sans-compressed, sans-serif;
+    font-weight: 300;
+
+    span {
+      font-family: benton-sans-compressed, sans-serif;
+    }
+  }
+
   .fsRequiredLabel {
     text-transform: uppercase;
     color: black;
