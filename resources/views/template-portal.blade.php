@@ -44,11 +44,13 @@
           @while(have_posts()) @php the_post() @endphp
             @include('partials.content-page')
           @endwhile
+
           @if($section_title)<h2 class='mt-10 text-3xl mb-5'>{!! $section_title !!}</h2>@endif
-          <ul class='m-0 p-0 meeting-list'>
-            @if($portal_calendar)
-            @foreach($portal_calendar as $event)
-            <li class='text-black text-lg text-bold mb-5 bg-grey-lightest flex'>
+
+          @if($portal_calendar)
+            <ul class='m-0 p-0 meeting-list'>
+              @foreach($portal_calendar as $event)
+                <li class='text-black text-lg text-bold mb-5 bg-grey-lightest flex'>
               @if( $event['date'] )
               <div class='date-block text-3xl bg-primary w-48 text-center flex flex-wrap text-white content-center justify-center'>
                 <span class='date p-5 text-3xl uppercase font-light'>{!! $event['date'] !!}</span>
@@ -66,12 +68,13 @@
                 @endif
               </div>
             </li>
-            @endforeach
-            @endif
+              @endforeach
           </ul>
+          @endif
 
-          <!-- Directory List -->
-          <ul class='directory-portal flex flex-wrap'>
+          @if(have_rows('directory'))
+            <!-- Directory List -->
+            <ul class='directory-portal flex flex-wrap'>
             @php while(have_rows('directory')): the_row(); @endphp
             <li data-id="@php echo  'person_' . get_row_index() @endphp" class='directory-person modal-open cursor-pointer p-3 w-full lg:w-1/2  hover:text-primary cursor-pointer'>
               <span class='hover:text-primary w-full font-bold text-lg'>{!! the_sub_field('name') !!}</span>
@@ -137,6 +140,7 @@
             </li>
             @endwhile
           </ul>
+          @endif
         </main>
       </div>
     </div>
