@@ -35,7 +35,7 @@ $event_id = get_the_ID(); ?>
 </div>
 <div class='container'>
 	<div class="flex flex-wrap">
-  <aside class='sidebar py-8 lg:w-1/3 lg:pr-12 xxl:pr-24'>
+  <aside class='sidebar w-full py-8 lg:w-1/3 lg:pr-12 xxl:pr-24'>
     <!-- Event featured image, but exclude link -->
     <?php
       //echo tribe_event_featured_image( $event_id, 'full', false );

@@ -97,12 +97,19 @@
   padding: 0;
 }
 
+.tribe-events-content {
+  iframe {
+    max-width: 100%;
+  }
+}
+
 #tribe-events-content-wrapper {
   margin-bottom: 2em;
 }
 
 #tribe-bar-form {
   background: none;
+  display: none;
 
   .tribe-bar-submit {
     margin-left: 0;
