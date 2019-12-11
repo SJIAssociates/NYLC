@@ -90,11 +90,11 @@
   .fsLabel {
     color: #333 !important;
     font-size: 1.5em !important;
-    font-family: benton-sans-compressed, sans-serif;
+    font-family: benton-sans-condensed, Helvetica Neue, sans-serif;
     font-weight: 300;
 
     span {
-      font-family: benton-sans-compressed, sans-serif;
+      font-family: benton-sans-condensed, Helvetica Neue, sans-serif;
     }
   }
 
@@ -107,6 +107,18 @@
     background: $primary !important;
     padding: 15px 30px;
     text-transform: uppercase;
+  }
+
+  div[fs-field-type="richtext"] {
+    h3 {
+      font-size: 24px;
+    }
+
+    li,
+    p {
+      font-family: benton-sans, sans-serif;
+      line-height: 1.4em;
+    }
   }
 
   .fsFieldRow {
