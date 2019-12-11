@@ -35,6 +35,10 @@
 .single-success_stories,
 .blog {
   .content {
+    iframe {
+      max-width: 100%;
+    }
+
     .main {
       order: -1;
     }
@@ -171,9 +175,9 @@
 }
 
 /* Explore NY */
-.acf-map {
-  display: none;
-}
+// .acf-map {
+//   display: none;
+// }
 
 .acf-map img {
   max-width: inherit !important;
