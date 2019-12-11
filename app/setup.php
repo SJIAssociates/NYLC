@@ -442,8 +442,8 @@ function collapse_acf_repeater() {
 
             $(document).ready(function(){
 
-                $('.acf-row').addClass('-collapsed');
-                $('.acf-icon').addClass('collapsed');
+                $('.directoryRepeater .acf-row').addClass('-collapsed');
+                $('.directoryRepeater .acf-icon').addClass('collapsed');
 
             });
 
