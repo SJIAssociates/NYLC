@@ -299,17 +299,6 @@
     }
   }
 
-  .directory-portal {
-    li:nth-child(odd) {
-      background: inherit;
-    }
-
-    li:nth-child(4n+0),
-    li:nth-child(4n+1) {
-      background: #fafafa;
-    }
-  }
-
   /* Explore NY */
   .acf-map {
     width: 100%;
