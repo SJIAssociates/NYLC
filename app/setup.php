@@ -462,3 +462,21 @@ function remove_protected_text() {
   return __('%s');
 }
 add_filter( 'protected_title_format',  __NAMESPACE__ .'\\remove_protected_text' );
+
+
+
+
+
+
+function sji_customize_notice( $html, $notices ) {
+
+	// If text is found in notice, then replace it
+	if( stristr( $html, '. Please try viewing the full calendar for a complete list of events.' ) ) {
+		 // Customize the message as needed
+		 $html = str_replace( '. Please try viewing the full calendar for a complete list of events.', ' at this time, please check back.', $html );
+	}
+
+	return $html;
+
+}
+add_filter( 'tribe_the_notices', __NAMESPACE__ .'\\sji_customize_notice', 10, 2 );
