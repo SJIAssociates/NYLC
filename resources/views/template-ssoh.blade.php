@@ -25,58 +25,19 @@
       </div>
   </div>
 </section>
-<section class='full-section' aria-label="Photo Contest">
-  <div class='container'>
-    <div class="text-center">
-      <h2><span class='bg-white'>Photo Contest</span></h2>
-    </div>
-    <div class='flex success-box'>
-  		  <div class='w-full p-12 xl:p-24 bg-blue-grey my-8'>
-    		  <div class='flex flex-wrap'>
-      		  <div class='w-full lg:w-1/2 flex flex-col pr-8 justify-center'>
-      		    <h3 class='mb-10'>{{ $annual_report->description }}</h3>
-      		    <div class="button-container">
-        		    <a href="{{ $annual_report->link }}" class='btn bg-red text-white inline-block mb-12 hover:no-underline'>View 2019 Annual Report</a><br>
-      		    </div>
-      		    <a href="{{ $annual_report->archive_link }}" class='archive-link hover:no-underline hover:no-border'>View all annual reports and 990s <i class="fas fa-chevron-right"></i></a>
-      		  </div>
-      		  <div class='w-full lg:w-1/2'>
-        		  <img src="{{ $annual_report->image['url'] }}" alt="{{ $annual_report->image['alt'] }}">
-      		  </div>
-    		  </div>
-  		  </div>
-		</div>
-  </div>
-</section>
-<section class='full-section' aria-label="Sponsors">
-  <div class='container'>
-    <div class="text-center">
-      <h2><span class='bg-white'>Sponsors</span></h2>
-    </div>
 
-  </div>
-</section>
-<section class='full-section' aria-label="Common Bond">
-  <div class='container'>
-    <div class="text-center">
-      <h2><span class='bg-white'>Common Bond</span></h2>
-    </div>
-    <div class='flex success-box'>
-  		  <div class='w-full p-12 xl:p-24 bg-blue-grey my-8'>
-    		  <div class='flex flex-wrap'>
-      		  <div class='w-full lg:w-1/2 flex flex-col pr-8 justify-center'>
-      		    <h3 class='mb-10'>{{ $annual_report->description }}</h3>
-      		    <div class="button-container">
-        		    <a href="{{ $annual_report->link }}" class='btn bg-red text-white inline-block mb-12 hover:no-underline'>View 2019 Annual Report</a><br>
-      		    </div>
-      		    <a href="{{ $annual_report->archive_link }}" class='archive-link hover:no-underline hover:no-border'>View all annual reports and 990s <i class="fas fa-chevron-right"></i></a>
-      		  </div>
-      		  <div class='w-full lg:w-1/2'>
-        		  <img src="{{ $annual_report->image['url'] }}" alt="{{ $annual_report->image['alt'] }}">
-      		  </div>
-    		  </div>
-  		  </div>
-		</div>
-  </div>
-</section>
+@if ($flex_generator)
+
+  @foreach ($flex_generator as $block)
+
+    @if ($block->block_type == 'logo')
+      @include('partials.page-builder.logo')
+    @endif
+
+    @if ($block->block_type == 'image_block_right')
+      @include('partials.page-builder.image_block_right')
+    @endif
+
+  @endforeach
+@endif
 @endsection

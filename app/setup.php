@@ -313,7 +313,12 @@ add_action('acf/init', __NAMESPACE__ .'\\my_acf_init');
 
 
 function admin_styles() {
-	echo '<style type="text/css">#adminmenu li.wp-menu-separator {margin: 0; background: #444;}  .column-featured_image img{ height: 50px;}.acf-table .acf-row:nth-of-type(odd) .acf-fields{background: #FAFAFA;}</style>';
+	echo '<style type="text/css">
+        #adminmenu li.wp-menu-separator {margin: 0; background: #444;}
+        .column-featured_image img{ height: 50px;}
+        .acf-table .acf-row:nth-of-type(odd) .acf-fields{background: #FAFAFA;}
+        .acf-flexible-content .layout .acf-fc-layout-handle {background: #DDD; font-size: 18px;}
+    </style>';
 }
 add_action('admin_head', __NAMESPACE__ .'\\admin_styles');
 // -------------------------------------------------------------
