@@ -38,6 +38,14 @@
       @include('partials.page-builder.image_block_right')
     @endif
 
+    @if ($block->block_type == 'contact')
+      @include('partials.page-builder.contact')
+    @endif
+
+    @if ($block->block_type == 'news')
+      @include('partials.page-builder.news-trio')
+    @endif
+
   @endforeach
 @endif
 @endsection

@@ -37,6 +37,7 @@ class TemplateSsoh extends Controller
 
             $this_block = (object) [
               'block_type'            => $block['acf_fc_layout'],
+              'index'               => $i,
               'section_description'   => $block['section_description'],
               'section_title'         => $block['section_title'],
               'right_image'           => $block['right_image'],
@@ -48,20 +49,34 @@ class TemplateSsoh extends Controller
             ];
 
             array_push($data, $this_block);
+
+          } elseif($block['acf_fc_layout'] == 'contact') {
+
+            $this_block = (object) [
+              'index'           => $i,
+              'block_type'      => $block['acf_fc_layout'],
+              'contact_form'    => $block['contact_form'],
+            ];
+
+            array_push($data, $this_block);
+          } elseif($block['acf_fc_layout'] == 'news') {
+
+            $this_block = (object) [
+              'index'           => $i,
+              'block_type'      => $block['acf_fc_layout'],
+              'category'    => $block['category'],
+            ];
+
+            array_push($data, $this_block);
           }
 
         $i++;
-
-
 
       }
       $data = (object) $data;
       return $data;
     }
   }
-
-
-
 
 
 
