@@ -1,7 +1,7 @@
-<section class='full-section {{ $block->acf_fc_layout }}' aria-label="{{ $block->section_title }}">
+<section class='full-section {{ $block->acf_fc_layout }} {{ $block->background }}' aria-label="{{ $block->section_title }}">
   <div class='container'>
     <div class="text-center">
-      <h2><span class='bg-white'>{{ $block->section_title }}</span></h2>
+      <h2><span class='{{ $block->background }}'>{{ $block->section_title }}</span></h2>
     </div>
     <div class='flex success-box'>
   		  <div class='w-full p-12 xl:p-24 bg-blue-grey my-8'>

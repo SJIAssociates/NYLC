@@ -15,16 +15,7 @@
       </div>
     </div>
   @endwhile
-<section class='full-section bg-grey-lightest' aria-label="Featured Sites">
-  <div class='container'>
-      <div class="text-center">
-        <h2><span class='bg-grey-lightest'>Featured Sites</span></h2>
-      </div>
-      <div class='flex flex-row py-10 items-stretch xl:px-24'>
 
-      </div>
-  </div>
-</section>
 
 @if ($flex_generator)
 
@@ -44,6 +35,14 @@
 
     @if ($block->block_type == 'news')
       @include('partials.page-builder.news-trio')
+    @endif
+
+    @if ($block->block_type == 'featured_site')
+      @include('partials.page-builder.featured-sites')
+    @endif
+
+    @if ($block->block_type == 'intro')
+      @include('partials.page-builder.intro')
     @endif
 
   @endforeach

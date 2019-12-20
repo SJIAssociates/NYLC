@@ -5,7 +5,7 @@
     </div>
     <div class='flex flex-wrap mx-auto xl:w-4/5 mt-10'>
       <div class='w-full lg:w-1/2 lg:px-10'>
-          {!! $block->contact_form !!}
+          @php echo do_shortcode(' $block->contact_form ') @php
       </div>
       <div class='w-full lg:w-1/2 text-xl lg:px-10'>
         <div class='content-info'>
