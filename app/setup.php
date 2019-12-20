@@ -17,7 +17,7 @@ add_action('wp_enqueue_scripts', function () {
 
     wp_enqueue_script('sage/main.js', asset_path('scripts/main.js'), ['jquery'], null, true);
 
-    if( is_post_type_archive('landmark') or is_singular('landmark') ) {
+    if( is_post_type_archive('landmark') or is_singular('landmark') or is_singular('site')) {
       $api = get_field('google_maps_api', 'options');
 
       $googleMapLink = 'https://maps.googleapis.com/maps/api/js?key=' . $api;
@@ -25,7 +25,7 @@ add_action('wp_enqueue_scripts', function () {
       wp_enqueue_script( 'google-api', $googleMapLink , null, null, true); // Add in your key
     }
 
-    if( is_post_type_archive('landmark')) {
+    if( is_post_type_archive('landmark') || is_post_type_archive('site')) {
       wp_enqueue_script('sage/explorer.js', asset_path('scripts/explorer.js'), ['jquery'], '1.0.0', true);
     }
     if (is_single() && comments_open() && get_option('thread_comments')) {
