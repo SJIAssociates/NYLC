@@ -102,8 +102,20 @@ class TemplateSsoh extends Controller
             ];
 
             array_push($data, $this_block);
-          }
+          } elseif($block['acf_fc_layout'] == 'full_width_content') {
 
+
+            $this_block = (object) [
+              'index'           => $i,
+              'block_type'      => $block['acf_fc_layout'],
+              'section_title'   => $block['header'],
+              'background'      => $block['background'],
+              'content'         => $block['full_width_visual_editor']
+            ];
+
+            array_push($data, $this_block);
+
+          }
         $i++;
 
       }

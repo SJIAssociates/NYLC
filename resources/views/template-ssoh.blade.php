@@ -45,6 +45,10 @@
       @include('partials.page-builder.intro')
     @endif
 
+    @if ($block->block_type == 'full_width_content')
+      @include('partials.page-builder.full_width_content')
+    @endif
+
   @endforeach
 @endif
 @endsection
