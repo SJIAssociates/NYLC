@@ -49,6 +49,11 @@
       @include('partials.page-builder.full_width_content')
     @endif
 
+    @if ($block->block_type == 'listing')
+      @include('partials.page-builder.facets_sites')
+    @endif
+
+
   @endforeach
 @endif
 @endsection

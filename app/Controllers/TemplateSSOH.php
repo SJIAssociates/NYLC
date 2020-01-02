@@ -115,7 +115,19 @@ class TemplateSsoh extends Controller
 
             array_push($data, $this_block);
 
+          }elseif($block['acf_fc_layout'] == 'listing') {
+
+
+            $this_block = (object) [
+              'index'           => $i,
+              'block_type'      => $block['acf_fc_layout'],
+              'filters'         => $block['filters']
+            ];
+
+            array_push($data, $this_block);
+
           }
+
         $i++;
 
       }
