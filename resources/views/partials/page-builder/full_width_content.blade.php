@@ -3,7 +3,7 @@
     <div class="text-center">
       <h2><span class='{{ $block->background }}'>{{ $block->section_title }}</span></h2>
     </div>
-    <div class='flex-wrap flex content '>
+    <div class='content xxl:max-w-lg xxl:mx-auto'>
       {!! $block->content !!}
 		</div>
   </div>
