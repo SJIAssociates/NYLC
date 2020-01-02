@@ -13,6 +13,7 @@
     top: 0;
     left: 0;
     z-index: 999;
+    max-height: 90vh;
   }
   body.modal-active {
     overflow-x: hidden;
