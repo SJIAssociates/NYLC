@@ -41,6 +41,26 @@
   color: #372e2c;
 }
 
+.accordion-content {
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  a[href$=".pdf"] {
+    @apply btn inline-block mt-5 text-white bg-primary;
+
+    font-size: 1.25em;
+    border: 2px solid darken($primary, 0.1);
+    font-family: "benton-sans-condensed", "Helvetica Neue", sans-serif;
+
+    &:hover {
+      color: $primary;
+      background-color: white;
+      border-color: $primary;
+    }
+  }
+}
+
 .full-section {
   @apply py-8;
 
