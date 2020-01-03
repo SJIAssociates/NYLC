@@ -4,7 +4,6 @@
 
 .content-info {
   border-bottom: 16px solid $primary;
-  background: white;
   padding: 70px 0 10px;
 
   .widget_roots_vcard {
@@ -24,6 +23,7 @@
 
   .btn {
     margin-top: 20px;
+    border: 2px solid;
     margin-bottom: 20px;
     display: inline-block;
     border-radius: 0;
@@ -33,6 +33,13 @@
     padding: 20px 0;
     width: 250px;
     text-align: center;
+    transition: all 0.4s;
+
+    &:hover {
+      background: $primary;
+      color: white;
+      border-color: $primary;
+    }
   }
 
   .social-links {
