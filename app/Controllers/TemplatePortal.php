@@ -49,9 +49,9 @@ class TemplatePortal extends Controller
         return [
             'title'         => $item['name'],
             'date'          => $shortDate ?? Null,
-            'time'          => $item['time'],
+            'time'          => date('h:i a', strtotime($item['time'])),
             'calendarButton'=> $comboFormat,
-            'file'          => $item['file'],
+            'buttons'       => $item['buttons'],
             'description'   => $item['description'],
             'past'          => $past,
         ];

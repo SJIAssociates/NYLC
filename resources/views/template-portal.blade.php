@@ -13,14 +13,14 @@
     top: 0;
     left: 0;
     z-index: 999;
-    max-height: 90vh;
   }
   body.modal-active {
     overflow-x: hidden;
     overflow-y: hidden;
   }
   .modal-content {
-    max-height: 100vh;
+    max-height: 50vh;
+    overflow: hidden;
   }
   .modal-close.absolute {
     top: 0;
@@ -28,7 +28,16 @@
   }
   .modal-header {
     right: 15px;
+    top: 15px;
     position: absolute;
+  }
+  .modal-header svg {
+    width: 25px;
+    height: 25px;
+  }
+  .person_contact_wrap {
+    height: 50vh;
+    overflow-y: scroll;
   }
 </style>
 @if ( ! post_password_required( $post ) )
@@ -46,27 +55,30 @@
             @include('partials.content-page')
           @endwhile
 
-          @if($section_title)<h2 class='mt-10 text-3xl mb-5'>{!! $section_title !!}</h2>@endif
-
           @if($portal_calendar)
             <ul class='m-0 p-0 meeting-list'>
               @foreach($portal_calendar as $event)
                 <li class='text-black text-lg text-bold mb-5 bg-grey-lightest flex'>
-              @if( $event['date'] )
-              <div class='date-block text-3xl bg-primary w-48 text-center flex flex-wrap text-white content-center justify-center'>
-                <span class='date p-5 text-3xl uppercase font-light'>{!! $event['date'] !!}</span>
-              </div>
-              @endif
-              <div class="p-5 w-full">
-                <span class='font-bold text-2xl block'>{!! $event['title'] !!}</span>
-                {!! $event['description'] !!}
-                @if( $event['date'] && !$event['past'])
-                <a href="http://www.google.com/calendar/render?action=TEMPLATE&text={!! $event['title'] !!}&dates={!! $event['calendarButton'] !!}/{!! $event['calendarButton'] !!}&ctz=America/New_York&trp=false&sprop=&sprop=name:"
+                @if( $event['date'] )
+                  <div class='date-block text-3xl bg-primary w-48 text-center flex flex-wrap text-white content-center justify-center'>
+                    <span class='date p-5 text-3xl uppercase font-light'>{!! $event['date'] !!}</span>
+                  </div>
+                @endif
+                <div class="p-5 w-full">
+                  <span class='font-bold text-2xl block'>{!! $event['title'] !!}</span>
+                  @if($event['time'] && !$event['past'])
+                    <time class='block py-1 text-sm font-bold'><i class='fa fa-clock'></i> {!! $event['time'] !!}</time>
+                  @endif
+                  {!! $event['description'] !!}
+                  @if( $event['date'] && !$event['past'])
+                    <a href="http://www.google.com/calendar/render?action=TEMPLATE&text={!! $event['title'] !!}&dates={!! $event['calendarButton'] !!}/{!! $event['calendarButton'] !!}&ctz=America/New_York&trp=false&sprop=&sprop=name:"
                 target="_blank" rel="nofollow" class='text-xs mt-5 inline-block bg-grey-darker text-white rounded-lg px-2 py-1 uppercase'>+ Google Calendar</a>
-                @endif
-                @if( $event['file'] )
-                  <a href="{!! $event['file'] !!}" class='btn float-right text-sm m-0' download>Download</a>
-                @endif
+                  @endif
+                  @if( $event['buttons'] )
+                    @foreach($event['buttons'] as $button)
+                      <a href="{!! $button['button_file'] !!}" class='btn float-right text-sm m-0 mr-5' download>{!! $button['button_text'] !!}</a>
+                    @endforeach
+                  @endif
               </div>
             </li>
               @endforeach
@@ -81,7 +93,7 @@
               <span class='hover:text-primary w-full font-bold text-lg'>{!! the_sub_field('name') !!}</span>
               <strong class='block py-1 text-primary'>{!! the_sub_field('business') !!}</strong>
               <div class='directory-person p-10 hidden' id="@php echo  'person_' . get_row_index() @endphp">
-                <div class='w-full flex flex-wrap pb-3'>
+                <div class='w-full flex flex-wrap pb-3 px-6 bg-blue-grey pt-4'>
                   @if( get_sub_field('profile_picture') )
                     <img src="{!! the_sub_field('profile_picture') !!}" alt="{!! the_sub_field('name') !!} Profile Picture" class='lg:w-32 mr-8'/>
                   @endif
@@ -92,51 +104,53 @@
                     <a href="tel:{!! the_sub_field('personal_phone') !!}"  class='block py-1'>{!! the_sub_field('personal_phone') !!}</a>
                   </div>
                 </div>
-                @if(get_sub_field('business_address'))
-                <div class='flex flex-wrap border-t-2 py-3'><!-- Business -->
-                  <div class='w-full lg:flex-1'>
-                    <p class='font-bold'>Work</p>
-                    <address>
-                      {!! the_sub_field('business_address') !!}
-                    </address>
-                  </div>
-                  <div class='w-full lg:flex-1'>
-                    <p class='font-bold mb-0 mt-5'>Work Phone</p>
-                    <span class='block mb-5'>{!! the_sub_field('work_phone') !!}</span>
+                <div class='person_contact_wrap px-6 border-t-2'>
+                  @if(get_sub_field('business_address'))
+                  <div class='flex flex-wrap border-b-2 py-3'><!-- Business -->
+                    <div class='w-full lg:flex-1'>
+                      <p class='font-bold'>Work</p>
+                      <address>
+                        {!! the_sub_field('business_address') !!}
+                      </address>
+                    </div>
+                    <div class='w-full lg:flex-1'>
+                      <p class='font-bold mb-0 mt-5'>Work Phone</p>
+                      <span class='block mb-5'>{!! the_sub_field('work_phone') !!}</span>
 
-                    <p class='font-bold mb-0'>Work Fax</p>
-                    <span>{!! the_sub_field('work_fax') !!}</span>
-                  </div>
-                  @if(get_sub_field('assistant'))
-                  <div class='w-full lg:flex-1'>
-                    <p class='font-bold mb-0 mt-5 mb-1'>Assistant</p>
-                    <span class='block'>{!! the_sub_field('assistant') !!}</span>
-                    <a href="mailto:{!! the_sub_field('assistant_email') !!}" title="Email for {!! the_sub_field('assistant') !!}" class='block py-1'>{!! the_sub_field('assistant_email') !!}</a>
-                    <a href="tel:{!! the_sub_field('assistant_phone') !!}"  class='block py-1'>{!! the_sub_field('assistant_phone') !!}</a>
-                  </div>
-                  @endif
-                </div>
-                @endif
-                @if(get_sub_field('home_address'))
-                <div class='flex flex-wrap border-t-2 py-3'>
-                  <div class='w-full lg:w-1/2'>
-                    <p class='font-bold'>Home</p>
-                    <address>{!! the_sub_field('home_address') !!}</address>
-                  </div>
-                  @if(get_sub_field('spouse_partner'))
-                  <div class='w-full lg:w-1/2'>
-                    <p class='m-0 font-bold mt-3'>Spouse / Partner</p>
-                    <p class='m-0'>{!! the_sub_field('spouse_partner') !!}</p>
+                      <p class='font-bold mb-0'>Work Fax</p>
+                      <span>{!! the_sub_field('work_fax') !!}</span>
+                    </div>
+                    @if(get_sub_field('assistant'))
+                    <div class='w-full lg:flex-1'>
+                      <p class='font-bold mb-0 mt-5 mb-1'>Assistant</p>
+                      <span class='block'>{!! the_sub_field('assistant') !!}</span>
+                      <a href="mailto:{!! the_sub_field('assistant_email') !!}" title="Email for {!! the_sub_field('assistant') !!}" class='block py-1'>{!! the_sub_field('assistant_email') !!}</a>
+                      <a href="tel:{!! the_sub_field('assistant_phone') !!}"  class='block py-1'>{!! the_sub_field('assistant_phone') !!}</a>
+                    </div>
+                    @endif
                   </div>
                   @endif
-                </div>
-                @endif
-                @if(get_sub_field('bio'))
-                <div class="flex flex-wrap border-t-2 pt-3">
-                  <h3 class='font-bold mb-1 mt-2 text-2xl'>About {!! the_sub_field('name') !!}</h3>
-                  {!! the_sub_field('bio') !!}
-                </div>
-                @endif
+                  @if(get_sub_field('home_address'))
+                  <div class='flex flex-wrap border-b-2 py-3'><!-- Home -->
+                    <div class='w-full lg:w-1/2'>
+                      <p class='font-bold'>Home</p>
+                      <address>{!! the_sub_field('home_address') !!}</address>
+                    </div>
+                    @if(get_sub_field('spouse_partner'))
+                    <div class='w-full lg:w-1/2'>
+                      <p class='m-0 font-bold mt-3'>Spouse / Partner</p>
+                      <p class='m-0'>{!! the_sub_field('spouse_partner') !!}</p>
+                    </div>
+                    @endif
+                  </div>
+                  @endif
+                  @if(get_sub_field('bio'))
+                  <div class="flex flex-wrap pt-3"><!-- Bio -->
+                    <h3 class='font-bold mb-1 mt-2 text-2xl'>About {!! the_sub_field('name') !!}</h3>
+                    {!! the_sub_field('bio') !!}
+                  </div>
+                  @endif
+                </div><!-- person_contact_wrap -->
               </div>
             </li>
             @endwhile
@@ -159,7 +173,7 @@
         </div>
 
         <!-- Add margin if you want to see some of the overlay behind the modal-->
-        <div class="modal-content py-4 text-left px-6 relative">
+        <div class="modal-content text-left relative">
           <!--Title-->
           <div class="modal-header flex justify-between items-center pb-3">
             <div class="modal-close cursor-pointer z-50">
