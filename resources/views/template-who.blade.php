@@ -77,10 +77,28 @@
     </div>
   </div>
 </section>
-<section class='full-section' id="contactSection" aria-label="Contact Us Section"  >
+<section  class='full-section' aria-label="Supporters" >
+  <div class='container'>
+      <div class="text-center">
+        <h2><span class='bg-white'>Supporters</span></h2>
+      </div>
+      <div class='flex flex-row py-10 items-stretch xl:px-24'>
+        <div class='flex-1 w-full sm:w-1/2 flex flex-col pr-8 justify-center'>
+      		    <h3 class='xxl:text-4xl xxl:pr-10'>{{ $supporters_block->description }}</h3>
+      		    <div class="">
+        		    <a href="{{ $supporters_block->link }}" class='btn bg-red text-white inline-block hover:no-underline'>Read More</a><br>
+      		    </div>
+      		  </div>
+        <div class='flex-1 w-full sm:w-1/2'>
+        		  <img src="{{ $supporters_block->image['url'] }}" alt="{{ $supporters_block->image['alt'] }}">
+      		  </div>
+      </div>
+  </div>
+</section>
+<section class='full-section bg-blue-grey' id="contactSection" aria-label="Contact Us Section" >
   <div class='container'>
     <div class="text-center">
-      <h2><span class='bg-white'>Contact Us</span></h2>
+      <h2><span class='bg-blue-grey'>Contact Us</span></h2>
     </div>
     <div class='flex flex-wrap mx-auto xl:w-4/5 mt-10'>
       <div class='w-full lg:w-1/2 lg:px-10'>

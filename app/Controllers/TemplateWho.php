@@ -15,6 +15,15 @@ class TemplateWho extends Controller
       );
   }
 
+  public function SupportersBlock(){
+
+      return (object) array(
+         'description'  =>   get_field('supporters_description'),
+         'link'   =>   get_field('supporters_page_link'),
+         'image'   =>   get_field('supporters_image'),
+      );
+  }
+
   public function AnnualReport(){
 
       return (object) array(
