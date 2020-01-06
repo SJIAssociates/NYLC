@@ -35,8 +35,11 @@
     width: 25px;
     height: 25px;
   }
+  .modal-header-inner {
+    height: 17vh;
+  }
   .person_contact_wrap {
-    height: 50vh;
+    height: 33vh;
     overflow-y: scroll;
   }
 </style>
@@ -93,7 +96,7 @@
               <span class='hover:text-primary w-full font-bold text-lg'>{!! the_sub_field('name') !!}</span>
               <strong class='block py-1 text-primary'>{!! the_sub_field('business') !!}</strong>
               <div class='directory-person p-10 hidden' id="@php echo  'person_' . get_row_index() @endphp">
-                <div class='w-full flex flex-wrap pb-3 px-6 bg-blue-grey pt-4'>
+                <div class='w-full flex flex-wrap pb-3 px-6 bg-blue-grey pt-4 modal-header-inner'>
                   @if( get_sub_field('profile_picture') )
                     <img src="{!! the_sub_field('profile_picture') !!}" alt="{!! the_sub_field('name') !!} Profile Picture" class='lg:w-32 mr-8'/>
                   @endif
