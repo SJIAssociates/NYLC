@@ -55,7 +55,7 @@
 .entry-content {
   ul li {
     line-height: 1.5em;
-    font-family: benton-sans-condensed, sans-serif;
+    font-family: benton-sans, sans-serif;
     margin-bottom: 15px;
   }
 
@@ -231,6 +231,7 @@
 
 @screen lg {
   .single-post,
+  .single-success_stories,
   .blog {
     .content {
       .main {
