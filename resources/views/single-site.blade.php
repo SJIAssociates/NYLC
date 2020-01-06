@@ -13,11 +13,6 @@
     <div class='flex flex-wrap'>
       <aside class='sidebar w-full py-8 lg:w-1/3 xxl:py-12 xl:pr-24'>
         <div class='widget'>
-          <h3>Contact</h3>
-          @if(!empty($contact->email) )<a href="mailto:{!! $contact->email !!}" class='text-black block hover:text-red mb-2'>{!! $contact->email !!}</a>@endif
-          @if(!empty($contact->phone) )<a href="tel:{!! $contact->phone !!}" class='text-black block hover:text-red'>{!! $contact->phone !!}</a>@endif
-        </div>
-        <div class='widget'>
           <h3>Follow</h3>
           @if(!empty($profile->website) )<a href="{!! $profile->website !!}" class='text-black block hover:text-red mb-2' target="_blank"  rel='noopener'aria-label='Website for Landmark'>Website</a>@endif
           @if(!empty($profile->facebook) )<a href='{!! $profile->facebook !!}' class='text-black block hover:text-red mb-2' target="_blank" rel='noopener'aria-label='Facebook Page for the Landmark'>Follow on Facebook</a>@endif
