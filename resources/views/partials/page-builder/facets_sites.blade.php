@@ -4,13 +4,18 @@
       <h2><span class='bg-white'>Sacred Sites 2020</span></h2>
     </div>
     <div class='flex flex-wrap content'>
-      <div class='filters w-full flex flex-wrap border-b-2 border-t-2 border-black mb-5 pt-5'>
-        @foreach ($block->filters as $filter)
-        <div class='facet-group w-full lg:w-1/3'>
-          <h3>{{ $filter['filter_name'] }}</h3>
-          @php echo do_shortcode($filter['filter_shortcode']) @endphp
+      <div class='filters w-full flex flex-wrap border-b-2 border-t-2 border-black mb-5 pt-5 items-end'>
+        <div class='facet-group w-full lg:w-1/5'>
+          <h3 class='uppercase font-bold mb-0'>Filter Sites By:</h3>
+          @php echo facetwp_display( 'facet', 'location' ) @endphp
+
         </div>
-        @endforeach
+        <div class='facet-group w-full lg:w-1/5 facet-neighborhood-header'>
+          @php echo facetwp_display( 'facet', 'neighborhood' ) @endphp
+        </div>
+        <div class='facet-group w-full lg:w-1/2'>
+          @php echo facetwp_display( 'facet', 'activities' ) @endphp
+        </div>
       </div>
       <div class='facet_template_area w-full'>
         @php echo facetwp_display( 'template', 'sacred_sites_landing' ) @endphp
