@@ -13,6 +13,29 @@
     <div class='flex flex-wrap'>
       <aside class='sidebar w-full py-8 lg:w-1/3 xxl:py-12 xl:pr-24'>
         <div class='widget'>
+          <h3>Date</h3>
+          @if( $dates_open == 'Saturday')
+            <p class='mb-0'><strong>Saturday:</strong> {!! $saturday_open!!} - {!! $saturday_close!!}</p>
+            <p><strong>Sunday:</strong> Closed</p>
+          @elseif($dates_open == 'Sunday')
+            <p class='mb-0'><strong>Saturday:</strong> Closed</p>
+            <p><strong>Sunday:</strong> {!! $sunday_open!!} - {!! $sunday_close!!}</p>
+          @else
+            <p class='mb-0'><strong>Saturday:</strong> {!! $saturday_open!!} - {!! $saturday_close!!}</p>
+            <p><strong>Sunday:</strong> {!! $sunday_open!!} - {!! $sunday_close!!}</p>
+          @endif
+        </div>
+        @if($activities)
+        <div class='widget'>
+          <h3>Activities</h3>
+          <ul>
+            @foreach($activities as $activity)
+              <li class='block w-full inline-block pr-3'>{!! $activity !!}</li>
+            @endforeach
+          </ul>
+        </div>
+        @endif
+        <div class='widget'>
           <h3>Follow</h3>
           @if(!empty($profile->website) )<a href="{!! $profile->website !!}" class='text-black block hover:text-red mb-2' target="_blank"  rel='noopener'aria-label='Website for Landmark'>Website</a>@endif
           @if(!empty($profile->facebook) )<a href='{!! $profile->facebook !!}' class='text-black block hover:text-red mb-2' target="_blank" rel='noopener'aria-label='Facebook Page for the Landmark'>Follow on Facebook</a>@endif
@@ -34,8 +57,12 @@
           <article @php post_class() @endphp>
             <div class="entry-content">
               <img src="{!! the_post_thumbnail_url(); !!}" class="w-full" />
-              <h2 class='bold text-black text-2xl xxl:text-4xl mb-2'>About The Sacred Site</h2>
+              <h2 class='bold text-black text-2xl xxl:text-4xl mb-2 mt-3'>About The Sacred Site</h2>
               @php the_content() @endphp
+              @if($activity_descrition )
+                <h2 class='bold text-black text-2xl xxl:text-4xl mb-2 mt-5'>Activities</h2>
+                {!! $activity_descrition !!}
+              @endif
             </div>
           </article>
         @endwhile
@@ -46,7 +73,7 @@
 <section class='bg-blue-grey full-section'>
   <div class='container'>
     <div class='text-center mx-auto mb-10'>
-      <h2><span class='bg-blue-grey'>Explore More Landmarks</span></h2>
+      <h2><span class='bg-blue-grey'>Explore More Sites</span></h2>
     </div>
     <div class='flex flex-wrap'>
         @if( $prev_landmark )
