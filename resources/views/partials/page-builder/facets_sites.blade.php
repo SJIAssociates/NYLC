@@ -5,12 +5,11 @@
     </div>
     <div class='flex flex-wrap content'>
       <div class='filters w-full flex flex-wrap border-b-2 border-t-2 border-black mb-5 pt-5 items-end'>
-        <div class='facet-group w-full lg:w-1/5'>
+        <div class='facet-group w-full lg:w-1/4'>
           <h3 class='uppercase font-bold mb-0'>Filter Sites By:</h3>
           @php echo facetwp_display( 'facet', 'location' ) @endphp
-
         </div>
-        <div class='facet-group w-full lg:w-1/5 facet-neighborhood-header'>
+        <div class='facet-group w-full lg:w-1/4 facet-neighborhood-header'>
           @php echo facetwp_display( 'facet', 'neighborhood' ) @endphp
         </div>
         <div class='facet-group w-full lg:w-1/2'>
