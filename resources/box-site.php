@@ -31,9 +31,10 @@ $activities = get_field('activities');
 
       <ul class='activities_list block m-0 p-0 mt-5 list-none'>
         <?php
+          if($activities):
           foreach($activities as $activity):
             echo "<li class='font-bold inline-block'>" . $activity . '</li>';
-          endforeach; ?>
+          endforeach; endif;?>
       </ul>
     </div>
     <div class="w-2/5">
