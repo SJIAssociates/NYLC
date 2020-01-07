@@ -25,7 +25,7 @@ add_action('wp_enqueue_scripts', function () {
       wp_enqueue_script( 'google-api', $googleMapLink , null, null, true); // Add in your key
     }
 
-    if( is_post_type_archive('landmark') || is_post_type_archive('site')) {
+    if( is_post_type_archive('landmark')) {
       wp_enqueue_script('sage/explorer.js', asset_path('scripts/explorer.js'), ['jquery'], '1.0.0', true);
     }
     if (is_single() && comments_open() && get_option('thread_comments')) {
@@ -396,10 +396,43 @@ function script_cleanup() {
     wp_dequeue_script('tribe-tooltip-js');
 
     wp_dequeue_script('contact-form-7');
+
+
+    //Wp Facet
+    wp_dequeue_script('fwpcl-front');
   }
 
 }
 add_action('wp_footer', __NAMESPACE__ .'\\script_cleanup');
+
+function style_cleanup() {
+  if(is_front_page()  ) {
+    //Staff Profile Pages
+    wp_dequeue_style('staff-styles');
+
+    //Contact Form 7
+    wp_dequeue_style('contact-form-7');
+
+    //Formstack
+    wp_dequeue_style('formstack-css');
+
+    //Events
+    wp_dequeue_style('tribe-tooltip');
+    wp_dequeue_style('tribe-events-admin-menu');
+
+    //Simple Lightbox
+    wp_dequeue_style('slb_core');
+
+    //Wp Facet
+    wp_dequeue_style('fwpcl-front');
+  }
+
+  if(basename(get_page_template()) == "template-form.blade.php") {
+    //Wp Facet
+    wp_dequeue_style('fwpcl-front');
+  }
+}
+add_action('wp_enqueue_scripts', __NAMESPACE__ .'\\style_cleanup',100);
 
 
 function remove_roots_share_buttons_assets() {
