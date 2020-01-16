@@ -10,9 +10,9 @@
 
   @while(have_posts()) @php the_post() @endphp
     <div class='container'>
-      <div class='w-full md:w-2/3 xxl:w-1/2 mx-auto mb-10 xl:text-2xl'>
-        @include('partials.content-page')
-      </div>
+      @if( $subtitle )
+      <h2 class='text-black text-center text-2xl lg:text-3xl mx-auto w-full lg:w-3/4 font-light mt-10 leading-normal'>{{ $subtitle }}</h2>
+      @endif
     </div>
   @endwhile
 

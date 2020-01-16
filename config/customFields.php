@@ -574,6 +574,13 @@ acf_add_local_field_group(array(
 					'value' => '9',
 				),
 			),
+			array(
+				array(
+					'param' => 'post_template',
+					'operator' => '==',
+					'value' => 'views/template-ssoh.blade.php',
+				),
+			),
 		),
 		'menu_order' => 0,
 		'position' => 'acf_after_title',
