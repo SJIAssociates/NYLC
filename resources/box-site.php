@@ -14,7 +14,10 @@ $activities = get_field('activities');
 ?>
 <article class='w-full lg:w-1/2 lg:pr-10' >
   <div class="border-b-2 w-full flex flex-wrap  py-3 lg:py-6">
-    <div class="w-3/5 lg:pr-10 pr-5">
+    <div class="w-2/5">
+      <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('news_thumb') ?></a>
+    </div>
+    <div class="w-3/5 lg:pl-10 pl-5">
       <?php echo get_the_term_list( $post->ID, 'neighborhood', '<span class="borough text-primary font-bold uppercase inlin-block relative ml-4 text-sm">', ', ', '</span>' ) ?>
 
       <h3 class="entry-title mt-1 lg:mt-5 mb-0 text-base text-2xl">
@@ -36,9 +39,6 @@ $activities = get_field('activities');
             echo "<li class='font-bold inline-block'>" . $activity . '</li>';
           endforeach; endif;?>
       </ul>
-    </div>
-    <div class="w-2/5">
-      <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('news_thumb') ?></a>
     </div>
   </div>
 </article>
