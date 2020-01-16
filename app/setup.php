@@ -504,7 +504,9 @@ add_filter( 'protected_title_format',  __NAMESPACE__ .'\\remove_protected_text' 
 
 
 
-
+/**
+* Change the no Event Text
+*/
 
 function sji_customize_notice( $html, $notices ) {
 
@@ -518,3 +520,32 @@ function sji_customize_notice( $html, $notices ) {
 
 }
 add_filter( 'tribe_the_notices', __NAMESPACE__ .'\\sji_customize_notice', 10, 2 );
+/**
+* Remove Captcha on pages without hte shortcode
+*/
+function conditionally_load_plugin_js_css(){
+	if( !is_page('who-we-are') ) { # Only load CSS and JS on needed Pages
+		wp_dequeue_script('contact-form-7'); # Restrict scripts.
+		wp_dequeue_script('google-recaptcha');
+		wp_dequeue_style('contact-form-7'); # Restrict css.
+	}
+}
+add_action( 'wp_enqueue_scripts', __NAMESPACE__ .'\\conditionally_load_plugin_js_css' );
+
+/**
+* Set the City field
+*/
+function auto_save_city( $post_id ) {
+
+  $location = get_field('location');
+  // Address, City, State zip
+  $Fulladdress = $location['address'];
+
+  $city = explode(",",$Fulladdress)[1];
+
+
+    // do something
+    update_field('city', $city);
+}
+
+add_action('acf/save_post',  __NAMESPACE__ .'\\auto_save_city', 20);
