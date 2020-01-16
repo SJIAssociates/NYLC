@@ -35,6 +35,11 @@
     width: 25px;
     height: 25px;
   }
+  .modal-header-inner img{
+  width: 150px;
+  float: left;
+  padding-right: 10px;
+  }
   .modal-header-inner {
     height: 17vh;
   }
@@ -42,6 +47,7 @@
     height: 33vh;
     overflow-y: scroll;
   }
+
 </style>
 @if ( ! post_password_required( $post ) )
   <section class='main-content' aria-label="Main Content"  >
