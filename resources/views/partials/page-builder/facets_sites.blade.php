@@ -1,8 +1,5 @@
 <section class='full-section {{ $block->acf_fc_layout }}' aria-label="">
   <div class='container'>
-    <div class="text-center">
-      <h2><span class='bg-white'>Sacred Sites 2020</span></h2>
-    </div>
     <div class='flex flex-wrap content'>
       <div class='filters w-full flex flex-wrap border-b-2 border-t-2 border-black mb-5 pt-5 items-end'>
         <div class='facet-group w-full lg:w-1/4'>
