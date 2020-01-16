@@ -60,7 +60,7 @@
               <h2 class='bold text-black text-2xl xxl:text-4xl mb-2 mt-3'>About The Sacred Site</h2>
               @php the_content() @endphp
               @if($activity_descrition )
-                <h2 class='bold text-black text-2xl xxl:text-4xl mb-2 mt-5'>Activities</h2>
+                <h2 class='bold text-black text-2xl xxl:text-3xl mb-2 mt-5'>Activities</h2>
                 {!! $activity_descrition !!}
               @endif
             </div>
@@ -85,7 +85,7 @@
               {!! $prev_landmark->excerpt !!}
             </p>
             <div class="w-full text-center">
-              <a href="{!! $prev_landmark->permalink !!}" class='btn inline-block'>Explore Landmark</a>
+              <a href="{!! $prev_landmark->permalink !!}" class='btn inline-block'>Explore Site</a>
             </div>
           </div>
 
@@ -100,7 +100,7 @@
               {!! $next_landmark->excerpt !!}
             </p>
             <div class="w-full text-center">
-              <a href="{!! $next_landmark->permalink !!}" class='btn inline-block'>Explore Landmark</a>
+              <a href="{!! $next_landmark->permalink !!}" class='btn inline-block'>Explore Site</a>
             </div>
           </div>
 
@@ -108,7 +108,7 @@
         @endif
     </div>
     <div class='archive-link w-full text-center mt-10'>
-      <a href="/explore-ny" class='text-black text-lg uppercase underline hover:text-primary'>Explore All NY Landmarks <i class='fa fa-chevron-right'></i></a>
+      <a href="/explore-ny" class='text-black text-lg uppercase underline hover:text-primary'>Explore All Sacred Sites <i class='fa fa-chevron-right'></i></a>
     </div>
   </div>
 </section>
