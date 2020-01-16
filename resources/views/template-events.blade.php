@@ -49,7 +49,7 @@
               {!! $item['description'] !!}
             </p>
             @if($item['count'] > 0)
-            <a href="{!! $item['future_event'] !!}" class='btn bg-red uppercase block w-full text-center'>Get Tickets</a>
+            <a href="{!! $item['permalink'] !!}" class='btn bg-red uppercase block w-full text-center'>Get Tickets</a>
             @else
             <a href="{!! $item['permalink'] !!}/list/?tribe_event_display=past&tribe_paged=1" class='btn bg-red uppercase block w-full text-center'>See Past Events</a>
             @endif

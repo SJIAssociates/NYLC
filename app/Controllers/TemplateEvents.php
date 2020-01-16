@@ -52,13 +52,18 @@ class TemplateEvents extends Controller
               )
         ]);
 
+        if( count($tribeCategory) > 0){
+          $cat_link = get_the_permalink($tribeCategory[0]->ID);
+        }else{
+          $cat_link = '/calendar/category/' . $item->slug;
+        }
+
 
         return [
             'title'         => $item->name,
             'description'   => $item->description,
-            'permalink'     => '/calendar/category/' . $item->slug,
-            'count'         => count($tribeCategory),
-            'future_event'  => get_the_permalink($tribeCategory[0]->ID)
+            'permalink'     => $cat_link,
+            'count'         => count($tribeCategory)
         ];
     }, $annual_awards ?? [] );
   }
