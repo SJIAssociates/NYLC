@@ -60,9 +60,14 @@
   }
 }
 
+//SSOH Facets
 .facet-group {
   .facetwp-facet {
     margin-bottom: 15px;
+  }
+
+  .fs-label-wrap {
+    border: 2px solid #333;
   }
 }
 
@@ -79,6 +84,7 @@
   border: 1px solid black;
 }
 
+//SSOH Listing Area Facet Template
 .facet_template_area .facetwp-template {
   @apply flex flex-wrap;
 
