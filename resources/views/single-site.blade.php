@@ -12,6 +12,10 @@
   <div class="content">
     <div class='flex flex-wrap'>
       <aside class='sidebar w-full py-8 lg:w-1/3 xxl:py-12 xl:pr-24'>
+        @if($event_link)
+        <a class="btn text-white block text-center w-full mb-5" href="{!! $event_link !!}" target="_blank" rel="noopener">Get Tickets</a>
+        @endif
+        @if($dates_open)
         <div class='widget'>
           <h3>Date</h3>
           @if( $dates_open == 'Saturday')
@@ -25,6 +29,7 @@
             <p><strong>Sunday:</strong> {!! $sunday_open!!} - {!! $sunday_close!!}</p>
           @endif
         </div>
+        @endif
         @if($activities)
         <div class='widget'>
           <h3>Activities</h3>
