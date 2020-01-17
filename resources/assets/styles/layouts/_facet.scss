@@ -48,6 +48,18 @@
   }
 }
 
+.site-box {
+  @apply border-b-2 w-full flex flex-wrap;
+
+  .site-box-details {
+    @apply pl-5 w-3/5;
+  }
+
+  .site-box-image {
+    @apply w-2/5;
+  }
+}
+
 .activities_list {
   li {
     border-right: 2px solid #333;
