@@ -10,17 +10,22 @@ if($location):
   $state = explode(",",$Fulladdress)[2];
 endif;
 
+$neighborhoods = get_the_term_list( $post->ID, 'neighborhood', '', ', ', '' );
+
 $activities = get_field('activities');
 ?>
-<article class='w-full lg:w-1/2 lg:pr-10' >
-  <div class="border-b-2 w-full flex flex-wrap  py-3 lg:py-6">
-    <div class="w-2/5">
+<article class='w-full lg:w-1/2 pr-5 lg:pr-10' >
+  <div class="site-box py-3 lg:py-6">
+    <div class="site-box-image">
       <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('news_thumb') ?></a>
     </div>
-    <div class="w-3/5 lg:pl-10 pl-5">
-      <?php echo get_the_term_list( $post->ID, 'neighborhood', '<span class="borough text-primary font-bold uppercase inlin-block relative ml-4 text-sm">', ', ', '</span>' ) ?>
-
-      <h3 class="entry-title mt-1 lg:mt-5 mb-0 text-base text-2xl">
+    <div class="site-box-details">
+      <?php if($neighborhoods): ?>
+      <span class="borough text-primary font-bold uppercase inline-block relative ml-4 text-sm  mb-1 lg:mb-5">
+        <?php echo strip_tags($neighborhoods); ?>
+      </span>
+    <?php endif; ?>
+      <h3 class="entry-title mb-0 text-base text-2xl">
         <a href="<?php the_permalink(); ?>" class='text-black hover:text-red'><?php the_title(); ?></a>
       </h3>
 
