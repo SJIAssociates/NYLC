@@ -11,11 +11,11 @@
     </div>
 
     <form role="search" method="get" class="search-form flex my-1 mx-auto w-full lg:w-3/4 my-10" action="{{ esc_url( home_url( '/' ) ) }}">
-      <label class='w-3/4 bg-grey'>
+      <label class='w-3/4'>
         <span class="screen-reader-text">{{ _x( 'Search for:', 'label' ) }}</span>
-        <input type="search" class="search-field bg-grey" placeholder="{!! esc_attr_x( 'Search &hellip;', 'placeholder' ) !!}" value="{{ get_search_query() }}" name="s" />
+        <input type="search" class="search-field w-full bg-grey p-2 border-grey-darker border-2" placeholder="{!! esc_attr_x( 'Search &hellip;', 'placeholder' ) !!}" value="{{ get_search_query() }}" name="s" />
       </label>
-      <button type="submit" class="search-submit" value="{{ esc_attr_x( 'Search ', 'submit button' ) }}" />
+      <button type="submit" class="search-submit ml-5 border-2 border-white hover:border-primary" value="{{ esc_attr_x( 'Search ', 'submit button' ) }}" />
         Search <i class='fas fa-search'></i>
       </button>
     </form>
