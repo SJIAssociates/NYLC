@@ -440,7 +440,7 @@ function remove_roots_share_buttons_assets() {
 }
 add_action('wp_enqueue_scripts',  __NAMESPACE__ .'\\remove_roots_share_buttons_assets');
 // -------------------------------------------------------------
-// Clean Up
+// Clean Up Title Tag for Archive
 // -------------------------------------------------------------
 add_filter( 'the_seo_framework_title_from_generation', function( $title, $args ) {
 	/**
@@ -492,22 +492,17 @@ function collapse_acf_repeater() {
 
 add_action('acf/input/admin_head', __NAMESPACE__ .'\\collapse_acf_repeater');
 
-/**
-* Removes or edits the 'Protected:' part from posts titles
-*/
-
+// -------------------------------------------------------------
+// Removes or edits the 'Protected:' part from posts titles
+// -------------------------------------------------------------
 function remove_protected_text() {
   return __('%s');
 }
 add_filter( 'protected_title_format',  __NAMESPACE__ .'\\remove_protected_text' );
 
-
-
-
-/**
-* Change the no Event Text
-*/
-
+// -------------------------------------------------------------
+// Change the no Event Text
+// -------------------------------------------------------------
 function sji_customize_notice( $html, $notices ) {
 
 	// If text is found in notice, then replace it
@@ -520,9 +515,10 @@ function sji_customize_notice( $html, $notices ) {
 
 }
 add_filter( 'tribe_the_notices', __NAMESPACE__ .'\\sji_customize_notice', 10, 2 );
-/**
-* Remove Captcha on pages without hte shortcode
-*/
+
+// -------------------------------------------------------------
+// Remove Captcha on pages without hte shortcode
+// -------------------------------------------------------------
 function conditionally_load_plugin_js_css(){
 	if( !is_page('who-we-are') ) { # Only load CSS and JS on needed Pages
 		wp_dequeue_script('contact-form-7'); # Restrict scripts.
@@ -532,9 +528,9 @@ function conditionally_load_plugin_js_css(){
 }
 add_action( 'wp_enqueue_scripts', __NAMESPACE__ .'\\conditionally_load_plugin_js_css' );
 
-/**
-* Set the City field
-*/
+// -------------------------------------------------------------
+// Automatically Set the City field
+// -------------------------------------------------------------
 function auto_save_city( $post_id ) {
 
   $location = get_field('location');
@@ -549,3 +545,14 @@ function auto_save_city( $post_id ) {
 }
 
 add_action('acf/save_post',  __NAMESPACE__ .'\\auto_save_city', 20);
+
+// -------------------------------------------------------------
+// Change Search Results URL
+// -------------------------------------------------------------
+function wpb_change_search_url() {
+    if ( is_search() && ! empty( $_GET['s'] ) ) {
+        wp_redirect( home_url( "/search/" ) . urlencode( get_query_var( 's' ) ) );
+        exit();
+    }
+}
+add_action( 'template_redirect', __NAMESPACE__ .'\\wpb_change_search_url' );
