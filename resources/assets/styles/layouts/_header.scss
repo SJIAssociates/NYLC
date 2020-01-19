@@ -24,6 +24,10 @@
     }
   }
 
+  .nav-primary {
+    @apply hidden;
+  }
+
   .nav {
     @apply list-reset flex flex-wrap;
 
@@ -202,6 +206,14 @@
         padding: 10px 15px;
         display: block;
       }
+    }
+  }
+}
+
+@screen lg {
+  .banner {
+    .nav-primary {
+      @apply block;
     }
   }
 }
