@@ -24,7 +24,8 @@
     }
   }
 
-  .nav-primary {
+  .nav-primary,
+  .header-btns {
     @apply hidden;
   }
 
@@ -177,6 +178,10 @@
     transform: translateX(0);
   }
 
+  .search-field {
+    height: 40px;
+  }
+
   .nav {
     margin: 0;
     padding: 0;
@@ -212,8 +217,16 @@
 
 @screen lg {
   .banner {
-    .nav-primary {
+    .nav-primary,
+    .header-btns {
       @apply block;
+    }
+  }
+
+  .page-template-template-form .banner {
+    .nav-primary,
+    .header-btns {
+      display: none !important;
     }
   }
 }

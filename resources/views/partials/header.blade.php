@@ -11,7 +11,7 @@
           @endif
         </nav>
       </div>
-      <div class='w-full lg:w-1/4 lg:block hidden text-right'>
+      <div class='lg:w-1/4 header-btns text-right'>
         {!! get_search_form() !!}
         <a href="/join" class='uppercase text-white text-sm font-bold hover:bg-white hover:text-primary py-4 px-5'>Join Us</a>
         <a href="/donate" class='btn btn-donate hover:bg-primary hover:text-white border-2 border-primary hover:border-white'>Donate</a>
