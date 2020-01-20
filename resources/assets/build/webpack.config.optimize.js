@@ -68,14 +68,14 @@ module.exports = {
               "resources/assets/styles/layouts/*.scss"]),
           ],
           whitelistPatterns: [
-            /ctct*/,/ssba*/,/fsForm*/,
+            /ctct*/,/ssba*/,/fsForm*/,/page-template-template-form*/,
             /tribe-bar-form*/,/tribe-events-list-separator-month/,
             /tribe-events-sub-nav/,/tribe-events-meta-group*/,
             /banner/,/menu-footer-nav/
           ],
           whitelistPatternsChildren: [
             /gform*/,
-            /ctct*/,/fsForm*/,
+            /ctct*/,/fsForm*/,/page-template-template-form*/,
             /tribe-bar-form*/,/tribe-events-list-separator-month/,
             /tribe-events-sub-nav/,/tribe-events-meta-group*/,
             /banner/,/menu-footer-nav/],
