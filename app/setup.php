@@ -13,14 +13,19 @@ use Roots\Sage\Template\BladeProvider;
  */
 add_action('wp_enqueue_scripts', function () {
     wp_enqueue_style('sage/main.css', asset_path('styles/main.css'), false, null);
-    wp_enqueue_style( 'AdobeBenton' ,'https://use.typekit.net/nwk0uyd.css',false, null);
+
+    $typekit_api = get_field('typekit_id','options');
+    $typekit_link = 'https://use.typekit.net/' . $typekit_api . '.css';
+
+    wp_enqueue_style( 'AdobeBenton' ,$typekit_link,false, null);
+
 
     wp_enqueue_script('sage/main.js', asset_path('scripts/main.js'), ['jquery'], null, true);
 
     if( is_post_type_archive('landmark') or is_singular('landmark') or is_singular('site')) {
-      $api = get_field('google_maps_api', 'options');
+      $Google_api = get_field('google_maps_api', 'options');
 
-      $googleMapLink = 'https://maps.googleapis.com/maps/api/js?key=' . $api;
+      $googleMapLink = 'https://maps.googleapis.com/maps/api/js?key=' . $Google_api;
 
       wp_enqueue_script( 'google-api', $googleMapLink , null, null, true); // Add in your key
     }
@@ -537,11 +542,13 @@ function auto_save_city( $post_id ) {
   // Address, City, State zip
   $Fulladdress = $location['address'];
 
-  $city = explode(",",$Fulladdress)[1];
+  $city = ltrim(explode(",",$Fulladdress)[1]);
 
 
-    // do something
+  // do something
+  if( empty(get_field('city'))  ):
     update_field('city', $city);
+  endif;
 }
 
 add_action('acf/save_post',  __NAMESPACE__ .'\\auto_save_city', 20);

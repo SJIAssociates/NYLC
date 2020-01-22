@@ -267,8 +267,8 @@ acf_add_local_field_group(array(
 	'description' => '',
 ));
 /*
-Name: Maps API Key
-Fields: map_api
+Name: API Keys
+Fields: map_api, typekit_id
 Location: side
 */
 acf_add_local_field_group(array(
@@ -281,6 +281,13 @@ acf_add_local_field_group(array(
 			'name' => 'google_maps_api',
 			'type' => 'text',
 			'instructions' => 'Enter the API Key to Enable Google Maps API.',
+		),
+		array(
+			'key' => 'field_5d4df',
+			'label' => 'Adobe Project ID',
+			'name' => 'typekit_id',
+			'type' => 'text',
+			'instructions' => 'Enter the Project ID to the Adobe Fonts from your project.',
 		),
 	),
 	'location' => array(
@@ -400,4 +407,5 @@ acf_add_local_field_group(array(
 	'active' => true,
 	'description' => '',
 ));
+
 endif;
