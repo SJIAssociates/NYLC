@@ -11,6 +11,10 @@ if($location):
 endif;
 
 $neighborhoods = get_the_term_list( $post->ID, 'neighborhood', '', ', ', '' );
+if($neighborhoods == ''):
+
+  $neighborhoods = get_field('city') . ", NY";
+endif;
 
 $activities = get_field('activities');
 ?>
