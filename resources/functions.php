@@ -90,5 +90,6 @@ Container::getInstance()
             'view' => require dirname(__DIR__).'/config/view.php',
             'fields' => require dirname(__DIR__).'/config/customFields.php',
             'themeOptions' => require dirname(__DIR__).'/config/acfThemeOptions.php',
+            'facetFeature' => require dirname(__DIR__).'/config/facetwpFeaturedFilter.php',
         ]);
     }, true);
