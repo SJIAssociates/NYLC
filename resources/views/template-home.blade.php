@@ -32,7 +32,7 @@
 <section class='full-section' id='homeNews' aria-label="The Three most recent news items">
 	<div class='container'>
 		<div class='text-center'><h2><span class='bg-grey'>News</span></h2></div>
-		<p class='text-black text-xxl text-center font-semibold my-3 xxl:mb-10'>Stay informed about the latest preservation issues.</p>
+		<p class='text-black text-2xl text-center font-semibold my-3 xxl:mb-10'>Stay informed about the latest preservation issues.</p>
 		<div class='flex my-8 flex-wrap'>
       @foreach($news_loop as $item)
         @include('partials/box-news',$item)
