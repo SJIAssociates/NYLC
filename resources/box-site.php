@@ -25,7 +25,7 @@ $activities = get_field('activities');
     </div>
     <div class="site-box-details">
       <?php if($neighborhoods): ?>
-      <span class="borough text-primary font-bold uppercase inline-block relative ml-4 text-sm  mb-1 lg:mb-5">
+      <span class="borough text-primary font-bold uppercase inline-block relative ml-4 text-sm  mb-5">
         <?php echo strip_tags($neighborhoods); ?>
       </span>
     <?php endif; ?>
