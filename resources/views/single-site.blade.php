@@ -11,9 +11,9 @@
 <div class='container'>
   <div class="content">
     <div class='flex flex-wrap'>
-      <aside class='sidebar w-full py-8 lg:w-1/3 xxl:py-12 xl:pr-24'>
-        @if($event_link)
-        <a class="btn text-white block text-center w-full mb-5" href="{!! $event_link !!}" target="_blank" rel="noopener">Get Tickets</a>
+      <aside class='sidebar w-full py-8 lg:w-1/3 pr-5 xxl:pr-24 xxl:py-12'>
+        @if( !empty($event_link) )
+          <a class="btn text-white block text-center w-full mb-5 mt-0" href="{!! $event_link !!}" target="_blank" rel="noopener">Get Tickets</a>
         @endif
         @if($dates_open)
         <div class='widget'>
@@ -32,7 +32,7 @@
         @endif
         @if($activities)
         <div class='widget'>
-          <h3>Activities</h3>
+          <h3>Tours</h3>
           <ul>
             @foreach($activities as $activity)
               <li class='block w-full inline-block pr-3'>{!! $activity !!}</li>
@@ -40,12 +40,14 @@
           </ul>
         </div>
         @endif
+        @if(!empty($profile->website) or !empty($profile->facebook) or !empty($profile->twitter) )
         <div class='widget'>
           <h3>Follow</h3>
           @if(!empty($profile->website) )<a href="{!! $profile->website !!}" class='text-black block hover:text-red mb-2' target="_blank"  rel='noopener'aria-label='Website for Landmark'>Website</a>@endif
           @if(!empty($profile->facebook) )<a href='{!! $profile->facebook !!}' class='text-black block hover:text-red mb-2' target="_blank" rel='noopener'aria-label='Facebook Page for the Landmark'>Follow on Facebook</a>@endif
           @if(!empty($profile->twitter) )<a href='{!! $profile->twitter !!}' class='text-black block hover:text-red mb-2' target="_blank"  rel='noopener' aria-label='Twitter Page for the Landmark'>Follow on Twitter</a>@endif
         </div>
+        @endif
         <div class='widget'>
           <h3>Address</h3>
           <address>
@@ -75,50 +77,6 @@
     </div>
   </div>
 </div>
-<section class='bg-blue-grey full-section'>
-  <div class='container'>
-    <div class='text-center mx-auto mb-10'>
-      <h2><span class='bg-blue-grey'>Explore More Sites</span></h2>
-    </div>
-    <div class='flex flex-wrap'>
-        @if( $prev_landmark )
-        <div class="box w-full lg:w-1/2 lg:px-10 mb-5">
-          <img src='{!! $prev_landmark->thumb !!}' alt="{!! $prev_landmark->title !!}"/>
-          <div class='text-center bg-white p-5 mx-auto w-3/4 -mt-24 relative'>
-            <h3 class='text-2xl lg:text-3xl'><a href="{!! $prev_landmark->permalink !!}" class='text-black'>{!! $prev_landmark->title !!}</a></h3>
-            <p class='text-lg mt-5 px-5'>
-              {!! $prev_landmark->excerpt !!}
-            </p>
-            <div class="w-full text-center">
-              <a href="{!! $prev_landmark->permalink !!}" class='btn inline-block'>Explore Site</a>
-            </div>
-          </div>
-
-        </div>
-        @endif
-        @if( $next_landmark )
-        <div class="box w-full lg:w-1/2 lg:px-10  mb-5">
-          <img src='{!! $next_landmark->thumb !!}' alt="{!! $next_landmark->title !!}"/>
-          <div class='text-center bg-white p-5 mx-auto w-3/4 -mt-24 relative'>
-            <h3 class='text-2xl lg:text-3xl'><a href="{!! $next_landmark->permalink !!}" class='text-black'>{!! $next_landmark->title !!}</a></h3>
-            <p class='text-lg mt-5 px-5'>
-              {!! $next_landmark->excerpt !!}
-            </p>
-            <div class="w-full text-center">
-              <a href="{!! $next_landmark->permalink !!}" class='btn inline-block'>Explore Site</a>
-            </div>
-          </div>
-
-        </div>
-        @endif
-    </div>
-    <div class='archive-link w-full text-center mt-10'>
-      <a href="/explore-ny" class='text-black text-lg uppercase underline hover:text-primary'>Explore All Sacred Sites <i class='fa fa-chevron-right'></i></a>
-    </div>
-  </div>
-</section>
-
-
 <style type="text/css">
 .acf-map {
     width: 100%;
