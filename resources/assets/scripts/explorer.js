@@ -112,7 +112,7 @@ function add_marker( $marker, map ) {
 */
 
 function center_map( map ) {
-
+	console.lpog('center Map');
 	// vars
 	var bounds = new google.maps.LatLngBounds();
 
@@ -164,11 +164,11 @@ jQuery(document).ready(function($){
 
 		// create map
 		map = new_map( $(this) );
-
+		console.log('got the map!');
 	});
 
 	$(document).on('facetwp-loaded', function() {
-		console.log('facet reload')
+			console.log('facet reload')
 			$('.map-list-container').animate({ scrollTop: 0 }, 500);
 
 			// Remove All Markers
@@ -194,7 +194,9 @@ jQuery(document).ready(function($){
 
 
 $(document).on('facetwp-loaded', function() {
+
 		 if (FWP.loaded) {
+			 	console.log('going.... up');
 				 $('html, body').animate({
 						 scrollTop: $('.facetwp-template').offset().top,
 				 }, 250);
@@ -215,6 +217,7 @@ $(document).on('facetwp-loaded', function() {
 
 
 function remove_markers() {
+	console.log('removing markers')
 	//Loop through all the markers and remove
  for (var i = 0; i < map.markers.length; i++) {
 		 map.markers[i].setMap(null);
