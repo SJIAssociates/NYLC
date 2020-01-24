@@ -44,12 +44,11 @@
         @foreach($annual_events as $item)
           <div class="border p-10 w-full bg-white mx-5 mb-5 items-stretch relative flex flex-col lg:flex-1">
             <h3 class='text-2xl xxl:text-3xl mb-5'>{!! $item['title'] !!}</h3>
-            <span class='block mb-5 uppercase font-bold'>{!! $item['count']!!} Events Scheduled</span>
             <p class='flex-grow text-lg mb-5'>
               {!! $item['description'] !!}
             </p>
             @if($item['count'] > 0)
-            <a href="{!! $item['permalink'] !!}" class='btn bg-red uppercase block w-full text-center'>Get Tickets</a>
+            <a href="{!! $item['permalink'] !!}" class='btn bg-red uppercase block w-full text-center'>Learn More</a>
             @else
             <a href="{!! $item['permalink'] !!}/list/?tribe_event_display=past&tribe_paged=1" class='btn bg-red uppercase block w-full text-center'>See Past Events</a>
             @endif
