@@ -9,13 +9,14 @@
   @include('partials.page-header')
 
   @while(have_posts()) @php the_post() @endphp
+  <section class='pb-5'>
     <div class='container'>
       @if( $subtitle )
       <h2 class='text-black text-center text-2xl lg:text-3xl mx-auto w-full lg:w-3/4 font-light mt-10 leading-normal'>{{ $subtitle }}</h2>
       @endif
     </div>
+  </section>
   @endwhile
-
 
 @if ($flex_generator)
 
@@ -53,6 +54,9 @@
       @include('partials.page-builder.facets_sites')
     @endif
 
+    @if ($block->block_type == 'trio_box')
+      @include('partials.page-builder.trio_box')
+    @endif
 
   @endforeach
 @endif

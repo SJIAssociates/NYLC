@@ -1,7 +1,7 @@
 <section class='full-section {{ $block->acf_fc_layout }}' aria-label="">
   <div class='container'>
     <div class='flex flex-wrap content'>
-      <div class='filters w-full flex flex-wrap border-b-2 border-t-2 border-black mb-5 pt-5 items-end'>
+      <div class='filters w-full flex flex-wrap border-b-2 border-t-2 border-black pt-5 items-end'>
         <div class='facet-group w-full lg:w-auto pr-5'>
           <h3 class='uppercase font-bold mb-0'>Filter Sites By:</h3>
           @php echo facetwp_display( 'facet', 'location' ) @endphp

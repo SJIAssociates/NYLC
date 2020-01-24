@@ -126,6 +126,18 @@ class TemplateSsoh extends Controller
 
             array_push($data, $this_block);
 
+          }elseif($block['acf_fc_layout'] == 'trio_box') {
+
+
+            $this_block = (object) [
+              'index'           => $i,
+              'block_type'      => $block['acf_fc_layout'],
+              'background'      => $block['background'],
+              'blocks'         => $block['blocks']
+            ];
+
+            array_push($data, $this_block);
+
           }
 
         $i++;
