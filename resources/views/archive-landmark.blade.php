@@ -12,7 +12,7 @@
   <div class='container'>
     <div class="content">
       <div class='flex border-b-2 border-t-2 relative'>
-        <div class='w-full lg:w-1/2 borough-facet border-b-2 absolute bg-white'>
+        <div class='w-full lg:w-1/2 borough-facet border-b-2 absolute bg-white sji-filters-top'>
             @php echo do_shortcode('[facetwp facet="borough"]'); @endphp
             @php echo do_shortcode('[facetwp facet="landmark_categories"]'); @endphp
         </div>

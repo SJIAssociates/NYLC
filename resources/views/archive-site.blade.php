@@ -4,7 +4,7 @@
   @include('partials.page-header')
   <div class='container'>
     <div class="content">
-      <div class='flex'>
+      <div class='flex sji-filters-top'>
         <aside class='aside py-8 lg:w-1/4 xxl:py-12'>
             <h3>Location</h3>
             @php echo do_shortcode('[facetwp facet="location"]'); @endphp
