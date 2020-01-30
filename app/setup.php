@@ -30,9 +30,15 @@ add_action('wp_enqueue_scripts', function () {
       wp_enqueue_script( 'google-api', $googleMapLink , null, null, true); // Add in your key
     }
 
-    if( is_post_type_archive('landmark') or get_page_template_slug() == 'views/template-ssoh.blade.php') {
+    if( is_post_type_archive('landmark') ) {
       wp_enqueue_script('sage/explorer.js', asset_path('scripts/explorer.js'), ['jquery'], '1.0.0', true);
     }
+
+    //Sacred Sites JS
+    if( get_page_template_slug() == 'views/template-ssoh.blade.php') {
+      wp_enqueue_script('sage/sacred.js', asset_path('scripts/sacred.js'), ['jquery'], '1.0.0', true);
+    }
+
     if (is_single() && comments_open() && get_option('thread_comments')) {
         wp_enqueue_script('comment-reply');
     }

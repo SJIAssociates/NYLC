@@ -7,9 +7,12 @@
     "customizer": [
       "./scripts/customizer.js"
     ],
-      "explorer": [
-          "./scripts/explorer.js"
-      ]
+    "explorer": [
+        "./scripts/explorer.js"
+    ],
+    "sacred": [
+        "./scripts/sacred.js"
+    ]
   },
   "publicPath": "/wp-content/themes/sage",
   "devUrl": "http://nylc.test",
