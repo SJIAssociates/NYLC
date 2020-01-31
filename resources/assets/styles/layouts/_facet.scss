@@ -124,7 +124,7 @@
 
 //SSOH Listing Area Facet Template
 .facet_template_area .facetwp-template {
-  @apply flex flex-wrap;
+  @apply flex flex-wrap w-full;
 
   article .border-b-2 {
     min-height: 230px;

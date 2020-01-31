@@ -1,4 +1,3 @@
-<div class="flex flex-wrap">
 <?php while ( have_posts() ): the_post();
 
 $location = get_field('location');
@@ -38,4 +37,3 @@ $activities = get_field('activities');
      </div>
 </div>
 <?php endwhile; ?>
-</div>

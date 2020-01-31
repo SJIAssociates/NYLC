@@ -33,7 +33,7 @@
         </span>
         <?php endif; ?>
 
-        <?php if( !empty($lat) ) ?>
+        <?php if( !empty($lat) ): ?>
         <div class='marker' data-lat="<?php echo $lat; ?>" data-lng="<?php echo $lng; ?>">
           <h4><a href="<?php the_permalink(); ?>" class='text-black hover:text-red text-lg'><?php the_title(); ?></a></h4>
         </div>
