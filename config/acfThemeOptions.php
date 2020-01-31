@@ -457,5 +457,56 @@ if( function_exists('acf_add_local_field_group') ):
 		'active' => true,
 		'description' => '',
 	));
+//$cpt->labels->name
+//$cpt->rewrite->slug
+	add_action('admin_init', function(){
+
+					//Get all the Post Types that are Public and not built in (No Pages or Posts or attachments, menus, media)
+	        $post_types = get_post_types( array( 'public' => true, '_builtin' => false ), 'object' );
+
+					//Eventually we'll shove a nice array or arrays into this variable
+					$cpt_breadcrumbs_fields = [];
+
+					//we're gonna loop through the list of Custom Post Type and for each one:
+					//We'll create an array with 6 fields, 3 of those fields will be unique to each array.
+					//We're getting the post type name (which doesn't allow for spaces, and using it in the name and key.)
+					// the Label will be used, since it allows Spaces, and looks better.
+					foreach($post_types as $cpt):
+
+						array_push(
+							$cpt_breadcrumbs_fields,
+							array(
+									'key' => 'field_breadcrumb_' . $cpt->name,
+									'label' => $cpt->label,
+									'name' => 'breadcrumb_link_' . $cpt->name,
+									'type' => 'page_link',
+									'instructions' => '',
+									'required' => 0,
+								)
+							);
+
+					endforeach;
+
+					// Now we're gonna Create a ACF Group
+					// The Array that holds all those other arrays will then be turned into Fields in the field.
+					//So for each Post Type we'll get a Label to the Left, and a dropdown that lists all Pages inside it.
+					//Lastly, we'll display this all on the Breadcrumbs Page
+					acf_add_local_field_group(array(
+						'key' => 'group_5e33182b04b3d',
+						'title' => 'Breadcrumb Page',
+						'fields' => $cpt_breadcrumbs_fields,
+						'location' => array(
+							array(
+								array(
+									'param' => 'options_page',
+									'operator' => '==',
+									'value' => 'acf-options-breadcrumbs',
+								),
+							),
+						),
+						'label_placement' => 'left',
+					));
+
+	}, 0, 99);
 
 endif;

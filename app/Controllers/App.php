@@ -107,6 +107,7 @@ class App extends Controller
       $after = '</span>'; // tag after the current crumb
       global $post;
       $homeLink = get_bloginfo('url');
+      $enableBreadcrumbs = get_field('enable_breadcrumbs','options');
 
       $output = '<div id="crumbs" class="py-3"><a href="' . $homeLink . '" class="underline text-black home-crumb">' . $home . '</a> <span class="delimiter home-delimiter">' . $delimiter . ' ';
 
@@ -154,18 +155,22 @@ class App extends Controller
           //Success Stories
           } elseif (is_singular('success_stories')) {
 
+            $cpt_archive_link = get_field('breadcrumb_link_success_stories','options') ?: '/what-we-do/success-stories/';
+
             $output .= '<a href="/what-we-do/" class="text-black underline">What We Do</a>';
             $output .= ' ' . $delimiter . ' ';
-              $output .= '<a href="/what-we-do/success-stories/" class="text-black underline">Success Stories</a>';
+              $output .= '<a href="'. $cpt_archive_link .'" class="text-black underline">Success Stories</a>';
             $output .= ' ' . $delimiter . ' ';
             $output .= $before . get_the_title() . $after;
 
           //Staff
           } elseif (is_singular('staff')) {
 
+            $cpt_archive_link = get_field('breadcrumb_link_staff','options') ?: '/who-we-are/board-staff/';
+
             $output .= '<a href="/who-we-are/" class="text-black underline">Who We Are</a>';
             $output .= ' ' . $delimiter . ' ';
-            $output .= '<a href="/who-we-are/board-staff/" class="text-black underline">Board & Staff</a>';
+            $output .= '<a href="' . $cpt_archive_link .'" class="text-black underline">Board & Staff</a>';
             $output .= ' ' . $delimiter . ' ';
             $output .= $before . get_the_title() . $after;
 
@@ -176,7 +181,14 @@ class App extends Controller
               $archive_link = get_post_type_archive_link($post_type->name);
               $slug = $post_type->rewrite;
 
-              $output .= '<a href="' . $archive_link . '/" class="text-black underline">' . $post_type->labels->singular_name . '</a>';
+              $acf_breadcrumb = 'breadcrumb_link_' . $post_type->name;
+
+
+
+              $customLink = get_field($acf_breadcrumb, 'options') ?: $archive_link;
+              $customLink = get_the_permalink($customLink) ?: $archive_link;
+
+              $output .= '<a href="' . $customLink . '" class="text-black underline">' . $post_type->labels->singular_name . '</a>';
               if ($showCurrent == 1) {
                   $output .= ' ' . $delimiter . ' ' . $before . get_the_title() . $after;
               }
@@ -229,7 +241,13 @@ class App extends Controller
           $output .= $before . 'Error 404' . $after;
       }
       $output .= '</div>';
-      return $output;
+
+      if($enableBreadcrumbs == 'Off'):
+        return false;
+      else:
+        return $output;
+      endif;
+
 
     } // end the_breadcrumb()
 
