@@ -121,6 +121,9 @@ class TemplateSsoh extends Controller
             $this_block = (object) [
               'index'           => $i,
               'block_type'      => $block['acf_fc_layout'],
+              'template'        => $block['template'],
+              'activate_filters'=> $block['activate_filters'],
+              'map'             => $block['activate_map'],
               'filters'         => $block['filters']
             ];
 

@@ -60,6 +60,32 @@
   }
 }
 
+.pbt-box {
+  margin-left: 10px;
+  margin-right: 10px;
+  max-width: 100%;
+
+  @screen md {
+    max-width: calc(50% - 20px);
+  }
+
+  @screen lg {
+    max-width: calc(33% - 20px);
+  }
+
+  .size-news_thumb {
+    margin: 0;
+    padding: 0;
+  }
+
+  .btn {
+    position: absolute;
+    width: calc(100% - 4rem);
+    bottom: 1rem;
+    left: 2rem;
+  }
+}
+
 .activities_list {
   li {
     border-right: 2px solid #333;

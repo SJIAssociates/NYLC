@@ -20,8 +20,8 @@ function new_map( $el ) {
 
 	// vars
 	var args = {
-		zoom		: 8,
-		center		: new google.maps.LatLng(40.7128,-74.0070),
+		zoom		: 9,
+		center		: new google.maps.LatLng(40.7128,-73.9070),
 		mapTypeId	: google.maps.MapTypeId.ROADMAP,
 		styles		: [ { "featureType": "administrative.province", "stylers": [ { "visibility": "off" } ] }, { "featureType": "landscape", "stylers": [ { "saturation": -100 }, { "lightness": 65 }, { "visibility": "on" } ] }, { "featureType": "poi", "stylers": [ { "saturation": -100 }, { "lightness": 51 }, { "visibility": "simplified" } ] }, { "featureType": "road.arterial", "stylers": [ { "saturation": -100 }, { "lightness": 30 }, { "visibility": "on" } ] }, { "featureType": "road.highway", "stylers": [ { "saturation": -100 }, { "visibility": "simplified" } ] }, { "featureType": "road.local", "stylers": [ { "saturation": -100 }, { "lightness": 40 }, { "visibility": "on" } ] }, { "featureType": "transit", "stylers": [ { "saturation": -100 }, { "visibility": "simplified" } ] }, { "featureType": "water", "elementType": "geometry", "stylers": [ { "hue": "#ffff00" }, { "saturation": -97 }, { "lightness": -25 } ] }, { "featureType": "water", "elementType": "geometry.fill", "stylers": [ { "color": "#778391" } ] }, { "featureType": "water", "elementType": "labels", "stylers": [ { "saturation": -100 }, { "lightness": -25 }, { "visibility": "on" } ] } ],
 	};
@@ -34,7 +34,6 @@ function new_map( $el ) {
 	// add a markers reference
 	map.markers = [];
 
-	console.log(map.markers);
 	// add markers
 	$markers.each(function(){
 
@@ -44,7 +43,7 @@ function new_map( $el ) {
 
 
 	// center map
-	center_map( map );
+	//center_map( map );
 
 
 	// return
@@ -159,34 +158,39 @@ var map = null;
 
 jQuery(document).ready(function($){
 
-	$('.acf-map').each(function(){
+	if( $('.map-list-container').length ){
+		$('.acf-map').each(function(){
 
-		// create map
-		map = new_map( $(this) );
-		console.log('got the map!');
+			// create map
+			map = new_map( $(this) );
+
 	});
 
+	}
 	$(document).on('facetwp-loaded', function() {
 			$('.map-list-container').animate({ scrollTop: 0 }, 500);
 
-			// Remove All Markers
-			remove_markers();
+			//If The Map is on, Then Run this.
+			if( $('.map-list-container').length ){
+				// Remove All Markers
+				remove_markers();
 
-			//Grab all Markers on Page Currently
-			var $markers = $(document).find('.marker');
 
-			// add a markers reference
-			map.markers = [];
+				//Grab all Markers on Page Currently
+				var $markers = $(document).find('.marker');
 
-			console.log(map.markers);
-			// add markers
-			$markers.each(function(){
+				// add a markers reference
+				map.markers = [];
 
-		    add_marker( $(this), map );
+				// add markers
+				$markers.each(function(){
 
-			});
+					add_marker( $(this), map );
 
-			center_map( map );
+				});
+
+				center_map( map );
+			}
 
 	 });
 
@@ -198,6 +202,7 @@ $(document).on('facetwp-loaded', function() {
 				 $('html, body').animate({
 						 scrollTop: $('.sji-filters-top').offset().top,
 				 }, 250);
+
 		 }
  });
 /*
