@@ -10,23 +10,6 @@ class SingleSite extends Controller
 
   use Partials\location;
 
-  public function contact()
-  {
-    return (object) array(
-       'email'  =>   get_field('location_email'),
-       'phone'   =>   get_field('location_number')
-    );
-  }
-
-  public function profile()
-  {
-    return (object) array(
-       'facebook'  =>   get_field('landmark_facebook'),
-       'twitter'   =>   get_field('landmark_twitter'),
-       'website'   =>   get_field('website')
-    );
-  }
-
   public function activitiesList()
   {
       $activities = get_field('activities');
