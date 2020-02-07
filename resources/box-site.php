@@ -4,7 +4,7 @@
   $location = get_field('location');
 
   // Address, City, State zip
-  if($location):
+  if($location['address'] !== ''):
     $Fulladdress = $location['address'];
 
     $numberAddress = explode(",",$Fulladdress)[0];
@@ -16,8 +16,8 @@
   endif;
 
   $neighborhoods = get_the_term_list( $post->ID, 'neighborhood', '', ', ', '' );
-  if($neighborhoods == ''):
 
+  if($neighborhoods == ''):
     $neighborhoods = get_field('city') . ", NY";
   endif;
 
@@ -33,18 +33,22 @@
         </span>
         <?php endif; ?>
 
-        <?php if( !empty($lat) ): ?>
+        <?php if( $location['address'] !== '' ): ?>
         <div class='marker' data-lat="<?php echo $lat; ?>" data-lng="<?php echo $lng; ?>">
           <h4><a href="<?php the_permalink(); ?>" class='text-black hover:text-red text-lg'><?php the_title(); ?></a></h4>
         </div>
-        <? endif; ?>
+        <?php endif; ?>
 
         <h3 class="entry-title mb-0 text-base text-2xl"><a href="<?php the_permalink(); ?>" class='text-black hover:text-red'><?php the_title(); ?></a></h3>
         <div class="entry-content lg:block">
-          <?php if($location): ?>
+          <?php if($location['address'] !== '' ): ?>
            <address class='block mt-3'>
               <?php echo $numberAddress . ",<br />" . $city . ", " . $state; ?>
            </address>
+         <?php else: ?>
+           <p class='text-primary uppercase mt-5 text-xs font-bold'>
+             No Address Found
+           </p>
          <?php endif; ?>
         </div>
 
@@ -57,7 +61,7 @@
         </ul>
       </div>
       <div class="site-box-image">
-        <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('news_thumb') ?></a>
+        <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('news_thumb'); ?></a>
       </div>
     </div>
   </article>

@@ -214,13 +214,6 @@ acf_add_local_field_group(array(
 			array(
 				'param' => 'post_type',
 				'operator' => '==',
-				'value' => 'site',
-			),
-		),
-		array(
-			array(
-				'param' => 'post_type',
-				'operator' => '==',
 				'value' => 'landmark',
 			),
 		),
@@ -324,7 +317,7 @@ acf_add_local_field_group(array(
 	),
 	'menu_order' => 0,
 	'position' => 'normal',
-	'style' => 'default',
+	'style' => 'seamless',
 	'label_placement' => 'top',
 	'instruction_placement' => 'label',
 	'hide_on_screen' => '',
@@ -621,6 +614,286 @@ acf_add_local_field_group(array(
 			),
 		),
 	'position' => 'acf_after_title',
-
 ));
+/*
+Name: Sacred Sites Hour
+Fields: Dates_Open, saturday_open, saturday_close, sunday_open, sunday_close
+*/
+acf_add_local_field_group(array(
+	'key' => 'group_5e14c70183a33',
+	'title' => 'Sacred Site::Hours',
+	'fields' => array(
+		array(
+			'key' => 'field_5e14c707d03a1',
+			'label' => 'Dates Open',
+			'name' => 'dates_open',
+			'type' => 'button_group',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'choices' => array(
+				'Saturday' => 'Saturday',
+				'Sunday' => 'Sunday',
+				'Both' => 'Both',
+			),
+			'allow_null' => 0,
+			'default_value' => 'Saturday',
+			'layout' => 'horizontal',
+			'return_format' => 'value',
+		),
+		array(
+			'key' => 'field_5e14c730d03a2',
+			'label' => 'Saturday Open',
+			'name' => 'saturday_open',
+			'type' => 'time_picker',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => array(
+				array(
+					array(
+						'field' => 'field_5e14c707d03a1',
+						'operator' => '==',
+						'value' => 'Saturday',
+					),
+				),
+				array(
+					array(
+						'field' => 'field_5e14c707d03a1',
+						'operator' => '==',
+						'value' => 'Both',
+					),
+				),
+			),
+			'wrapper' => array(
+				'width' => '50',
+				'class' => '',
+				'id' => '',
+			),
+			'display_format' => 'g:i a',
+			'return_format' => 'g:i a',
+		),
+		array(
+			'key' => 'field_5e14c761d03a3',
+			'label' => 'Saturday Close',
+			'name' => 'saturday_close',
+			'type' => 'time_picker',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => array(
+				array(
+					array(
+						'field' => 'field_5e14c707d03a1',
+						'operator' => '==',
+						'value' => 'Saturday',
+					),
+				),
+				array(
+					array(
+						'field' => 'field_5e14c707d03a1',
+						'operator' => '==',
+						'value' => 'Both',
+					),
+				),
+			),
+			'wrapper' => array(
+				'width' => '50',
+				'class' => '',
+				'id' => '',
+			),
+			'display_format' => 'g:i a',
+			'return_format' => 'g:i a',
+		),
+		array(
+			'key' => 'field_5e14c7b96a162',
+			'label' => 'Sunday Open',
+			'name' => 'sunday_open',
+			'type' => 'time_picker',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => array(
+				array(
+					array(
+						'field' => 'field_5e14c707d03a1',
+						'operator' => '==',
+						'value' => 'Sunday',
+					),
+				),
+				array(
+					array(
+						'field' => 'field_5e14c707d03a1',
+						'operator' => '==',
+						'value' => 'Both',
+					),
+				),
+			),
+			'wrapper' => array(
+				'width' => '50',
+				'class' => '',
+				'id' => '',
+			),
+			'display_format' => 'g:i a',
+			'return_format' => 'g:i a',
+		),
+		array(
+			'key' => 'field_5e14c7c96a163',
+			'label' => 'Sunday Close',
+			'name' => 'sunday_close',
+			'type' => 'time_picker',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => array(
+				array(
+					array(
+						'field' => 'field_5e14c707d03a1',
+						'operator' => '==',
+						'value' => 'Sunday',
+					),
+				),
+				array(
+					array(
+						'field' => 'field_5e14c707d03a1',
+						'operator' => '==',
+						'value' => 'Both',
+					),
+				),
+			),
+			'wrapper' => array(
+				'width' => '50',
+				'class' => '',
+				'id' => '',
+			),
+			'display_format' => 'g:i a',
+			'return_format' => 'g:i a',
+		),
+	),
+	'location' => array(
+		array(
+			array(
+				'param' => 'post_type',
+				'operator' => '==',
+				'value' => 'site',
+			),
+		),
+	),
+	'position' => 'side',
+));
+/*
+Name: Sacred Site:Activity Description
+Fields: Activity Description
+*/
+acf_add_local_field_group(array(
+	'key' => 'group_5e14dfa005636',
+	'title' => 'Sacred Site:Activity Description',
+	'fields' => array(
+		array(
+			'key' => 'field_5e14dff235562',
+			'label' => 'Activity Descrition',
+			'name' => 'activity_descrition',
+			'type' => 'wysiwyg',
+			'instructions' => 'Use the Area Below for describing activities on site. Include details about times or cost of any event or tours.',
+			'tabs' => 'all',
+			'toolbar' => 'full',
+			'media_upload' => 1,
+		),
+	),
+	'location' => array(
+		array(
+			array(
+				'param' => 'post_type',
+				'operator' => '==',
+				'value' => 'site',
+			),
+		),
+	),
+	'style' => 'seamless',
+));
+/*
+Name: SacredSite::Activities
+Fields: activities, event_link, city
+*/
+acf_add_local_field_group(array(
+	'key' => 'group_5d6fd8df061b1',
+	'title' => 'SacredSite::Activities',
+	'fields' => array(
+		array(
+			'key' => 'field_5d6fd8e847aa7',
+			'label' => 'Tours',
+			'name' => 'activities',
+			'type' => 'checkbox',
+			'choices' => array(
+				'self-guided-tours' => 'Self-guided Tours',
+				'guided-tours' => 'Guided Tours',
+				'pre-booked-tours' => 'Pre-booked Tours',
+			),
+			'allow_custom' => 0,
+			'default_value' => array(
+			),
+			'layout' => 'vertical',
+			'toggle' => 0,
+			'return_format' => 'value',
+			'save_custom' => 0,
+		),
+		array(
+			'key' => 'field_5e20de2d130ff',
+			'label' => 'Event Link',
+			'name' => 'event_link',
+			'type' => 'url',
+			'instructions' => 'Enter the Eventbrite or other ticketing page URL.',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => '',
+			'placeholder' => '',
+		),
+		array(
+			'key' => 'field_5e20de2d130da',
+			'label' => 'Status',
+			'name' => 'sold_out',
+			'type' => 'true_false',
+			'instructions' => 'Check this is the Event is Sold Out.',
+			'default_value' => 0,
+			'ui' => 1,
+		),
+		array(
+			'key' => 'field_5d6ff9a60c040',
+			'label' => 'City',
+			'name' => 'city',
+			'type' => 'text',
+			'instructions' => 'This Field is auto-populated by the Google Map field.',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => '',
+			'placeholder' => '',
+			'prepend' => '',
+			'append' => '',
+			'maxlength' => '',
+		),
+	),
+	'location' => array(
+		array(
+			array(
+				'param' => 'post_type',
+				'operator' => '==',
+				'value' => 'site',
+			),
+		),
+	),
+	'position' => 'side',
+));
+
+
 endif;
