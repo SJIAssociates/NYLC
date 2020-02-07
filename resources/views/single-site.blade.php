@@ -13,7 +13,11 @@
     <div class='flex flex-wrap'>
       <aside class='sidebar w-full py-8 lg:w-1/3 pr-5 xxl:pr-24 xxl:py-12'>
         @if( !empty($event_link) )
+          @if( $sold_out )
+          <a class="py-5 bg-primary block text-white uppercase text-center w-full mb-5 mt-0 cursor-not-allowed opacity-50">Sold Out</a>
+          @else
           <a class="btn text-white block text-center w-full mb-5 mt-0" href="{!! $event_link !!}" target="_blank" rel="noopener">Get Tickets</a>
+          @endif
         @endif
         @if($dates_open)
         <div class='widget'>
@@ -40,12 +44,10 @@
           </ul>
         </div>
         @endif
-        @if(!empty($profile->website) or !empty($profile->facebook) or !empty($profile->twitter) )
+        @if(!empty($website) )
         <div class='widget'>
           <h3>Follow</h3>
-          @if(!empty($profile->website) )<a href="{!! $profile->website !!}" class='text-black block hover:text-red mb-2' target="_blank"  rel='noopener'aria-label='Website for Landmark'>Website</a>@endif
-          @if(!empty($profile->facebook) )<a href='{!! $profile->facebook !!}' class='text-black block hover:text-red mb-2' target="_blank" rel='noopener'aria-label='Facebook Page for the Landmark'>Follow on Facebook</a>@endif
-          @if(!empty($profile->twitter) )<a href='{!! $profile->twitter !!}' class='text-black block hover:text-red mb-2' target="_blank"  rel='noopener' aria-label='Twitter Page for the Landmark'>Follow on Twitter</a>@endif
+          @if(!empty($website) )<a href="{!! $website !!}" class='text-black block hover:text-red mb-2' target="_blank"  rel='noopener'aria-label='Website for Landmark'>Website</a>@endif
         </div>
         @endif
         <div class='widget'>
@@ -66,6 +68,23 @@
               <img src="{!! the_post_thumbnail_url(); !!}" class="w-full" />
               <h2 class='bold text-black text-2xl xxl:text-4xl mb-2 mt-3'>About The Sacred Site</h2>
               @php the_content() @endphp
+
+              @php
+
+                $fields = acf_get_fields(3244);
+
+                if( $fields ) {
+
+                foreach($fields as $field)
+                {
+                  $detail = get_field($field['name']);
+
+                  echo "<p><strong>" . $field['label'] . "</strong>: " . $detail . "</p>";
+                }
+              }
+              @endphp
+
+
               @if($activity_descrition )
                 <h2 class='bold text-black text-2xl xxl:text-3xl mb-2 mt-5'>Activities</h2>
                 {!! $activity_descrition !!}

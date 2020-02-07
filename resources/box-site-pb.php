@@ -32,8 +32,13 @@ $activities = get_field('activities');
          <address class='block mt-3 text-lg text-grey-darker font-normal mb-5'>
             <?php echo $numberAddress . ",<br />" . $city . ", " . $state; ?>
          </address>
-       <?php endif; ?>
-         <a href="<?php the_permalink(); ?>" class='btn bg-red text-white text-center w-full block absolute' title="Register For Event">Register</a>
+       <?php endif;
+
+      if( get_field('sold_out') ): ?>
+        <a class="btn bg-primary block text-white uppercase text-center block absolute cursor-not-allowed opacity-50">Sold Out</a>
+      <?php else: ?>
+        <a class="btn bg-red text-white text-center w-full block absolute" href="<?php the_field('event_link'); ?>" target="_blank" rel="noopener" title="Register For Event">Register</a>
+      <?php endif; ?>
      </div>
 </div>
 <?php endwhile; ?>
