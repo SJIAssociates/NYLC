@@ -78,8 +78,13 @@
                 foreach($fields as $field)
                 {
                   $detail = get_field($field['name']);
-
-                  echo "<p><strong>" . $field['label'] . "</strong>: " . $detail . "</p>";
+                  if( !empty($detail) ):
+                    if($field['type'] == 'url'):
+                      echo "<p><strong>" . $field['label'] . "</strong>: <a href='$detail' target='_blank'>" . $detail . "</a></p>";                    
+                    else:
+                      echo "<p><strong>" . $field['label'] . "</strong>: " . $detail . "</p>";
+                    endif;
+                  endif;
                 }
               }
               @endphp
