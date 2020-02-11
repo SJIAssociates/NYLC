@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
-@section('content')
+@section('content');
 
 @include('partials.page-header')
-<div class='container'>
+<div class='container entry-content'>
   <div class="content">
     <div class='flex flex-wrap xxl:w-3/4 mx-auto'>
       @if (App\display_sidebar())
@@ -18,6 +18,6 @@
   </main>
     </div>
   </div>
-  
+
 </div>
 @endsection
