@@ -60,7 +60,8 @@ class FrontPage extends Controller
 
     $carousel = get_field('image_carousel');
 
-    shuffle($carousel);
+    if($carousel):
+      shuffle($carousel);
 
     //Maybe do something with a limit here
     return array_map(function ($item) {
@@ -68,7 +69,9 @@ class FrontPage extends Controller
             'url' => $item['image']['url'],
         ];
     }, $carousel ?? [] );
-
+  else:
+    return false;
+  endif;
   }
   use Partials\ServiceBoxes;
 
