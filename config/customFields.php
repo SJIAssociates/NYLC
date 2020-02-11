@@ -413,15 +413,27 @@ acf_add_local_field_group(array(
 					'required' => 0,
 					'conditional_logic' => 0,
 					'wrapper' => array(
-						'width' => '33%',
-						'class' => '',
-						'id' => '',
+						'width' => '100%',
 					),
+				),
+				array(
+					'key' => 'field_5d7998c00c7',
+					'label' => 'Button Type',
+					'type' => 'button_group',
+					'instructions' => 'Is the button linking to a internal page or external wesbite',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'choices' => array(
+						'wp_page' => 'Internal',
+						'url' => 'External',
+					),
+					'allow_null' => 0,
 					'default_value' => '',
-					'placeholder' => '',
-					'prepend' => '',
-					'append' => '',
-					'maxlength' => '',
+					'layout' => 'horizontal',
+					'return_format' => 'value',
+					'wrapper' => array(
+						'width' => '50%',
+					),
 				),
 				array(
 					'key' => 'field_5d7998c00c7bc',
@@ -430,9 +442,7 @@ acf_add_local_field_group(array(
 					'instructions' => 'Text that appears in the button. The Button will be placed below the content.',
 					'type' => 'text',
 					'wrapper' => array(
-						'width' => '33%',
-						'class' => '',
-						'id' => '',
+						'width' => '50%',
 					),
 				),
 				array(
@@ -440,10 +450,37 @@ acf_add_local_field_group(array(
 					'label' => 'Button Link',
 					'name' => 'cta_link',
 					'type' => 'page_link',
+					'instructions' => 'Select the page title within this site.',
 					'wrapper' => array(
-						'width' => '33%',
-						'class' => '',
-						'id' => '',
+						'width' => '100%',
+					),
+					'conditional_logic' => array(
+						array(
+							array(
+								'field' => 'field_5d7998c00c7',
+								'operator' => '==',
+								'value' => 'wp_page',
+							),
+						),
+					),
+				),
+				array(
+					'key' => 'field_5d7998c00c7be',
+					'label' => 'Button Link',
+					'name' => 'cta_link',
+					'type' => 'url',
+					'instructions' => 'Input the URL of the desired page, including HTTP in the beginning.',
+					'wrapper' => array(
+						'width' => '100%',
+					),
+					'conditional_logic' => array(
+						array(
+							array(
+								'field' => 'field_5d7998c00c7',
+								'operator' => '==',
+								'value' => 'url',
+							),
+						),
 					),
 				),
 				array(
@@ -451,19 +488,12 @@ acf_add_local_field_group(array(
 					'label' => 'Content',
 					'name' => 'content',
 					'type' => 'wysiwyg',
-					'instructions' => '',
-					'required' => 0,
-					'conditional_logic' => 0,
 					'wrapper' => array(
 						'width' => '100%',
-						'class' => '',
-						'id' => '',
 					),
-					'default_value' => '',
 					'tabs' => 'all',
 					'toolbar' => 'full',
 					'media_upload' => 1,
-					'delay' => 0,
 				),
 			),
 		),
